@@ -1,13 +1,27 @@
-﻿/* background: #568dea; */
-html,body, div, form, a, ul, li, p, h1,h2,h3,h4,h5,h6, span, input,label,textarea {margin:0;padding:0;}
+﻿ol#instruction p {
+    text-align: justify;
+    font-size: 12pt;
+    color: black;
+}
+
+.text-pullcenter {
+    text-align: center;
+}
+
+.text-pullleft {
+    text-align: left;
+}
+
+/* background: #568dea; */
+html,body, div, form, a, ul, ol, li, p, h1,h2,h3,h4,h5,h6, span, input,label,textarea {margin:0;padding:0;}
 
 html, body {width: 100%;  height: 100%; font-size: 14px;overflow-x: hidden; overflow-y: visible; font-family: Tahoma; line-height: 18px;}
 
-a {text-decoration: none; color: white;}
+a {text-decoration: none; color: #333;}
 
 ul, li {list-style-type: none;}  
 
-p {color: #9fbff4; font-size: 12px;}
+p {color: #9fbff4; font-size: 12px; }
 
 h1 {font-size: 18px; color: #568dea;}
 h2 {font-size: 16px; color: #568dea;}
@@ -16,7 +30,7 @@ h4 {font-size: 13px; color: #568dea;}
 h5 {font-size: 12px; color: #568dea;}
 h6 {font-size: 11px; color: #568dea;}
 
-form {color: white;}
+form {color: #333;}
 
 /* Parallax using smart3D */
 #wrap {position: fixed; width: 700px; height: 100%; z-index: 99999;}
@@ -42,14 +56,20 @@ form {color: white;}
 
 
 /* Header */
-#header { width: 100%; height: 70px; border-bottom: solid 1px #568dea; padding: 5px 0 5px 0; z-index: 10;margin-bottom: 10px;}
+#header, header { width: 100%; border-bottom: solid 1px #568dea; padding: 5px 0 5px 0; z-index: 10;margin-bottom: 10px;}
+header {height: 70px; }
+#header { height: 55px; }
 #logo {float: left; width: 120px; height: 40px; background: url('img/logo.png') no-repeat;}
 
 /* Navigation */
-#navigation {float: left; padding: 0; margin: 20px 0 0 0;}
-#navigation li {float:left; position: relative;}
-#navigation a {display: block; position: relative; color: #568dea; padding: 10px 10px 20px 10px; z-index: 13; width: 100%;}
-#navigation li.back {background: #568dea;height: 3px; z-index: 18; position: absolute;top:67px;}
+nav a {
+    margin-bottom: 15px;
+    float: right;
+}
+#navigation {float: left; padding: 0; margin: 20px 0 0 0;position: relative;}
+#navigation li {float:left; position: relative; margin-right: 30px !important;}
+#navigation a {display: block; position: relative; color: #568dea; padding: 10px 10px 20px 10px; z-index: 13; width: 100%;text-decoration: none;}
+#navigation li.back {background: #568dea;height: 3px; z-index: 18; position: absolute;top:37px;}
 #navigation ul {position:absolute;top:-999em;width:160px;border-top: 4px #568dea solid;}
 #navigation ul li {width:100%;}
 #navigation li:hover {visibility:inherit;}
@@ -64,14 +84,10 @@ ul#navigation li li:hover li ul,ul#navigation li li.sfHover li ul {	background: 
 
 
 /* Page Name */
-.head {float: left; width: 100%; height: 40px; margin: 60px 0 20px 0; background: #568dea; color: white; z-index: 98;}
-.head h1 {padding: 12px 0 0 20px; color: white;}
-
-
-
+.head {float: left; width: 100%; height: 40px; margin: 0px 0 10px 0; background: #568dea; color: white; z-index: 98;}
+.head h1 {padding: 5px 0 0 10px; color: white;}
 
 /* HOME PAGE */
-
 
 /* Featured Images */
 #featured {float: left; width: 510px; margin: 100px 0 30px 0; z-index: 98;}
@@ -114,14 +130,14 @@ ul#navigation li li:hover li ul,ul#navigation li li.sfHover li ul {	background: 
 
 
 /* Google map */
-#map_canvas {float: left; margin: 0 0 40px 0; width:500px; height:320px;}
+#map_canvas {float: left; margin-bottom: 10px; width:780px; height:350px;}
 
 /* contact names and forms */
 #contactUs {float: left;  width: 500px; margin: 0 0 40px 0; padding: 0;}
 
 /* contact form names */
 #contactName {float: left; width: 80px; margin: 0;}
-#contactName p {float: left; color: #568dea; font-size: 14px; width: 80px;}
+#contactName p {float: left; color: #568dea; font-size: 14px; width: 80px;height: 40px;}
 #nameLabel {float: left; margin: 5px 0 0 0; padding: 0;}
 #emailLabel {float: left; margin: 15px 0 0 0; padding: 0;}
 #textLabel {float: left; margin: 20px 0 0 0; padding: 0;}
@@ -146,10 +162,6 @@ ul#navigation li li:hover li ul,ul#navigation li li.sfHover li ul {	background: 
 #contactRight p {margin-bottom: 20px;}
 #contactLeft { float: left; width: 240px; margin: 0; padding: 0;}
 
-
-
-
-
 /* ABOUT PAGE */
 
 
@@ -157,7 +169,7 @@ ul#navigation li li:hover li ul,ul#navigation li li.sfHover li ul {	background: 
 #whoWeAre {float: left; width: 100%; padding: 0; margin: 0 0 30px 0;overflow: hidden;}
 #whoWeAre p {width: 500px;}
 
-.underline { padding: 0 0 5px 0px; width:500px;border-bottom: 1px solid #568dea; margin: 0 0 20px 0;}
+.underline { padding: 0 0 5px 0px; width:500px;border-bottom: 1px solid #568dea; margin: 0 0 20px 0; }
 
 /* Meet the Team */
 #meetTeam {float: left; width: 520px; height: 200px; margin: 0px 0 40px 0; padding: 0;}

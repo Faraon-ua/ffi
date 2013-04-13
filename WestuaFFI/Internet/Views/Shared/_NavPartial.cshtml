@@ -1,11 +1,13 @@
-﻿<ul class="nav">    
-    <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        Home
-        <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a href="@Url.Content("~/home/?layout=standard")">Standard Layout</a></li>
-            <li><a href="@Url.Content("~/home/?layout=fluid")">Fluid Layout</a></li>
-        </ul>
-    </li>  
-    <li><a href="@Url.Content("~/home/about")" id="about">About</a></li>     
-</ul>                                   
+﻿<nav>
+    <a href="@Url.Action("TestDrive")">
+        <img src="@Url.Content("~/Content/images/menu/img2.jpg")" class="captify" alt="<h1>Тест Драйв<h1>"/>
+    </a><a href="@Url.Action("Instruction")">
+        <img src="@Url.Content("~/Content/images/menu/img1.jpg")" class="captify" alt="<h4><font color='red'>ПРАВИЛЬНО</font> начать пользоваться продукцией</h4>"/>
+    </a><a href="#">
+        <img src="@Url.Content("~/Content/images/menu/img3.jpg")" class="captify" alt="<h4><font color='red'>ПРАВИЛЬНО</font> начать свой бизнес</h4>"/>
+    </a><a href="#">
+        <img src="@Url.Content("~/Content/images/menu/img4.jpg")" class="captify" alt="<h2>Технические детали и Результаты</h3>"/>
+    </a><a href="@Url.Action("Contacts")">
+        <img src="@Url.Content("~/Content/images/menu/img5.jpg")" class="captify" alt="<h1>Контакты<h1>"/>
+    </a>
+</nav>

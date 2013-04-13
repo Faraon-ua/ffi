@@ -16,6 +16,21 @@ namespace Internet.Controllers
         public ActionResult About()
         {
             return View();
+        }  
+        
+        public ActionResult TestDrive()
+        {
+            return View();
+        }
+
+        public ActionResult Instruction()
+        {
+            return View();
+        }
+        
+        public ActionResult Contacts()
+        {
+            return View();
         }
     }
 }

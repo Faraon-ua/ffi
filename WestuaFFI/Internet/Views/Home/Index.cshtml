@@ -5,10 +5,12 @@
 }
 @section scripts
 {
+    <script src="@Url.Content("~/Scripts/lava.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.nivo.slider.js")" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $('#slider').nivoSlider();
+            $("#navigation").lavaLamp({ speed: 200 });
         });
     </script>
 }
@@ -25,5 +27,16 @@
         <div id="htmlcaption" class="nivo-html-caption">
             <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
         </div>
+    </div>
+</div>
+<div class="row-fluid">
+    <div id="header">
+        <ul id="navigation">
+            <li class="current"><a href="#">Катализаторы горения</a></li>
+            <li><a href="#">Автокосметика</a></li>
+            <li><a href="#">Чистящие средства</a></li>
+            <li><a href="#">Косметика</a></li>
+            <li><a href="#">Здоровье</a></li>
+        </ul>
     </div>
 </div>

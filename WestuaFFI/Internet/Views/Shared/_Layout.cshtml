@@ -11,17 +11,28 @@
 </head>
 <body>
     <div class="container">
-        <header id="header">
-            <img alt="logo" src="@Url.Content("~/Content/images/logo.png")"/>
-            @Html.Partial("_LogOnPartial")
+        <header>
+            <a href="/">
+                <img alt="logo" src="@Url.Content("~/Content/images/logo.png")"/>
+            </a>
+            <div class="pull-right">
+                <div class="row">
+                    @Html.Partial("_LogOnPartial")
+                </div>
+                <div class="row">
+                    <a class="btn-large btn-danger" href="https://backoffice.myffi.biz/signup.asp?siteurl=WESTUA">Стать партнером</a>
+                </div>
+            </div>
         </header>
         <section id="main">
             <div class="row-fluid">
-                <div class="span9">
+                <div class="span10">
                     @RenderBody()
                 </div>
-                <div class="span3">
-                    <img src="@Url.Content("~/Content/images/menu/img2.jpg")" class="captioning" alt="Save the Ozone"/>
+                <div class="span2">
+                    <div class="pull-right">
+                       @Html.Partial("_NavPartial")
+                    </div>
                 </div>
             </div>
         </section>

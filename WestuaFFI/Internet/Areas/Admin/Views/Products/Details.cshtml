@@ -1,0 +1,35 @@
+﻿@model Internet.Models.Product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Details</h2>
+<fieldset>
+    <legend>Product</legend>
+    <div class="display-label">
+        Name:
+    </div>
+    @Html.DisplayFor(model => model.Name)
+    <div class="display-label">
+        Price:
+    </div>
+    @Html.DisplayFor(model => model.Price)
+    <div class="display-label">
+        Description:
+    </div>
+    @Model.Description
+    <div class="display-label">
+        Category:
+    </div>
+    @Html.DisplayFor(model => model.Category.Name)
+    <div class="display-label">
+        Image:
+    </div>
+    <img src="@Url.Action("GetImage", "Products", new { productId = Model.Id })"/>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

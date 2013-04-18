@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Internet.Models.Product>
+<ul class="products">
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Name, "Details", "Products", new { id = item.Id }, null)
+        </li>
+    }
+</ul>

@@ -1,4 +1,30 @@
-﻿ol#instruction p {
+﻿.products li
+{
+    margin-top: 15px;
+}
+.products li a:hover
+{
+    text-decoration: none !important;
+}
+.products li a {
+    color: #568DEA;
+    font-size: 12pt;
+}
+
+.language-selection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #568DEA;
+    padding: 10px;
+}
+
+.language-selection a:not(:last-child){
+    margin-bottom: 10px !important;
+    display: block;    
+}
+
+ol#instruction p {
     text-align: justify;
     font-size: 12pt;
     color: black;
@@ -9,6 +35,14 @@
 }
 
 .text-pullleft {
+    text-align: left;
+}
+
+.text-pullright {
+    text-align: right;
+}
+
+.text-justify {
     text-align: left;
 }
 

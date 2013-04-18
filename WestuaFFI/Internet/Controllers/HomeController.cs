@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using Internet.Models;
 
 namespace Internet.Controllers
 {
     public class HomeController : Controller
     {
+        private ffiEntities _db = new ffiEntities();
+
         public ActionResult Index()
         {
-            return View();
+            var categories = _db.Categories.OrderBy(entry => entry.Index).ToList();
+            return View(categories);
         }
 
         public ActionResult About()

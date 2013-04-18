@@ -10,6 +10,17 @@
     @RenderSection("head", false)
 </head>
 <body>
+    <div class="language-selection">
+        <a href="#" title="ua">
+            <img src="@Url.Content("~/Content/images/ua.png")"/>
+        </a><a href="#" title="ru">
+            <img src="@Url.Content("~/Content/images/ru.png")"/>
+        </a><a href="#" title="en">
+            <img src="@Url.Content("~/Content/images/en.png")"/>
+        </a>
+        <div id="language_name">
+        </div>
+    </div>
     <div class="container">
         <header>
             <a href="/">
@@ -20,7 +31,8 @@
                     @Html.Partial("_LogOnPartial")
                 </div>
                 <div class="row">
-                    <a class="btn-large btn-danger" href="https://backoffice.myffi.biz/signup.asp?siteurl=WESTUA">Стать партнером</a>
+                    <a class="btn-large btn-danger" href="https://backoffice.myffi.biz/signup.asp?siteurl=WESTUA">
+                        Стать партнером</a>
                 </div>
             </div>
         </header>
@@ -31,7 +43,7 @@
                 </div>
                 <div class="span2">
                     <div class="pull-right">
-                       @Html.Partial("_NavPartial")
+                        @Html.Partial("_NavPartial")
                     </div>
                 </div>
             </div>

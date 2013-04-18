@@ -23,8 +23,7 @@
                 style: 'background-color: white; ' +
                        'position: absolute; top:0; ' +
                        'left: -160px; z-index: 2; ' +
-                       'border: solid 1px #568dea; opacity: 1; ' +
-                       'width: '+ (width - 2) +'px; height: '+ (height - 32) +'px; ' +
+                       'width: '+ (width ) +'px; height: '+ (height - 30) +'px; ' +
                        'padding-top:'+ 30 +'px;' +
                        'text-align: center;',
                 html: captionText 

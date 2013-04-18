@@ -1,10 +1,12 @@
-﻿@section head
+﻿@model IEnumerable<Internet.Models.Category>
+@section head
 {
     <link href="@Url.Content("~/Content/nivo-slider.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/nivo-slider.default-theme.css")" rel="stylesheet" type="text/css" />
 }
 @section scripts
 {
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/lava.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.nivo.slider.js")" type="text/javascript"></script>
     <script type="text/javascript">
@@ -32,11 +34,22 @@
 <div class="row-fluid">
     <div id="header">
         <ul id="navigation">
-            <li class="current"><a href="#">Катализаторы горения</a></li>
-            <li><a href="#">Автокосметика</a></li>
-            <li><a href="#">Чистящие средства</a></li>
-            <li><a href="#">Косметика</a></li>
-            <li><a href="#">Здоровье</a></li>
+            @foreach (var category in Model)
+            {
+                <li>
+                    @Ajax.ActionLink(category.Name, "Index", "Products", new { categoryId = category.Id }, new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            UpdateTargetId = "productsBox",
+                        })
+                </li>
+            }
         </ul>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span5" id="productsBox"></div>
+    <div class="span6">
+        <img src="../../Content/images/ffi_mpg-boost.png" />
     </div>
 </div>

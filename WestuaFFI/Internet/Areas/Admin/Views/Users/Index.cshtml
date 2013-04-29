@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MembershipUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<ul>
+    @foreach (MembershipUser user in Model)
+    {
+        <li>
+            @user.UserName
+            @Html.ActionLink("Approve", "ApproveUser", "Users", new { userName = user.UserName }, null)
+            @Html.ActionLink("Remove", "RemoveUser", "Users", new { userName = user.UserName }, null)
+        </li>
+    }
+</ul>

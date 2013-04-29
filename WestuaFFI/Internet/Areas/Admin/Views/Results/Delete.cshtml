@@ -1,0 +1,49 @@
+﻿@model Internet.Models.Result
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Result</legend>
+
+    <div class="display-label">Manufacturer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Manufacturer)
+    </div>
+
+    <div class="display-label">Model</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">Description_ua</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description_ua)
+    </div>
+
+    <div class="display-label">Description_ru</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description_ru)
+    </div>
+
+    <div class="display-label">Description_en</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description_en)
+    </div>
+
+    <div class="display-label">VideoTag</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VideoTag)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

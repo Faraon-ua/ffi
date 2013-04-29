@@ -1,31 +1,18 @@
 ﻿@model Internet.Models.Product
-
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>@Model.Name</h2>
+<br />
+<div class="row" id="productDetails">
+    
+    <img alt="@Model.Name" src="@Url.Action("GetImage", "Products", new { productId = Model.Id }, null)"/>
+    
+    <p>
+        <strong>Цена: </strong>@Model.Price грн
+    </p>
+    <br/>
 
-<h2>Details</h2>
-
-<fieldset>
-    <legend>Product</legend>
-
-    <div class="display-label">Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-
-    <div class="display-label">Description</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-
-    <div class="display-label">Category</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Category.Name)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @Html.Raw(Model.Description)
+</div>

@@ -62,7 +62,9 @@
 .nivo-box img { display:block; }
 
 /* Caption styles */
-.nivo-caption {
+.nivo-caption 
+{
+    font-size: 2em;
 	position:absolute;
 	left:0px;
 	bottom:0px;
@@ -70,11 +72,11 @@
 	color:#fff;
 	width:100%;
 	z-index:8;
-	padding: 5px 10px;
-	opacity: 0.8;
+	padding: 10px 15px;
+	opacity: 0.6;
 	overflow: hidden;
 	display: none;
-	-moz-opacity: 0.8;
+	-moz-opacity: 0.6;
 	filter:alpha(opacity=8);
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */

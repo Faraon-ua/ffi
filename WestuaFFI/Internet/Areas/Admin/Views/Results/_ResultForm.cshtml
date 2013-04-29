@@ -1,0 +1,49 @@
+﻿@model Internet.Models.Result
+<fieldset>
+    <legend>Result</legend>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Manufacturer)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Manufacturer)
+        @Html.ValidationMessageFor(model => model.Manufacturer)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model)
+        @Html.ValidationMessageFor(model => model.Model)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Description_ua)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Description_ua, new { @class = "redactor" })
+        @Html.ValidationMessageFor(model => model.Description_ua)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Description_ru)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Description_ru, new { @class = "redactor" })
+        @Html.ValidationMessageFor(model => model.Description_ru)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Description_en)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Description_en, new { @class = "redactor" })
+        @Html.ValidationMessageFor(model => model.Description_en)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.VideoTag)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.VideoTag)
+        @Html.ValidationMessageFor(model => model.VideoTag)
+    </div>
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+</fieldset>

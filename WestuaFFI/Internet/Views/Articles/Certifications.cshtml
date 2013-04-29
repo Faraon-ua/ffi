@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Certifications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/jquery.fancybox.css?v=2.1.4")" type="text/css" media="screen" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.js?v=2.1.4")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.pack.js?v=2.1.4")"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $(".fancybox").fancybox();
+            $(".fancypdf").fancybox({
+                'frameWidth': 680,
+                'frameHeight': 495,
+                'overlayShow': true,
+                'hideOnContentClick': false,
+                'type': 'iframe'
+            });
+        });
+
+    </script>
+}
+<div class="head">
+    <h1>
+        @Resources.labels.Certification
+    </h1>
+</div>
+<p>
+    @Resources.labels.CertificateInsurance</p>
+<br />
+<a class="fancybox centered" href="@Url.Content("~/Content/Certtification/straxovka.jpg")">
+    <img src="@Url.Content("~/Content/Certtification/straxovka.jpg")" alt="insurance" height="120" width="107" /></a>
+<br />
+<p>
+    @Resources.labels.CertificateMOZ</p>
+<br />
+<a class="fancybox" href="@Url.Content("~/Content/Certtification/certificate_moz.jpg")">
+    <img src="@Url.Content("~/Content/Certtification/certificate_moz.jpg")" alt="certificate MOZ Ukraine" height="120" width="107" /></a>
+<br />
+@Html.Raw(Resources.labels.CertificateText)
+<br />
+<a class="fancypdf" href="@Url.Content("~/Content/Certtification/Bosh.pdf")">
+    <img src="@Url.Content("~/Content/images/pdf-icon.png")" height="48" width="48"/>
+    Дослідження зменшення шкідливих викидів компанії Bosh </a>
+<br />
+<a class="fancypdf" href="@Url.Content("~/Content/Certtification/Him_centr.pdf")">
+    <img src="@Url.Content("~/Content/images/pdf-icon.png")" height="48" width="48"/>
+    Протокол тестування MPG-Caps в Хімітологічному центрі МО України </a>

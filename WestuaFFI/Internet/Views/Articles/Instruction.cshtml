@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Instruction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="head">
+    @Html.Raw(Resources.labels.GettingStarted)
+</div>
+<br />
+@Html.Raw(Resources.labels.GettingStartedProductionText)
+<br />
+<br />
+<div class="row-fluid">
+    <div class="span6">
+        <p>
+            @Html.Raw(Resources.labels.GettingStartedProductionConsulting)
+        </p>
+        <br />
+        <a class="btn btn-primary" href="@Url.Action("Contacts", "Home")">Контакты</a>
+    </div>
+    <div class="span1">
+    </div>
+    <div class="span5">
+        <p class="pull-right text-pullright">
+            @Html.Raw(Resources.labels.GettingStartedProductionBuy)
+            <br />
+            <br />
+            <a class="btn btn-primary pull-right" href="@Url.Action("Index", "Home")">Продукция</a>
+        </p>
+    </div>
+</div>

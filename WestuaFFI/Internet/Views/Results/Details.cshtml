@@ -1,0 +1,50 @@
+﻿@model Internet.Models.Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Result</legend>
+
+    <div class="display-label">Manufacturer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Manufacturer)
+    </div>
+
+    <div class="display-label">Model</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">Description_ua</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description_ua)
+    </div>
+
+    <div class="display-label">Description_ru</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description_ru)
+    </div>
+
+    <div class="display-label">Description_en</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description_en)
+    </div>
+
+    <div class="display-label">VideoTag</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VideoTag)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

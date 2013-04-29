@@ -61,20 +61,733 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Ваш аккаунт вже активовано, будь ласка, завітайте до сторінки Партнерька панель.
         /// </summary>
-        internal static string nav {
+        internal static string AccountAlreadyVerified {
             get {
-                return ResourceManager.GetString("nav", resourceCulture);
+                return ResourceManager.GetString("AccountAlreadyVerified", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Продукция.
+        ///   Looks up a localized string similar to Ваш аккаунт було створено, але ще не активовано. Після того, як адміністрація перевірить чи зареєструвались ви як дистриб&apos;ютор компанії FFI (чи дійсно ви є наш партнер), ви отримаєте email повідомлення про активацію вашого аккаунта. (Адміністрація сайту не працюватиме на травневих святах).
         /// </summary>
-        internal static string navProduction {
+        internal static string AccountBeingChecked {
             get {
-                return ResourceManager.GetString("navProduction", resourceCulture);
+                return ResourceManager.GetString("AccountBeingChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Змінити пароль.
+        /// </summary>
+        internal static string AccountChangePassword {
+            get {
+                return ResourceManager.GetString("AccountChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;&lt;meta content=\&quot;text/html;charset=utf-8\&quot; /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Dear {0} , &lt;/p&gt;&lt;p&gt; To verify your account, please click the following link:&lt;/p&gt;&lt;p&gt;&lt;a href=&apos;{1}&apos; target=\&quot;_blank\&quot;&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;Best regards,&lt;/div&gt;&lt;div&gt;FFI-ECO&lt;/div&gt;&lt;p&gt;Do not forward this email. The verify link is private.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;.
+        /// </summary>
+        internal static string AccountConfirmationText {
+            get {
+                return ResourceManager.GetString("AccountConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вітаємо! Ваш аккаунт набув статус партнерьского, термін дії ви можете перевірити та змінити у Партнерській Панелі..
+        /// </summary>
+        internal static string AccountPartnershipCreated {
+            get {
+                return ResourceManager.GetString("AccountPartnershipCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дякуємо за реєстрацію! Для того, щоб ваш аккаунт набув статусу партнерського, будь ласка, заповніть всі поля та продовжіть термін дії аккаунта.
+        /// </summary>
+        internal static string AccountRegistered {
+            get {
+                return ResourceManager.GetString("AccountRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ваші данні було оновлено.
+        /// </summary>
+        internal static string AccountUpdated {
+            get {
+                return ResourceManager.GetString("AccountUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Невірний код активації аккаунта.
+        /// </summary>
+        internal static string AccountWrongConfirmation {
+            get {
+                return ResourceManager.GetString("AccountWrongConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Стати партнером.
+        /// </summary>
+        internal static string BecomePartner {
+            get {
+                return ResourceManager.GetString("BecomePartner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити.
+        /// </summary>
+        internal static string btnCreate {
+            get {
+                return ResourceManager.GetString("btnCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Реєстрація.
+        /// </summary>
+        internal static string btnRegister {
+            get {
+                return ResourceManager.GetString("btnRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Зберегти.
+        /// </summary>
+        internal static string btnSave {
+            get {
+                return ResourceManager.GetString("btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Надіслати.
+        /// </summary>
+        internal static string btnSend {
+            get {
+                return ResourceManager.GetString("btnSend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Почати бізнес в FFI з партнерською програмою FFI-ECO.
+        /// </summary>
+        internal static string BusinessHint {
+            get {
+                return ResourceManager.GetString("BusinessHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Страховка від будь-яких можливих пошкоджень двигуна через продукцію компанії FFI.
+        /// </summary>
+        internal static string CertificateInsurance {
+            get {
+                return ResourceManager.GetString("CertificateInsurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Висновок державної санітарно-епідеміологічної експертизи про безпеку продуктів FFI.
+        /// </summary>
+        internal static string CertificateMOZ {
+            get {
+                return ResourceManager.GetString("CertificateMOZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Застраховано AUTO OWNERS INSURANCE COMPANY на суму 1 000 000$ на кожен страховий
+        ///    випадок.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Має дозвіл EPA - Environmental Protection Agency (американьского суспільства захисту
+        ///    навколишнього середовища) № 218820001. Перевірена на безпеку американським міністерством
+        ///    труда - MSDS - № CRF 1910.120029. Технологія запатентована і продукцію можна купити
+        ///    у дистриб&apos;юторів компанії FFI.
+        ///&lt;/p&gt;.
+        /// </summary>
+        internal static string CertificateText {
+            get {
+                return ResourceManager.GetString("CertificateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сертифікати якості та гарантії.
+        /// </summary>
+        internal static string Certification {
+            get {
+                return ResourceManager.GetString("Certification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Львів.
+        /// </summary>
+        internal static string City {
+            get {
+                return ResourceManager.GetString("City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Повторіть пароль.
+        /// </summary>
+        internal static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дякуємо за ваше повідомлення! Найближчим часом на зазначену вами Email адресу прийде відповідь..
+        /// </summary>
+        internal static string ContactEmailSent {
+            get {
+                return ResourceManager.GetString("ContactEmailSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h1&gt;Контакти&lt;h1&gt;.
+        /// </summary>
+        internal static string Contacts {
+            get {
+                return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Контактна інформація.
+        /// </summary>
+        internal static string ContactsInfo {
+            get {
+                return ResourceManager.GetString("ContactsInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to грн.
+        /// </summary>
+        internal static string Currency {
+            get {
+                return ResourceManager.GetString("Currency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email адреса.
+        /// </summary>
+        internal static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h1&gt;З чого почати&lt;/h1&gt;.
+        /// </summary>
+        internal static string GettingStarted {
+            get {
+                return ResourceManager.GetString("GettingStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Як правильно почати бізнес з FFI та партерською програмою FFI-ECO.
+        /// </summary>
+        internal static string GettingStartedBusiness {
+            get {
+                return ResourceManager.GetString("GettingStartedBusiness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Крок 1. Реєстрація та оплата акаунта дистриб&apos;ютора (Starter kit 30 $) на головному сайті FFI. .
+        /// </summary>
+        internal static string GettingStartedBusinessStep1 {
+            get {
+                return ResourceManager.GetString("GettingStartedBusinessStep1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;
+        ///                        Крок 2. Реєстрація партнерської програми FFI-ECO
+        ///        &lt;/h3&gt;
+        ///        &lt;p&gt;
+        ///            Бонуси від реєстрації в нашій партнерській програмі:
+        ///            &lt;ul&gt;
+        ///                &lt;li&gt;- дешевше будь-яких аналогів &lt;/li&gt;
+        ///                &lt;li&gt;- Персональний сайт c ЯКІСНИМ і УНІКАЛЬНИМ контентом: ознайомче відео,
+        ///                    технічні деталі роботи продукту, реальні практичні результати &lt;/li&gt;
+        ///                &lt;li&gt;- вбудована реферальна система FFI з унікальним доменом типу: N [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string GettingStartedBusinessStep2 {
+            get {
+                return ResourceManager.GetString("GettingStartedBusinessStep2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;
+        ///            Крок 3. Вивчити Маркетинг, Інструменти для роботи, Особливості Партнерської програми
+        ///        &lt;/h3&gt;
+        ///        &lt;p&gt;
+        ///            Ці знання дадуть вам можливість ШВИДКО, ПРАВИЛЬНО і максимально ЕФЕКТИВНО почати
+        ///            свій бізнес і заробіток з компанією Forever Freedom International.
+        ///        &lt;/p&gt;
+        ///        &lt;span class=&quot;field-validation-error&quot;&gt;Доступно після реєстрації партнерської програми
+        ///            FFI-ECO &lt;/span&gt;.
+        /// </summary>
+        internal static string GettingStartedBusinessStep3 {
+            get {
+                return ResourceManager.GetString("GettingStartedBusinessStep3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h2&gt;
+        ///                &lt;font color=&apos;red&apos;&gt;ПРАВИЛЬНО&lt;/font&gt;
+        ///                &lt;br /&gt;
+        ///                 почати свій бізнес і працювати&lt;br /&gt;
+        ///                ЭФЕКТИВНО
+        ///            &lt;/h2&gt;.
+        /// </summary>
+        internal static string GettingStartedBusinessSub {
+            get {
+                return ResourceManager.GetString("GettingStartedBusinessSub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h2&gt;
+        ///&lt;font color=&quot;red&quot;&gt;ПРАВИЛЬНО&lt;/font&gt;
+        ///&lt;br&gt;
+        ///почати користуватися продукцією та отримати ЕКОНОМІЮ
+        ///&lt;/h2&gt;.
+        /// </summary>
+        internal static string GettingStartedProduction {
+            get {
+                return ResourceManager.GetString("GettingStartedProduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Придбати продукцію ви також можете на нашому сайті, дивіться розділ .
+        /// </summary>
+        internal static string GettingStartedProductionBuy {
+            get {
+                return ResourceManager.GetString("GettingStartedProductionBuy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Будь-яку консультацію по використанню продукції Компанії FFI, ви можете отримати в
+        ///            зручному для вас форматі, дивіться розділ.
+        /// </summary>
+        internal static string GettingStartedProductionConsulting {
+            get {
+                return ResourceManager.GetString("GettingStartedProductionConsulting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;ol id=&quot;instruction&quot;&gt;
+        ///    &lt;li&gt;
+        ///        &lt;h3&gt;
+        ///            1. Визначення реальної витрати палива&lt;/h3&gt;
+        ///        &lt;p&gt;
+        ///             Виберіть АЗС на виїзді зі свого міста (бажано АЗС, на якому ви найчастіше
+        ///            заправляєтеся). Заправте паливо до горловини бака, щоб його було видно в горловині
+        ///            (Не до відстрілу заправного пістолета, а до горловини бака, це важливо). Скиньте
+        ///            лічильник добового пробігу авто на 0 і починайте рух з &quot;крейсерською швидкістю&quot;
+        ///            80-90 км/год, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string GettingStartedProductionText {
+            get {
+                return ResourceManager.GetString("GettingStartedProductionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Як працює продукція.
+        /// </summary>
+        internal static string HowItWorks {
+            get {
+                return ResourceManager.GetString("HowItWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;table style=&quot;height: 100%; color: black;&quot;&gt;
+        ///    &lt;tbody&gt;
+        ///        &lt;tr&gt;
+        ///            &lt;td valign=&quot;top&quot;&gt;
+        ///                &lt;br&gt;
+        ///                &lt;table class=&quot;contentpaneopen&quot;&gt;
+        ///                    &lt;tbody&gt;
+        ///                        &lt;tr&gt;
+        ///                            &lt;td valign=&quot;top&quot;&gt;
+        ///                                &lt;p style=&quot;text-align: justify;&quot;&gt;
+        ///                                    &lt;strong&gt;Розглянемо 3 фактора, завдяки яким і відбувається економія палива:&lt;/strong&gt;&lt;/p&gt;
+        ///                                &lt;p style= [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string HowItWorksText {
+            get {
+                return ResourceManager.GetString("HowItWorksText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вийти.
+        /// </summary>
+        internal static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Увійти.
+        /// </summary>
+        internal static string LogOn {
+            get {
+                return ResourceManager.GetString("LogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Текст.
+        /// </summary>
+        internal static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to І&apos;мя.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Продукція.
+        /// </summary>
+        internal static string NavProduction {
+            get {
+                return ResourceManager.GetString("NavProduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити аккаунт.
+        /// </summary>
+        internal static string NewAccountTitle {
+            get {
+                return ResourceManager.GetString("NewAccountTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Адреса.
+        /// </summary>
+        internal static string PartnerAddress {
+            get {
+                return ResourceManager.GetString("PartnerAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Місто.
+        /// </summary>
+        internal static string PartnerCity {
+            get {
+                return ResourceManager.GetString("PartnerCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Країна.
+        /// </summary>
+        internal static string PartnerCountry {
+            get {
+                return ResourceManager.GetString("PartnerCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Інформація партнера.
+        /// </summary>
+        internal static string PartnerCreateHeading {
+            get {
+                return ResourceManager.GetString("PartnerCreateHeading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ці дані будуть використовуватись у розділі Контакти на вашому сайті, заповніть їх корректно, щоб клієнти мали змогу зв&apos;язатись з вами.
+        /// </summary>
+        internal static string PartnerCreateHint {
+            get {
+                return ResourceManager.GetString("PartnerCreateHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ви вже маєте партнерський аккаунт.
+        /// </summary>
+        internal static string PartnerExist {
+            get {
+                return ResourceManager.GetString("PartnerExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Аккаунт дійсній до.
+        /// </summary>
+        internal static string PartnerExpirationDate {
+            get {
+                return ResourceManager.GetString("PartnerExpirationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Продовжити термін дії.
+        /// </summary>
+        internal static string PartnerExtend {
+            get {
+                return ResourceManager.GetString("PartnerExtend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої дані.
+        /// </summary>
+        internal static string PartnerInfo {
+            get {
+                return ResourceManager.GetString("PartnerInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to місяців.
+        /// </summary>
+        internal static string PartnerMonths {
+            get {
+                return ResourceManager.GetString("PartnerMonths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to І&apos;мя та Прізвище.
+        /// </summary>
+        internal static string PartnerName {
+            get {
+                return ResourceManager.GetString("PartnerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не дійсний.
+        /// </summary>
+        internal static string PartnerNotActive {
+            get {
+                return ResourceManager.GetString("PartnerNotActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Будь-ласка, введіть свої дані для користування партнерською програмою.
+        /// </summary>
+        internal static string PartnerNotExist {
+            get {
+                return ResourceManager.GetString("PartnerNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Партнерська панель.
+        /// </summary>
+        internal static string PartnerPanel {
+            get {
+                return ResourceManager.GetString("PartnerPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Для оплати рахунку кредитною карткою необхідна реєстрація в системі EasyPay.
+        /// </summary>
+        internal static string PartnerPaymentCardHint {
+            get {
+                return ResourceManager.GetString("PartnerPaymentCardHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оплата терміну дії аккаунта.
+        /// </summary>
+        internal static string PartnerPaymentDescription {
+            get {
+                return ResourceManager.GetString("PartnerPaymentDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Виберіть термін продовження дії аккаунта.
+        /// </summary>
+        internal static string PartnerPaymentSelectHint {
+            get {
+                return ResourceManager.GetString("PartnerPaymentSelectHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сума до сплати.
+        /// </summary>
+        internal static string PartnerPaymentSumDescr {
+            get {
+                return ResourceManager.GetString("PartnerPaymentSumDescr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Телефон.
+        /// </summary>
+        internal static string PartnerPhone {
+            get {
+                return ResourceManager.GetString("PartnerPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пароль.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Практичні результати.
+        /// </summary>
+        internal static string PracticalResults {
+            get {
+                return ResourceManager.GetString("PracticalResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Важливо!!! &lt;br/&gt;&lt;br/&gt;Будь ласка, при реєстрації використовуйте той самий логін, з яким ви зареєструвались у системі FFI, щоб ми змогли перевірити чи дійсна ваша реєстрація та чи є ви нашим партнером. Якщо ви ще не зареєструвались як дистриб&apos;ютор компанії FFI, будь ласка, відвідайте цю сторінку {0} &lt;br/&gt;&lt;br/&gt;Також, будь ласка, корректно заповніть поле Email адреси, бо без діючої електронної поштової скриньки ви не зможете активувати аккаунт. Якщо після реєстрації протягом 24 годин ви не отримали реєстраційну [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string RegistrationHint {
+            get {
+                return ResourceManager.GetString("RegistrationHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оберіть виробника.
+        /// </summary>
+        internal static string ResultsSelectManufacturer {
+            get {
+                return ResourceManager.GetString("ResultsSelectManufacturer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оберіть модель.
+        /// </summary>
+        internal static string ResultsSelectModel {
+            get {
+                return ResourceManager.GetString("ResultsSelectModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Надіслати повідомлення.
+        /// </summary>
+        internal static string SendMessage {
+            get {
+                return ResourceManager.GetString("SendMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Будь ласка, заповніть всі поля форми.
+        /// </summary>
+        internal static string SendMessageFail {
+            get {
+                return ResourceManager.GetString("SendMessageFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h1&gt;Тест Драйв&lt;h1&gt;&lt;br/&gt;&lt;p style=&apos;margin-top:-20px;&apos;&gt;(Ознайомлення)&lt;/p&gt;.
+        /// </summary>
+        internal static string TestDrive {
+            get {
+                return ResourceManager.GetString("TestDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тест Драйв.
+        /// </summary>
+        internal static string TestDriveHeader {
+            get {
+                return ResourceManager.GetString("TestDriveHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тест Драйв - це ознайомче відео, з якого ви зможете почерпнути інформацію про продукти компанії FFI..
+        /// </summary>
+        internal static string TestDriveHint {
+            get {
+                return ResourceManager.GetString("TestDriveHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFI Ecology Україна: економія палива, захист двигуна, збереження екології.
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Україна.
+        /// </summary>
+        internal static string Ukraine {
+            get {
+                return ResourceManager.GetString("Ukraine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Логін.
+        /// </summary>
+        internal static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
             }
         }
     }

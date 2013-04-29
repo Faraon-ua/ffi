@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "GettingStarted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="head">
+    <h1>
+        С чего начать
+    </h1>
+</div>
+<div class="row">
+    <div class="span6 text-pullcenter">
+        <a href="@Url.Action("Instruction", "Articles")">
+            <img src="@Url.Content("~/Content/images/ffi_mpg-boost.png")" height="200px"/>
+            @Html.Raw(Resources.labels.GettingStartedProduction)
+        </a>
+    </div>
+    <div class="span6 text-pullcenter">
+        <a href="@Url.Action("Business", "Articles")">
+            <img src="@Url.Content("~/Content/images/business.jpg")" height="200px" width="300px"/>
+            @Html.Raw(Resources.labels.GettingStartedBusinessSub)
+        </a>
+    </div>
+</div>

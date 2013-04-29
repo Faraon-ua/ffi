@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using Internet.Extensions;
+using Internet.Helpers;
 using Internet.Models;
 
 namespace Internet.Controllers
@@ -8,8 +10,16 @@ namespace Internet.Controllers
     {
         private ffiEntities _db = new ffiEntities();
 
+        public ActionResult ChangeCulture(string lang, string returnUrl)
+        {
+            System.Web.HttpContext.Current.Session["Culture"] = lang;
+            return Redirect(returnUrl);
+        }
+
         public ActionResult Index()
         {
+            var slides = _db.Slides.ToList();
+            ViewBag.Slides = slides;
             var categories = _db.Categories.OrderBy(entry => entry.Index).ToList();
             return View(categories);
         }
@@ -17,21 +27,22 @@ namespace Internet.Controllers
         public ActionResult About()
         {
             return View();
-        }  
-        
-        public ActionResult TestDrive()
+        }
+
+        public ActionResult Contacts()
         {
             return View();
         }
 
-        public ActionResult Instruction()
+        [HttpPost]
+        public ActionResult Contacts(string name, string eMail, string text)
         {
-            return View();
-        }
-        
-        public ActionResult Contacts()
-        {
-            return View();
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(eMail) && !string.IsNullOrEmpty(text))
+            {
+                EmailHelper.Instance.SendContactsEmail(name, eMail, text);
+                return View().Warning(@Resources.labels.ContactEmailSent);
+            }
+            return View().Warning(@Resources.labels.SendMessageFail);
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Business";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="head">
+    <h1>@Resources.labels.GettingStartedBusiness</h1>
+</div>
+<ol id="instruction">
+    <li>
+        <h3>
+            @Html.Raw(Resources.labels.GettingStartedBusinessStep1)
+        </h3>
+        <p>
+            <a class="btn btn-success" href="https://backoffice.myffi.biz/signup.asp?siteurl=MR1970"
+                target="_blank">@Resources.labels.btnRegister</a>
+        </p>
+    </li>
+    <li>
+        @Html.Raw(Resources.labels.GettingStartedBusinessStep2)
+        <a class="btn btn-success" href="@Url.Action("Register", "Account")" target="_blank">@Resources.labels.btnRegister</a>
+    </li>
+    <li>
+        @Html.Raw(Resources.labels.GettingStartedBusinessStep3)
+    </li>
+</ol>

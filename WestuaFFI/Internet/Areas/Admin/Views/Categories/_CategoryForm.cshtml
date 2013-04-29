@@ -1,0 +1,38 @@
+﻿@model Internet.Models.Category
+<fieldset>
+    <legend>Category</legend>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name_ua)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name_ua)
+        @Html.ValidationMessageFor(model => model.Name_ua)
+    </div>
+    
+      <div class="editor-label">
+        @Html.LabelFor(model => model.Name_ru)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name_ru)
+        @Html.ValidationMessageFor(model => model.Name_ru)
+    </div>
+    
+      <div class="editor-label">
+        @Html.LabelFor(model => model.Name_en)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name_en)
+        @Html.ValidationMessageFor(model => model.Name_en)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Index)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Index)
+        @Html.ValidationMessageFor(model => model.Index)
+    </div>
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+</fieldset>

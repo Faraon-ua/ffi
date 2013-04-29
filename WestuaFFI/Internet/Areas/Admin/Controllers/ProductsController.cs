@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using Internet.Models;
 
@@ -60,7 +61,7 @@ namespace Internet.Areas.Admin.Controllers
                     {
                         productImg.InputStream.CopyTo(ms);
                         byte[] imgArray = ms.GetBuffer();
-                        product.Image = imgArray;
+                        product.Image = new WebImage(imgArray).Resize(200, 200).GetBytes("png");
                     }
 
                 product.Id = Guid.NewGuid();
@@ -74,7 +75,7 @@ namespace Internet.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Products/Edit/5
-
+        [HttpGet]
         public ActionResult Edit(Guid id)
         {
             ViewBag.Categories = db.Categories.OrderBy(entry => entry.Index).ToList();
@@ -95,7 +96,7 @@ namespace Internet.Areas.Admin.Controllers
                     {
                         productImg.InputStream.CopyTo(ms);
                         byte[] imgArray = ms.GetBuffer();
-                        product.Image = imgArray;
+                        product.Image = new WebImage(imgArray).Resize(200, 200).GetBytes("image/png");
                     }
                 db.Products.Attach(product);
                 db.ObjectStateManager.ChangeObjectState(product, EntityState.Modified);

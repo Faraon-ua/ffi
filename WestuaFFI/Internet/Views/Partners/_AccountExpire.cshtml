@@ -1,0 +1,17 @@
+﻿@model Internet.Models.Partner
+<strong>
+    @Resources.labels.PartnerExpirationDate :
+    @if (Model.ExpirationDate > DateTime.Now)
+    {
+        <font color="green">
+            @Model.ExpirationDate.ToString("dd.MM.yyyy")
+        </font>
+    }
+    else
+    {
+        <font color="red">
+            @Resources.labels.PartnerNotActive
+        </font>
+    }
+</strong>
+<a href="@Url.Action("ExtendExpirationDate", "Partners")" class="btn btn-success">@Resources.labels.PartnerExtend</a>

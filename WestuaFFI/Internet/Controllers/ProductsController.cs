@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Internet.Models;
 
@@ -13,6 +9,12 @@ namespace Internet.Controllers
     {
         private ffiEntities db = new ffiEntities();
 
+        public ActionResult GetImage(Guid productId)
+        {
+            var product = db.Products.FirstOrDefault(entry => entry.Id == productId);
+            var arr = product.Image == null ? new byte[0] : product.Image;
+            return File(arr, "image/png");
+        }
         //
         // GET: /Products/
 

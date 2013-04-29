@@ -1,13 +1,17 @@
 ﻿<nav>
-    <a href="@Url.Action("TestDrive")">
-        <img src="@Url.Content("~/Content/images/menu/test_drive.jpg")" class="captify" alt="<h1>Тест Драйв<h1><br/><p style='margin-top:-20px;'>(Ознакомление)</p>"/>
-    </a><a href="@Url.Action("Instruction")">
-        <img src="@Url.Content("~/Content/images/menu/products.jpg")" class="captify" alt="<h4><font color='red'>ПРАВИЛЬНО</font> начать пользоваться продукцией</h4>"/>
-    </a><a href="#">
-        <img src="@Url.Content("~/Content/images/menu/business3.jpg")" class="captify" alt="<h4><font color='red'>ПРАВИЛЬНО</font> начать свой бизнес</h4>"/>
-    </a><a href="#">
-        <img src="@Url.Content("~/Content/images/menu/settings2.jpg")" class="captify" alt="<h2>Технические детали и Результаты</h3>"/>
-    </a><a href="@Url.Action("Contacts")">
-        <img src="@Url.Content("~/Content/images/menu/contactus.jpg")" class="captify" alt="<h1>Контакты<h1>"/>
+    <a href="@Url.Action("TestDrive", "Articles")">
+        <img src="@Url.Content("~/Content/images/menu/test_drive.jpg")" class="captify" alt="@Resources.labels.TestDrive"/>
+    </a><a href="@Url.Action("GettingStarted", "Articles")">
+        <img src="@Url.Content("~/Content/images/menu/start.jpg")" class="captify" alt="@Resources.labels.GettingStarted"/>
+    </a><a href="@Url.Action("HowItWorks", "Articles")">
+        <img src="@Url.Content("~/Content/images/menu/settings3.jpg")" class="captify" alt="<h2>@Resources.labels.HowItWorks</h3>"/>
+        </a><a href="@Url.Action("Index", "Results")">
+                <img src="@Url.Content("~/Content/images/menu/results2.jpg")" class="captify" alt="<h2>@Resources.labels.PracticalResults</h3>"/>
+            </a>
+@*    <a href="@Url.Action("Index", "Articles")">*@
+@*        <img src="@Url.Content("~/Content/images/menu/articles.jpg")" class="captify" alt="<h1>Полезные статьи<h1>"/>*@
+@*    </a>*@
+    <a href="@Url.Action("Contacts", "Home")">
+        <img src="@Url.Content("~/Content/images/menu/contactus.jpg")" class="captify" alt="@Resources.labels.Contacts"/>
     </a>
 </nav>

@@ -1,0 +1,31 @@
+﻿@model Internet.Controllers.ResultsController.ResultsModelView
+@{
+    
+}
+@using (@Html.BeginForm("Index", "Results", FormMethod.Get))
+{
+    <div class="head">
+        <div class="row-fluid">
+            <div class="span5">
+                <h1>
+                    @Resources.labels.PracticalResults
+                </h1>
+            </div>
+            <div class="span7 text-pullleft results-select-header">
+                <div class="row-fluid">
+                    <div class="span6">
+                        @Html.DropDownList("manufacturer", new SelectList(Model.Manufacturers), Resources.labels.ResultsSelectManufacturer, new { onchange = "this.form.submit();" })
+                    </div>
+                    <div class="span6">
+                        @Html.DropDownList("model", new SelectList(Model.Models), Resources.labels.ResultsSelectModel, new { onchange = "this.form.submit();" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        @if (Model.Result != null)
+        {
+            @Html.Partial("_ResultDetails", Model.Result)
+        }
+    </div>
+}

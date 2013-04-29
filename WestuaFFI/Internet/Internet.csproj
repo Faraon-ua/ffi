@@ -39,12 +39,26 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Web.Razor\v4.0_1.0.0.0__31bf3856ad364e35\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -54,6 +68,12 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -65,16 +85,45 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\labels.Designer.cs">
+    <Compile Include="App_GlobalResources\Emails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Emails.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>labels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.en-US.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\labels.ru-RU.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>labels.ru-RU.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ResultsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlidesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\PartnersController.cs" />
+    <Compile Include="Controllers\ResultsController.cs" />
+    <Compile Include="Extensions\FlashMessageExtensions.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\Slide.cs" />
+    <Compile Include="RoutingHelpers\DomainData.cs" />
+    <Compile Include="RoutingHelpers\DomainRoute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -90,32 +139,38 @@
     <Compile Include="RoutingHelpers\AreaRouteConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\blank.gif" />
+    <Content Include="Content\Certtification\certificate_moz.jpg" />
+    <Content Include="Content\Certtification\straxovka.jpg" />
+    <Content Include="Content\fancybox_loading.gif" />
+    <Content Include="Content\fancybox_overlay.png" />
+    <Content Include="Content\fancybox_sprite.png" />
+    <Content Include="Content\images\business.jpg" />
+    <Content Include="Content\images\menu\articles.jpg" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\en.png" />
     <Content Include="Content\images\ffi_mpg-boost.png" />
-    <Content Include="Content\images\menu\img1.jpg" />
-    <Content Include="Content\images\menu\img2.jpg" />
-    <Content Include="Content\images\menu\img3.jpg" />
-    <Content Include="Content\images\menu\img4.jpg" />
-    <Content Include="Content\images\menu\img5.jpg" />
-    <Content Include="Content\images\menu\img6.jpg" />
+    <Content Include="Content\images\menu\contactus.jpg" />
+    <Content Include="Content\images\menu\results2.jpg" />
+    <Content Include="Content\images\menu\settings3.jpg" />
+    <Content Include="Content\images\menu\start.jpg" />
+    <Content Include="Content\images\menu\test_drive.jpg" />
+    <Content Include="Content\images\pdf-icon.png" />
     <Content Include="Content\images\ru.png" />
     <Content Include="Content\images\slideshow\arrows.png" />
     <Content Include="Content\images\slideshow\bullets.png" />
     <Content Include="Content\images\slideshow\loading.gif" />
     <Content Include="Content\images\ua.png" />
+    <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\nivo-slider.default-theme.css" />
     <Content Include="Content\images\logo.png" />
-    <Content Include="Content\images\slideshow\nemo.jpg" />
-    <Content Include="Content\images\slideshow\toystory.jpg" />
-    <Content Include="Content\images\slideshow\up.jpg" />
-    <Content Include="Content\images\slideshow\walle.jpg" />
     <Content Include="Content\nivo-slider.css" />
     <Content Include="Content\redactor.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\validation.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -123,6 +178,10 @@
     <Content Include="Scripts\jquery-1.8.0-vsdoc.js" />
     <Content Include="Scripts\jquery-1.8.0.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jQuery.flashMessage.js" />
     <Content Include="Scripts\jquery.nivo.slider.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -133,7 +192,9 @@
     <Content Include="Scripts\lava.js" />
     <Content Include="Scripts\redactor.js" />
     <Content Include="Scripts\site.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -170,14 +231,15 @@
   <ItemGroup>
     <Content Include="App_GlobalResources\labels.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>labels.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <LastGenOutput>labels.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\TestDrive.cshtml" />
+    <Content Include="Views\Articles\TestDrive.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Instruction.cshtml" />
+    <Content Include="Views\Articles\Instruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Contacts.cshtml" />
@@ -187,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -225,9 +288,6 @@
     <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Products\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +298,118 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ffi.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Slides\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Slides\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Slides\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Slides\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Slides\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\GettingStarted.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\Business.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Categories\_CategoryForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\labels.ru-RU.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.ru-RU.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\labels.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>labels.en-US.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Results\_ResultForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Results\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Results\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Results\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Results\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Results\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Results\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Results\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Results\_ResultDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Emails.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Emails.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Flash.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Confirmation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partners\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partners\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partners\_PartnerForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partners\_AccountExpire.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partners\ExtendExpirationDate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partners\_PaymentForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\HowItWorks.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Articles\Certifications.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Slides\_SlideForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\_ProductForm.cshtml" />
+    <None Include="Content\Certtification\Bosh.pdf" />
+    <None Include="Content\Certtification\Him_centr.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -256,7 +428,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56186</DevelopmentServerPort>
+          <DevelopmentServerPort>57618</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

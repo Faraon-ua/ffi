@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountAlreadyVerified" xml:space="preserve">
+    <value>Ваш аккаунт уже активирован, пожалуйста см. страницу Партнерька панель </value>
+  </data>
+  <data name="AccountBeingChecked" xml:space="preserve">
+    <value> Ваш аккаунт был создан, но еще не активирован. После того, как администрация проверит зарегистрировались ли вы как дистрибьютор компании FFI (действительно ли вы наш партнер), вы получите email сообщение об активации вашего аккаунта.  (Администрация сайта не будет работать в течении майских праздников)</value>
+  </data>
+  <data name="AccountChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="AccountConfirmationText" xml:space="preserve">
+    <value>&lt;html&gt;&lt;head&gt;&lt;meta content=\"text/html;charset=utf-8\" /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Dear {0} , &lt;/p&gt;&lt;p&gt;To verify your account, please click the following link:&lt;/p&gt;&lt;p&gt;&lt;a href='{1}' target=\"_blank\"&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;Best regards,&lt;/div&gt;&lt;div&gt;Someone&lt;/div&gt;&lt;p&gt;Do not forward this email. The verify link is private.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="AccountPartnershipCreated" xml:space="preserve">
+    <value> Поздравляем! Ваш аккаунт получил статус партнерьского, срок действия вы можете проверить и изменить в Партнерской Панели. </value>
+  </data>
+  <data name="AccountRegistered" xml:space="preserve">
+    <value>
+	    Спасибо за регистрацию! Для того, чтобы ваш аккаунт получил статус партнерского, пожалуйста, заполните все поля и продолжите срок действия аккаунта
+	</value>
+  </data>
+  <data name="AccountUpdated" xml:space="preserve">
+    <value> Ваши данные были обновлены </value>
+  </data>
+  <data name="AccountWrongConfirmation" xml:space="preserve">
+    <value>Неверный код активации аккаунта</value>
+  </data>
+  <data name="BecomePartner" xml:space="preserve">
+    <value>Стать партнером</value>
+  </data>
+  <data name="btnCreate" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="btnSend" xml:space="preserve">
+    <value>Послать</value>
+  </data>
+  <data name="BusinessHint" xml:space="preserve">
+    <value> Начать бизнес в FFI с партнерской программой FFI-ECO </value>
+  </data>
+  <data name="Certification" xml:space="preserve">
+    <value>Сертификаты качества и гарантии</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Львов</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Повторите пароль</value>
+  </data>
+  <data name="ContactEmailSent" xml:space="preserve">
+    <value> Спасибо за ваше сообщение! В ближайшее время на указанный Вами Email адрес придет ответ. </value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>&lt;h1&gt;Контакты&lt;h1&gt;</value>
+  </data>
+  <data name="ContactsInfo" xml:space="preserve">
+    <value>Контактная Информация</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>грн</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email адрес</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>&lt;h1&gt;С чего начать&lt;/h1&gt;</value>
+  </data>
+  <data name="GettingStartedBusiness" xml:space="preserve">
+    <value> Как правильно начать бизнес с FFI и партерською программе FFI-ECO </value>
+  </data>
+  <data name="GettingStartedBusinessStep1" xml:space="preserve">
+    <value>Шаг 1. Регистрация и оплата аккаунта дистрибьютора (Starter kit 30$) на главном
+            сайте FFI.</value>
+  </data>
+  <data name="GettingStartedBusinessStep2" xml:space="preserve">
+    <value>&lt;h3&gt;
+            Шаг 2. Регистрация партнерской программы FFI-ECO
+        &lt;/h3&gt;
+        &lt;p&gt;
+            Бонусы от регистрации в нашей партнерской программе:
+            &lt;ul&gt;
+                &lt;li&gt;- дешевле любых аналогов &lt;/li&gt;
+                &lt;li&gt;- Персональный сайт c КАЧЕСТВЕННЫМ и УНИКАЛЬНЫМ контентом: ознакомительное видео,
+                    технические детали работы продукта, реальные результаты &lt;/li&gt;
+                &lt;li&gt;- встроена реферальная система FFI с уникальным доменом типа: NAME.FFI-ECO.COM&lt;/li&gt;
+                &lt;li&gt;- реально работающая структура приносяшую прибыль &lt;/li&gt;
+                &lt;li&gt;- шаблоны визиток &lt;/li&gt;
+                &lt;li&gt;- Постоянная и полная информационная консультация по всем аспектам работы &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;span class="field-validation-error"&gt;Обязательно сначала зарегистрируйтесь как партнер
+                в ффи, иначе вы не сможете создать аккаунт на нашем сайте. &lt;/span&gt;
+        &lt;/p&gt;</value>
+  </data>
+  <data name="GettingStartedBusinessStep3" xml:space="preserve">
+    <value>&lt;h3&gt;
+            Шаг 3. Изучить Маркетинг, Инструменты для работы, Особенности Партнерской программы
+            FFI-ECO
+        &lt;/h3&gt;
+        &lt;p&gt;
+            Эти знания дадут вам возможность БЫСТРО, ПРАВИЛЬНО и максимально ЭФФЕКТИВНО начать
+            свой бизнес и заработок с компанией Forever Freedom International.
+        &lt;/p&gt;
+        &lt;span class="field-validation-error"&gt;Доступно после регистрации партнерской программы
+            FFI-ECO &lt;/span&gt;</value>
+  </data>
+  <data name="GettingStartedBusinessSub" xml:space="preserve">
+    <value>&lt;h2&gt;
+                &lt;font color='red'&gt;ПРАВИЛЬНО&lt;/font&gt;
+                &lt;br /&gt;
+                начать свой бизнесс и работать&lt;br /&gt;
+                ЭФФЕКТИВНО
+            &lt;/h2&gt;</value>
+  </data>
+  <data name="GettingStartedProduction" xml:space="preserve">
+    <value>&lt;h2&gt;
+&lt;font color="red"&gt;ПРАВИЛЬНО&lt;/font&gt;
+&lt;br&gt;
+начать пользоваться продукцией и получить ЭКОНОМИЮ
+&lt;/h2&gt;</value>
+  </data>
+  <data name="GettingStartedProductionBuy" xml:space="preserve">
+    <value>Приобрести продукцию вы также можете на нашем сайте, смотрите раздел</value>
+  </data>
+  <data name="GettingStartedProductionConsulting" xml:space="preserve">
+    <value>Любую консультацию по использованию продукции Компании FFI, вы можете получить в
+            удобном для вас формате, смотрите раздел</value>
+  </data>
+  <data name="GettingStartedProductionText" xml:space="preserve">
+    <value>&lt;ol id="instruction"&gt;
+    &lt;li&gt;
+        &lt;h3&gt;
+            1. Определение реального расхода топлива&lt;/h3&gt;
+        &lt;p&gt;
+            Выберите АЗС на выезде из вашего города (желательно АЗС, на котором вы чаще всего
+            заправляетесь). Заправьте топливо до горловины бака, чтобы его было видно в горловине
+            (не до отстрела заправочного пистолета, а до горловины бака, это важно). Сбросьте
+            счетчик суточного пробега авто на 0 и начинайте движение с "крейсерской скоростью"
+            80-90 км/час, 50 км в одну сторону и 50км назад, на ту же заправку, к тому же заправочному
+            пистолету. Долейте топливо до полного бака, чтобы топливо было видно в горловине
+            бака. Вы получите реальную картину расхода топлива на 100км. Сохраните чек, который
+            вам выдадут на АЗС.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;h3&gt;
+            2. Чистка топливной системы автомобиля с помощью промывки MPG MAX-PRO&lt;/h3&gt;
+        &lt;p&gt;
+            Вылейте содержимое бутылки MPG MAX-PRO в горловину бензобака. Одна бутылка расчитана
+            на 60-80л топлива, т.е. на полный бак. Выкатайте бак до сигнала контрольной лампочки.
+            После этого вам необходимо заменить топливный фильтр. Рекомендуем также заменить
+            все фильтры вашего авто, особенно если вы давно этого не делали. Проверьте свечи
+            зажигания, если они подлежат замене, замените их. Ваш автомобиль "условно" технически
+            исправный, можете начинать пользоваться продуктом для экономии топлива MPG BOOST.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;h3&gt;
+            3. Применение MPG BOOST&lt;/h3&gt;
+        &lt;p&gt;
+            MPG BOOST - жидкий катализатор горения топлива, используется в двигателях внутреннего
+            сгорания на бензине, диз.топливе или газу (кроме метана). Начинать использовать
+            катализатор рекомендуется в следующих дозировках: бензин - 1мл&lt;sup&gt;3&lt;/sup&gt; на 10л
+            бензина или газа, 1.3мл&lt;sup&gt;3&lt;/sup&gt; на 10 л дизельного топлива на первый бак. К
+            примеру, у вас бак 40л, вы добавляте 4мл&lt;sup&gt;3&lt;/sup&gt; MPG BOOST (бензин или газ),
+            5.2 мл&lt;sup&gt;3&lt;/sup&gt; для дизеля. На второй бак дозировка MPG BOOST уменьшается до
+            0.9мл&lt;sup&gt;3&lt;/sup&gt; на 10л бензина или газа, 1.1мл&lt;sup&gt;3&lt;/sup&gt; на 10л диз.топлива.
+            На третий бак дозировка 0.85 мл&lt;sup&gt;3&lt;/sup&gt; на 10 л бензина или газа и 1мл&lt;sup&gt;3&lt;/sup&gt;
+            на 10л диз.топлива. Дальнейшие дозировки рекомендуется подбирать каждому индивидуально,
+            понижая дозировку продукта с шагом 0,05 мл&lt;sup&gt;3&lt;/sup&gt; на 10 л, так как каждый автомобиль
+            индивидуален и состояние мотора и топливной системы у всех различное. Максимальный
+            эффект экономии достигается после использования 2-5 баков горючего с продуктом MPG.
+            Компания FFI гарантирует экономию топлива если ваш стиль вождения остается прежним. 
+            При смене стиля езды на более агресивный, вы заметите улучшение в работе двигателя, но возможно, без значительной экономии топлива.
+            Компания FFI предлагает продукцию для экономии топлива в виде жидкого катализатора
+            горения топлива MPG BOOST , таблетированного MPG-Caps и в виде порошка MPG-MEGA-CRUMBS
+            используемого в основном на технике с большими топливными баками. После второго-третьего
+            бака с использованием продукта, вернитесь на ту же АЗС, на которой вы проверяли
+            свой расход топлива, и проделайте тот же тест, что и вначале, а именно: заправьте
+            топливо до горловины бака, чтобы его было видно в горловине (не до отстрела заправочного
+            пистолета, а до горловины бака, это важно). Сбросьте счетчик суточного пробега авто
+            на 0 и начинайте движение с "крейсерской скоростью" 80-90 км/час, 50 км в одну сторону
+            и 50 назад, на ту же заправку, к тому же заправочному пистолету. Долейте топливо
+            до полного бака, чтобы топливо было видно в горловине бака. Вы получите реальную
+            картину расхода топлива на 100км. Сравните чек, который вам выдали первый раз с
+            тем что вам дали теперь. Вы получите полную уверенность, что продукция Компании
+            FFI на 100% работает, как и заявлено Компанией.
+        &lt;/p&gt;
+        &lt;br/&gt;
+        
+        &lt;p&gt;
+            Эта инструкция носит исключительно
+            рекомендательный характер, но при выполнении этих рекомендаций, вы на 100% получите
+            желаемый результат, в виде экономии топлива 10, 20, 30 и более % и удовольствие
+            от езды на своем "обновленном" автомобиле. Желаем вам успехов и достижения поставленных
+            целей.
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>Как работает продукция</value>
+  </data>
+  <data name="HowItWorksText" xml:space="preserve">
+    <value>&lt;table style="height: 100%; color: black;"&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td valign="top"&gt;
+                &lt;br&gt;
+                &lt;table class="contentpaneopen"&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td valign="top"&gt;
+                                &lt;p style="text-align: justify;"&gt;
+                                    &lt;strong&gt;Рассмотрим 3 фактора, благодаря которым и происходит экономия топлива:&lt;/strong&gt;&lt;/p&gt;
+                                &lt;p style="text-align: justify;"&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;&lt;span style="text-decoration: underline;"&gt;1 фактор:&lt;/span&gt;&lt;/strong&gt; повышение
+                                    КПД двигателя.&lt;br&gt;
+                                    Наибольшая часть имеющихся на рынке присадок к топливу и кондиционирующих материалов
+                                    - являются в основном обычными детергентами, которые служат для повышения октанового
+                                    числа, очистки топливной системы и т.п., но не улучшающих характеристик сгорания
+                                    горючего, или, что еще более важно, не оказывают воздействия на саму камеру сгорания.
+                                    Благодаря этому продукты MPG выгодно отличаются от всех остальных. Именно в этом
+                                    и заключается объяснение эффективности нашей технологии.&amp;nbsp;&amp;nbsp; Важно понимать,
+                                    что технология MPG&amp;nbsp; работает именно на этом участке,&amp;nbsp; т.е. в самой камере
+                                    сгорания!&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;em&gt;&lt;/em&gt;
+                                &lt;/p&gt;
+                                &lt;p style="float: none; margin: 5px; text-align: justify;" class="cd_typocss_icon_info"&gt;
+                                    &lt;em&gt;&lt;span&gt;&lt;/span&gt;&lt;/em&gt;Справка:&amp;nbsp; Не секрет, что всего лишь 15 - 40% энергии
+                                    от сгорания топлива превращается в механическую энергию. Поэтому, наибольшие потери
+                                    КПД автомобильного двигателя &amp;ndash; это ПОТЕРЯ ТЕПЛА. Большинство специалистов
+                                    считают, что &lt;strong&gt;сохранение тепла &amp;ndash; самый практичный способ увеличения термического
+                                        КПД в современном двигателе&lt;/strong&gt;. Это приводит к увеличению степени сжатия
+                                    и, соответственно, к увеличению мощности. Аналогичный подход применяют в двигателях
+                                    ФОРМУЛА-1, напыляя тефлоновое покрытие на стенках камеры сгорания, клапанах и днище
+                                    поршня. Таким образом, термический КПД удается поднять с 0,26 до 0,34. Это ощутимо!
+                                    Но эта процедура дорогостоящая, и тефлон довольно быстро прогорает.&lt;/p&gt;
+                                &lt;p&gt;
+                                &lt;/p&gt;
+                                &lt;p&gt;
+                                    &amp;nbsp;&lt;/p&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Компании FFI удалось разработать технологию наведения каталитического покрытия в
+                                    камере сгорания, благодаря которому термический КПД удается поднять с 0,26 до 0,30.
+                                    Наш продукт производит кондиционирование камеры сгорания, обеспечивая особые условия,
+                                    при которых используется больше тепла, выделяемого сгоранием топлива.&lt;/p&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Это работает так: перед каждой заправкой в бак с топливом помещают продукт MPG,
+                                    который полностью растворяется на молекулярном уровне и вместе с топливом подается
+                                    в камеру сгорания. При воспламенении продукт активируется и обрабатывает металлические
+                                    поверхности, образуя на стенках цилиндра, на днище поршня и на поверхности камеры
+                                    сгорания микропленку толщиной всего 0,01 микрона. Во время сгорания карбоксильный
+                                    металл создает остаток окисла на горячих поверхностях. Этот процесс называется -
+                                    термальное окисление.&amp;nbsp;
+                                    &lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;Это дает следующие ПРЕИМУЩЕСТВА:&lt;/strong&gt;&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;1)&lt;/strong&gt; &lt;strong&gt;Микропленка меняет характеристики теплопоглощения металла.&lt;/strong&gt;Фактически,
+                                    эта пленка препятствует передаче теплового излучения, т.е. образует так называемый
+                                    тепловой барьер. Это непосредственно приводит к увеличению степени сжатия/расширения
+                                    и, соответственно,&amp;nbsp; к увеличению мощности ДВС. При этом общий температурный
+                                    режим самого двигателя и клапанов не меняется, т.е. перегрева не происходит! Более
+                                    того, двигатель работает в более щадящем режиме.&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;2)&lt;/strong&gt; &lt;strong&gt;Пленка создает эффект полированной поверхности, обеспечивая
+                                        более равномерное распределение горючего.&lt;/strong&gt; Это можно сравнить с образованием
+                                    водяных шариков на окрашенной полированной поверхности. Микропленка притягивает
+                                    жидкое горючее, приводя к его лучшему распределению и воспламенению.&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;3)&lt;/strong&gt; &lt;strong&gt;Пленка в сочетании с теплом цилиндра вызывает каталитическую
+                                        реакцию, которая способствует более эффективному сгоранию топлива.&lt;/strong&gt;
+                                    Скорость сгорания увеличивается в 2-2,5 раза! Поэтому, на каких бы оборотах не работал
+                                    ваш двигатель, топливо полностью успевает сгореть в камере сгорания, а не догорает
+                                    в выхлопной системе автомобиля, как это было до применения продукта. Кроме того,
+                                    сама каталитическая реакция является экзотермической и выделяет дополнительную энергию
+                                    в виде тепла.
+                                    &lt;br&gt;
+                                    В целом, эти три преимущества приводят к увеличению степени сжатия в цилиндре на
+                                    30 &amp;ndash; 40% при том же количестве горючего.&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;2 фактор:&lt;/strong&gt;&lt;/span&gt; Снижение
+                                    эмиссий от использования продукта MPG.
+                                    &lt;br&gt;
+                                    Каталитический процесс, обычно происходящий в каталитических нейтрализаторах (катализаторах)
+                                    на выхлопных системах, в нашем случае начинается уже при возгорании смеси в цилиндре
+                                    ДВС, что снижает образование СО, СН и вредных оксидов азота NOx. Нагрузка на нейтрализатор
+                                    уменьшается и срок его эксплуатации значительно увеличивается. При этом зафиксировано
+                                    снижение СО и СН в среднем на 70-90%.&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;3 фактор:&lt;/strong&gt;&lt;/span&gt; Микропленка
+                                    препятствует образованию вредных отложений.
+                                    &lt;br&gt;
+                                    Это особенно важно в связи с влиянием, оказанным правилами Агентства по Защите Окружающей
+                                    Среды США (EPA) на автомобильную промышленность. Чтобы выполнить требования EPA
+                                    по снижению эмиссии, производители удалили из горючего свинец и добавили в горючее
+                                    оксигенаторы. Это привело к образованию вредных отложений, которые пропитывают горючее
+                                    и ухудшают его работу. Снижение количества этих отложений в камере сгорания ДВС
+                                    &amp;ndash; еще одно преимущество продукта.&lt;/p&gt;
+                                &lt;hr&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Масштабные научные эксперименты и практика применения продукта на легковых и грузовых
+                                    авто - более чем в 200 странах мира выявили многочисленные положительные эффекты
+                                    продуктов FFI.&lt;/p&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Продукт полностью состоит из органических соединений, не имеет кислотных или щелочных
+                                    основ, пагубно влияющих на двигатель. Можно с уверенностью утверждать, что применение
+                                    продукта MPG является &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;АБСОЛЮТНО БЕЗОПАСНЫМ&lt;/strong&gt;&lt;/span&gt;
+                                    для вашего автомобиля. Менеджеры и клиенты получили дополнительные гарантии к мировой
+                                    системе страховки, которая предусматривает и покрывает любые возможные повреждения
+                                    двигателя (&lt;a href="@Url.Action("Certifications", "Articles")"&gt;см. страховой полис&lt;/a&gt;) из-за продуктов
+                                    компании.&lt;/p&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td valign="bottom"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="NavProduction" xml:space="preserve">
+    <value>Продукция</value>
+  </data>
+  <data name="NewAccountTitle" xml:space="preserve">
+    <value>Создать аккаунт</value>
+  </data>
+  <data name="PartnerAddress" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="PartnerCity" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="PartnerCountry" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="PartnerCreateHeading" xml:space="preserve">
+    <value>Информация партнера</value>
+  </data>
+  <data name="PartnerCreateHint" xml:space="preserve">
+    <value> Эти данные будут использоваться в разделе Контакты на вашем сайте, заполните их корректно, чтобы клиенты могли связаться с вами </value>
+  </data>
+  <data name="PartnerExist" xml:space="preserve">
+    <value>У вас уже есть партнерский аккаунт </value>
+  </data>
+  <data name="PartnerExpirationDate" xml:space="preserve">
+    <value>Аккаунт действителен до</value>
+  </data>
+  <data name="PartnerExtend" xml:space="preserve">
+    <value>Продлить аккаунт</value>
+  </data>
+  <data name="PartnerInfo" xml:space="preserve">
+    <value>Мои данные</value>
+  </data>
+  <data name="PartnerMonths" xml:space="preserve">
+    <value>месяцев</value>
+  </data>
+  <data name="PartnerName" xml:space="preserve">
+    <value>Имя и фамилия</value>
+  </data>
+  <data name="PartnerNotActive" xml:space="preserve">
+    <value>Не действителен</value>
+  </data>
+  <data name="PartnerNotExist" xml:space="preserve">
+    <value>Пожалуйста, введите свои данные для пользования партнерской программой</value>
+  </data>
+  <data name="PartnerPanel" xml:space="preserve">
+    <value>Партнерская панель</value>
+  </data>
+  <data name="PartnerPaymentCardHint" xml:space="preserve">
+    <value>Для оплати счета кредитной карточкой необходима регистрация в системе EasyPay</value>
+  </data>
+  <data name="PartnerPaymentDescription" xml:space="preserve">
+    <value>Оплата срок действия аккаунта</value>
+  </data>
+  <data name="PartnerPaymentSelectHint" xml:space="preserve">
+    <value>Выберите срок продлевания действия аккаунта</value>
+  </data>
+  <data name="PartnerPaymentSumDescr" xml:space="preserve">
+    <value>Сума к оплате</value>
+  </data>
+  <data name="PartnerPhone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PracticalResults" xml:space="preserve">
+    <value>Практические результати</value>
+  </data>
+  <data name="RegistrationHint" xml:space="preserve">
+    <value> Обратите внимание! &lt;br/&gt;&lt;br/&gt; Пожалуйста, при регистрации используйте тот же логин, с которым вы зарегистрировались в системе FFI, чтобы мы смогли проверить действительна ли ваша регистрация и являетесь ли вы нашим партнёром. Если вы еще не зарегистрированы как дистрибьютор компании FFI, пожалуйста, посетите эту страницу {0} &lt;br/&gt;&lt;br/&gt; Также, пожалуйста, корректно заполните поле Email адреса, потому что без действующего электронного почтового ящика вы не сможете активировать аккаунт. Если после регистрации в течение 24 часов вы не получили регистрационную ссылку, пожалуйста, обратитесь к администрации в разделе. </value>
+  </data>
+  <data name="ResultsSelectManufacturer" xml:space="preserve">
+    <value>Выберите производителя</value>
+  </data>
+  <data name="ResultsSelectModel" xml:space="preserve">
+    <value>Выберите модель</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Послать сообщение</value>
+  </data>
+  <data name="SendMessageFail" xml:space="preserve">
+    <value>Пожалуйста, заполните все поля формы</value>
+  </data>
+  <data name="TestDrive" xml:space="preserve">
+    <value>&lt;h1&gt;Тест Драйв&lt;h1&gt;&lt;br/&gt;&lt;p style='margin-top:-20px;'&gt;(Ознакомление)&lt;/p&gt;</value>
+  </data>
+  <data name="TestDriveHeader" xml:space="preserve">
+    <value>Тест Драйв</value>
+  </data>
+  <data name="TestDriveHint" xml:space="preserve">
+    <value>Тест Драйв - это ознакомительное видео, из которого вы сможете почерпнуть информацию о продуктах компании FFI.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>FFI Ecology Украина: экономия топлива, защита двигателя, сохранность экологии</value>
+  </data>
+  <data name="Ukraine" xml:space="preserve">
+    <value>Украина</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="CertificateInsurance" xml:space="preserve">
+    <value>Страховка от любых возможных повреждений двигателя из-за продукции компании FFI</value>
+  </data>
+  <data name="CertificateMOZ" xml:space="preserve">
+    <value>Заключение государственной санитарно-эпидемиологической экспертизы о безопасности продукта FFI</value>
+  </data>
+  <data name="CertificateText" xml:space="preserve">
+    <value>&lt;p&gt;
+    Застраховано AUTO OWNERS INSURANCE COMPANY на суму 1 000 000$ на каждый страховой
+    случай.
+&lt;/p&gt;
+&lt;p&gt;
+    Имеет разрешение EPA - Environmental Protection Agency (американского общества охраны
+    окружающей среды) № 218820001. Проверена на безопасность американским министерством
+    труда - MSDS - № CRF 1910.120029. Технология запатентована и продукцию можно приобрести
+    у дистрибьюторов компании.
+&lt;/p&gt;</value>
+  </data>
+</root>

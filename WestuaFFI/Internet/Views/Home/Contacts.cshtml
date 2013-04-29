@@ -3,13 +3,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="head">
-    <h1>
-        Контакты
-    </h1>
+    @Html.Raw(Resources.labels.Contacts)
 </div>
 <div class="wrap">
     <!-- google map -->
-    <div id="map_canvas" style="position: relative; background-color: rgb(229, 227, 223);
+    @*    <div id="map_canvas" style="position: relative; background-color: rgb(229, 227, 223);
         overflow: hidden;">
         <div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%;
             height: 100%; z-index: 0;">
@@ -413,53 +411,52 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
     <!--contact info -->
     <div id="contact" class="row-fluid">
         <div class="span6">
             <h2 class="underline" class="">
-                Контактная информация
+                @Resources.labels.ContactsInfo
             </h2>
             <p>
-                Countryname</p>
+                @Resources.labels.Ukraine</p>
             <p>
-                Yourville</p>
-            <p>
-                34000 Your Address 20-1</p>
+                @Resources.labels.City</p>
             <h3>
-                Телефон
+                @Resources.labels.PartnerPhone
             </h3>
             <p>
-                063 05 17 004</p>
+                067 58 28 307</p>
             <h3>
                 Email
             </h3>
             <p>
-                <a href="mailto:ffi.lviv.ua@gmail.com">ffi.lviv.ua@gmail.com</a>
-            </p> 
+                <a href="mailto:ffi.lviv.ua@gmail.com">ffi.eco.com@gmail.com</a>
+            </p>
             <h3>
                 Skype
             </h3>
             <p>
-                <a href="mailto:ffi.lviv.ua@gmail.com">ffi.lviv.ua</a>
+                FFI-ECO
             </p>
         </div>
         <div class="span6">
             <h2 class="underline text-pullcenter">
-                Послать сообщение
+                @Resources.labels.SendMessage
             </h2>
             <!-- contact form -->
             <div id="contactUs">
-                <form action="#" method="post">
+                @using (Html.BeginForm())
+                {
                     <div id="contactName">
                         <p id="nameLabel">
-                            Name
+                            @Resources.labels.Name
                         </p>
                         <p id="emailLabel">
                             Email
                         </p>
                         <p id="textLabel">
-                            Message
+                            @Resources.labels.Message
                         </p>
                     </div>
                     <!-- contact form -->
@@ -468,8 +465,8 @@
                         <input type="text" id="contactEmailForm" name="eMail" />
                     </div>
                     <textarea id="contactTextForm" name="text" cols="" rows=""></textarea>
-                    <input type="submit" value="SEND" name="submit" id="contactParButton" />
-                </form>
+                    <input type="submit" value="@Resources.labels.btnSend" name="submit" id="contactParButton" />
+                }
             </div>
         </div>
     </div>

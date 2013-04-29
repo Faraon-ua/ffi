@@ -1,19 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using System.Web.Routing;
 using System.Web.Security;
+using Internet.Extensions;
+using Internet.Helpers;
 using Internet.Models;
 
 namespace Internet.Controllers
 {
     public class AccountController : Controller
     {
-
         //
         // GET: /Account/LogOn
+
+        public ActionResult Verify(string id)
+        {
+            if (string.IsNullOrEmpty(id) || (!Regex.IsMatch(id, @"[0-9a-f]{8}\-([0-9a-f]{4}\-){3}[0-9a-f]{12}")))
+            {
+                return RedirectToAction("Index", "Home").Warning(Resources.labels.AccountWrongConfirmation);
+            }
+
+            var user = Membership.GetUser(new Guid(id));
+
+            if (!user.IsApproved)
+            {
+                user.IsApproved = true;
+                Membership.UpdateUser(user);
+
+                FormsAuthentication.SetAuthCookie(user.UserName, false);
+                return RedirectToAction("Create", "Partners").Warning(Resources.labels.AccountRegistered);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home").Warning(Resources.labels.AccountAlreadyVerified);
+            }
+        } 
 
         public ActionResult LogOn()
         {
@@ -79,12 +100,14 @@ namespace Internet.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
+                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, false, null, out createStatus);
+                
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    //                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                    EmailHelper.Instance.NewUserAlert(model.UserName);
+//                    EmailHelper.Instance.SendConfirmationEmail(model.UserName);
+                    return RedirectToAction("Index", "Home").Warning(Resources.labels.AccountBeingChecked);
                 }
                 else
                 {

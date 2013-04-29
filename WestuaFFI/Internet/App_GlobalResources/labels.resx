@@ -117,10 +117,457 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="nav" xml:space="preserve">
-    <value />
+  <data name="AccountRegistered" xml:space="preserve">
+    <value>Дякуємо за реєстрацію! Для того, щоб ваш аккаунт набув статусу партнерського, будь ласка, заповніть всі поля та продовжіть термін дії аккаунта</value>
   </data>
-  <data name="navProduction" xml:space="preserve">
-    <value>Продукция</value>
+  <data name="btnRegister" xml:space="preserve">
+    <value>Реєстрація</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Повторіть пароль</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email адреса</value>
+  </data>
+  <data name="NavProduction" xml:space="preserve">
+    <value>Продукція</value>
+  </data>
+  <data name="NewAccountTitle" xml:space="preserve">
+    <value>Створити аккаунт</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="RegistrationHint" xml:space="preserve">
+    <value>Важливо!!! &lt;br/&gt;&lt;br/&gt;Будь ласка, при реєстрації використовуйте той самий логін, з яким ви зареєструвались у системі FFI, щоб ми змогли перевірити чи дійсна ваша реєстрація та чи є ви нашим партнером. Якщо ви ще не зареєструвались як дистриб'ютор компанії FFI, будь ласка, відвідайте цю сторінку {0} &lt;br/&gt;&lt;br/&gt;Також, будь ласка, корректно заповніть поле Email адреси, бо без діючої електронної поштової скриньки ви не зможете активувати аккаунт. Якщо після реєстрації протягом 24 годин ви не отримали реєстраційну ссилку, будь ласка, зверніться до адміністраціі у розділі Контакти.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>FFI Ecology Україна: економія палива, захист двигуна, збереження екології</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Логін</value>
+  </data>
+  <data name="AccountBeingChecked" xml:space="preserve">
+    <value>Ваш аккаунт було створено, але ще не активовано. Після того, як адміністрація перевірить чи зареєструвались ви як дистриб'ютор компанії FFI (чи дійсно ви є наш партнер), ви отримаєте email повідомлення про активацію вашого аккаунта. (Адміністрація сайту не працюватиме на травневих святах)</value>
+  </data>
+  <data name="AccountWrongConfirmation" xml:space="preserve">
+    <value>Невірний код активації аккаунта</value>
+  </data>
+  <data name="AccountConfirmationText" xml:space="preserve">
+    <value>&lt;html&gt;&lt;head&gt;&lt;meta content=\"text/html;charset=utf-8\" /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Dear {0} , &lt;/p&gt;&lt;p&gt; To verify your account, please click the following link:&lt;/p&gt;&lt;p&gt;&lt;a href='{1}' target=\"_blank\"&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;Best regards,&lt;/div&gt;&lt;div&gt;FFI-ECO&lt;/div&gt;&lt;p&gt;Do not forward this email. The verify link is private.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="AccountPartnershipCreated" xml:space="preserve">
+    <value>Вітаємо! Ваш аккаунт набув статус партнерьского, термін дії ви можете перевірити та змінити у Партнерській Панелі.</value>
+  </data>
+  <data name="BusinessHint" xml:space="preserve">
+    <value>Почати бізнес в FFI з партнерською програмою FFI-ECO</value>
+  </data>
+  <data name="AccountAlreadyVerified" xml:space="preserve">
+    <value>Ваш аккаунт вже активовано, будь ласка, завітайте до сторінки Партнерька панель</value>
+  </data>
+  <data name="AccountUpdated" xml:space="preserve">
+    <value>Ваші данні було оновлено</value>
+  </data>
+  <data name="PartnerExist" xml:space="preserve">
+    <value>Ви вже маєте партнерський аккаунт</value>
+  </data>
+  <data name="PartnerName" xml:space="preserve">
+    <value>І'мя та Прізвище</value>
+  </data>
+  <data name="PartnerAddress" xml:space="preserve">
+    <value>Адреса</value>
+  </data>
+  <data name="PartnerCity" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="PartnerCountry" xml:space="preserve">
+    <value>Країна</value>
+  </data>
+  <data name="PartnerCreateHeading" xml:space="preserve">
+    <value>Інформація партнера</value>
+  </data>
+  <data name="PartnerCreateHint" xml:space="preserve">
+    <value>Ці дані будуть використовуватись у розділі Контакти на вашому сайті, заповніть їх корректно, щоб клієнти мали змогу зв'язатись з вами</value>
+  </data>
+  <data name="PartnerExpirationDate" xml:space="preserve">
+    <value>Аккаунт дійсній до</value>
+  </data>
+  <data name="PartnerPhone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="AccountChangePassword" xml:space="preserve">
+    <value>Змінити пароль</value>
+  </data>
+  <data name="PartnerNotExist" xml:space="preserve">
+    <value>Будь-ласка, введіть свої дані для користування партнерською програмою</value>
+  </data>
+  <data name="PartnerPanel" xml:space="preserve">
+    <value>Партнерська панель</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="PartnerExtend" xml:space="preserve">
+    <value>Продовжити термін дії</value>
+  </data>
+  <data name="PartnerInfo" xml:space="preserve">
+    <value>Мої дані</value>
+  </data>
+  <data name="PartnerNotActive" xml:space="preserve">
+    <value>Не дійсний</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>грн</value>
+  </data>
+  <data name="PartnerMonths" xml:space="preserve">
+    <value>місяців</value>
+  </data>
+  <data name="PartnerPaymentDescription" xml:space="preserve">
+    <value>Оплата терміну дії аккаунта</value>
+  </data>
+  <data name="PartnerPaymentSelectHint" xml:space="preserve">
+    <value>Виберіть термін продовження дії аккаунта</value>
+  </data>
+  <data name="PartnerPaymentSumDescr" xml:space="preserve">
+    <value>Сума до сплати</value>
+  </data>
+  <data name="btnCreate" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="GettingStartedBusiness" xml:space="preserve">
+    <value>Як правильно почати бізнес з FFI та партерською програмою FFI-ECO</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>Як працює продукція</value>
+  </data>
+  <data name="PartnerPaymentCardHint" xml:space="preserve">
+    <value>Для оплати рахунку кредитною карткою необхідна реєстрація в системі EasyPay</value>
+  </data>
+  <data name="PracticalResults" xml:space="preserve">
+    <value>Практичні результати</value>
+  </data>
+  <data name="TestDriveHint" xml:space="preserve">
+    <value>Тест Драйв - це ознайомче відео, з якого ви зможете почерпнути інформацію про продукти компанії FFI.</value>
+  </data>
+  <data name="Certification" xml:space="preserve">
+    <value>Сертифікати якості та гарантії</value>
+  </data>
+  <data name="BecomePartner" xml:space="preserve">
+    <value>Стати партнером</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Львів</value>
+  </data>
+  <data name="ContactEmailSent" xml:space="preserve">
+    <value>Дякуємо за ваше повідомлення! Найближчим часом на зазначену вами Email адресу прийде відповідь.</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>&lt;h1&gt;Контакти&lt;h1&gt;</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>&lt;h1&gt;З чого почати&lt;/h1&gt;</value>
+  </data>
+  <data name="GettingStartedBusinessStep1" xml:space="preserve">
+    <value>Крок 1. Реєстрація та оплата акаунта дистриб'ютора (Starter kit 30 $) на головному сайті FFI. </value>
+  </data>
+  <data name="GettingStartedBusinessStep2" xml:space="preserve">
+    <value>&lt;h3&gt;
+                        Крок 2. Реєстрація партнерської програми FFI-ECO
+        &lt;/h3&gt;
+        &lt;p&gt;
+            Бонуси від реєстрації в нашій партнерській програмі:
+            &lt;ul&gt;
+                &lt;li&gt;- дешевше будь-яких аналогів &lt;/li&gt;
+                &lt;li&gt;- Персональний сайт c ЯКІСНИМ і УНІКАЛЬНИМ контентом: ознайомче відео,
+                    технічні деталі роботи продукту, реальні практичні результати &lt;/li&gt;
+                &lt;li&gt;- вбудована реферальна система FFI з унікальним доменом типу: NAME.FFI-ECO.COM &lt;/li&gt;
+                &lt;li&gt;- реально працююча структура, ща дає прибуток &lt;/li&gt;
+                &lt;li&gt;- шаблони візиток &lt;/li&gt;
+                &lt;li&gt;- Постійна і повна інформаційна консультація в усіх аспектах роботи &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;span class="field-validation-error"&gt; Спочатку обов'язково зареєструйтесь як партнер
+                в FFI, інакше ви не зможете створити аккаунт на нашому сайті. &lt;/span&gt;
+        &lt;/p&gt;</value>
+  </data>
+  <data name="GettingStartedBusinessStep3" xml:space="preserve">
+    <value>&lt;h3&gt;
+            Крок 3. Вивчити Маркетинг, Інструменти для роботи, Особливості Партнерської програми
+        &lt;/h3&gt;
+        &lt;p&gt;
+            Ці знання дадуть вам можливість ШВИДКО, ПРАВИЛЬНО і максимально ЕФЕКТИВНО почати
+            свій бізнес і заробіток з компанією Forever Freedom International.
+        &lt;/p&gt;
+        &lt;span class="field-validation-error"&gt;Доступно після реєстрації партнерської програми
+            FFI-ECO &lt;/span&gt;</value>
+  </data>
+  <data name="GettingStartedBusinessSub" xml:space="preserve">
+    <value>&lt;h2&gt;
+                &lt;font color='red'&gt;ПРАВИЛЬНО&lt;/font&gt;
+                &lt;br /&gt;
+                 почати свій бізнес і працювати&lt;br /&gt;
+                ЭФЕКТИВНО
+            &lt;/h2&gt;</value>
+  </data>
+  <data name="GettingStartedProduction" xml:space="preserve">
+    <value>&lt;h2&gt;
+&lt;font color="red"&gt;ПРАВИЛЬНО&lt;/font&gt;
+&lt;br&gt;
+почати користуватися продукцією та отримати ЕКОНОМІЮ
+&lt;/h2&gt;</value>
+  </data>
+  <data name="GettingStartedProductionBuy" xml:space="preserve">
+    <value>Придбати продукцію ви також можете на нашому сайті, дивіться розділ </value>
+  </data>
+  <data name="GettingStartedProductionConsulting" xml:space="preserve">
+    <value>Будь-яку консультацію по використанню продукції Компанії FFI, ви можете отримати в
+            зручному для вас форматі, дивіться розділ</value>
+  </data>
+  <data name="GettingStartedProductionText" xml:space="preserve">
+    <value>&lt;ol id="instruction"&gt;
+    &lt;li&gt;
+        &lt;h3&gt;
+            1. Визначення реальної витрати палива&lt;/h3&gt;
+        &lt;p&gt;
+             Виберіть АЗС на виїзді зі свого міста (бажано АЗС, на якому ви найчастіше
+            заправляєтеся). Заправте паливо до горловини бака, щоб його було видно в горловині
+            (Не до відстрілу заправного пістолета, а до горловини бака, це важливо). Скиньте
+            лічильник добового пробігу авто на 0 і починайте рух з "крейсерською швидкістю"
+            80-90 км/год, 50 км в одну сторону і 50 км назад, на ту ж заправку, до того ж заправного
+            пістолету. Долийте паливо до повного бака, щоб паливо було видно в горловині.
+            Ви отримаєте реальну картину витрати палива на 100км. Збережіть чек, який
+            вам видадуть на АЗС.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;h3&gt;
+            2. Чистка паливної системи автомобіля за допомогою засобу для промивання MPG MAX-PRO &lt;/h3&gt;
+        &lt;p&gt;
+            Вилийте вміст пляшки MPG MAX-PRO в горловину бензобака. Одна пляшка розрахована
+             на 60-80л палива, тобто на повний бак. Викатайте бак до сигналу контрольної лампочки.
+             Після цього вам необхідно замінити паливний фільтр. Рекомендуємо також замінити
+             всі фільтри вашого авто, особливо якщо ви давно цього не робили. Перевірте свічки
+             запалювання, якщо вони підлягають заміні, замініть їх. Ваш автомобіль "умовно" технічно
+             справний, можете починати користуватися продуктом для економії палива MPG BOOST.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;h3&gt;
+            3. Застосування MPG BOOST&lt;/h3&gt;
+        &lt;p&gt;
+             MPG BOOST - рідкий каталізатор горіння палива, використовується в двигунах внутрішнього
+            згоряння на бензині, диз.паливі або газу (крім метану). Починати використовувати
+            каталізатор рекомендується в наступних дозуваннях: бензин - 1мл&lt;sup&gt;3&lt;/sup&gt; на 10л
+            бензину або газу, 1.3мл &lt;sup&gt;3&lt;/sup&gt; на 10 л дизельного палива на перший бак. Наприклад, 
+            у вас бак 40л, ви додаєте 4мл&lt;sup&gt;3&lt;/sup&gt; MPG BOOST (бензин або газ),
+            5.2 мл&lt;sup&gt;3&lt;/sup&gt; для дизеля. На другий бак дозування MPG BOOST зменшується до
+            0.9мл&lt;sup&gt;3&lt;/sup&gt; на 10л бензину абу газу, 1.1мл&lt;sup&gt;3&lt;/sup&gt; на 10л диз.палива.
+            На третій бак дозування 0.85 мл&lt;sup&gt;3&lt;/sup&gt; на 10 л бензину або газу и 1мл&lt;sup&gt;3&lt;/sup&gt;
+            на 10л диз.палива. Подальші дозування рекомендується підбирати кожному індивідуально,
+            знижуючи дозування продукту з кроком 0,05 мл&lt;sup&gt;3&lt;/sup&gt; на 10 л, так як кожен автомобіль
+            індивідуальний і стан двигуна і паливної системи у всіх різний. Максимальний
+            ефект економії досягається після використання 2-5 баків пального з продуктом MPG.
+            Компанія FFI гарантує економію палива якщо ваш стиль водіння залишається колишнім.
+            При зміні стилю їзди на більш агресивний, ви помітите поліпшення в роботі двигуна, але можливо, без значної економії палива.
+            Компанія FFI пропонує продукцію для економії палива у вигляді рідкого каталізатора
+            горіння палива MPG BOOST, таблетованого MPG-Caps і у вигляді порошку MPG-MEGA-CRUMBS, який
+            використовується в основному в техніці з великими паливними баками. Після другого-третього
+            бака з використанням продукту, поверніться на ту ж АЗС, на якій ви перевіряли
+            свою витрату палива, і виконайте той же тест, що і спочатку, а саме: заправте
+            паливо до горловини бака, щоб його було видно в горловині (не до відстрілу заправного
+            пістолета, а до горловини бака, це важливо). Скиньте лічильник добового пробігу авто
+            на 0 і починайте рух з "крейсерською швидкістю" 80-90 км / год, 50 км в одну сторону
+            і 50 назад, на ту ж заправку, до того ж заправного пістолета. Долийте паливо
+            до повного бака, щоб паливо було видно в горловині бака. Ви отримаєте реальну
+            картину витрати палива на 100км. Порівняйте чек, який вам видали перший раз з
+            тим що вам дали тепер. Ви отримаєте повну впевненість, що продукція Компанії
+            FFI на 100% працює, як і заявлено Компанією.
+             &lt;/p&gt;
+             &lt;br/&gt;
+              &lt;p&gt;
+            Ця інструкція носить виключно
+            рекомендаційний характер, але при виконанні цих рекомендацій, ви на 100% отримаєте
+            бажаний результат, у вигляді економії палива 10, 20, 30 і більше % і задоволення
+            від їзди на свому "оновленому" автомобілі. Бажаємо вам успіхів і досягнення поставлених цілей.
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Вийти</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Увійти</value>
+  </data>
+  <data name="TestDrive" xml:space="preserve">
+    <value>&lt;h1&gt;Тест Драйв&lt;h1&gt;&lt;br/&gt;&lt;p style='margin-top:-20px;'&gt;(Ознайомлення)&lt;/p&gt;</value>
+  </data>
+  <data name="TestDriveHeader" xml:space="preserve">
+    <value>Тест Драйв</value>
+  </data>
+  <data name="Ukraine" xml:space="preserve">
+    <value>Україна</value>
+  </data>
+  <data name="btnSend" xml:space="preserve">
+    <value>Надіслати</value>
+  </data>
+  <data name="ContactsInfo" xml:space="preserve">
+    <value>Контактна інформація</value>
+  </data>
+  <data name="HowItWorksText" xml:space="preserve">
+    <value>&lt;table style="height: 100%; color: black;"&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td valign="top"&gt;
+                &lt;br&gt;
+                &lt;table class="contentpaneopen"&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td valign="top"&gt;
+                                &lt;p style="text-align: justify;"&gt;
+                                    &lt;strong&gt;Розглянемо 3 фактора, завдяки яким і відбувається економія палива:&lt;/strong&gt;&lt;/p&gt;
+                                &lt;p style="text-align: justify;"&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;&lt;span style="text-decoration: underline;"&gt;1 фактор:&lt;/span&gt;&lt;/strong&gt; підвищення ККД двигуна.&lt;br&gt;
+                                    Найбільша частина наявних на ринку присадок до палива і кондиціонерів - є в основному звичайними детергентами, які служать для підвищення октанового числа, очищення паливної системи тощо, але не поліпшують характеристик згоряння пального, або, що ще більш важливо, не роблять впливу на саму камеру згоряння.
+   Завдяки цьому продукти MPG вигідно відрізняються від всіх інших. Саме в цьому і полягає пояснення ефективності нашої технології. Важливо розуміти, що технологія MPG працює саме на цій ділянці, тобто в самій камері згоряння! &lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;em&gt;&lt;/em&gt;
+                                &lt;/p&gt;
+                                &lt;p style="float: none; margin: 5px; text-align: justify;" class="cd_typocss_icon_info"&gt;
+                                    &lt;em&gt;&lt;span&gt;&lt;/span&gt;&lt;/em&gt;Справка:&amp;nbsp;Не секрет, що всього лише 15 - 40% енергії
+                                     від згоряння палива перетворюється на механічну енергію. Тому, найбільші втрати
+                                     ККД автомобільного двигуна &amp;ndash; це ВТРАТА ТЕПЛА. більшість фахівців
+                                     вважають, що &lt;strong&gt; збереження тепла &amp;ndash; самий практичний спосіб збільшення термічного
+                                         ККД в сучасному двигуні &lt;/strong&gt;. Це призводить до збільшення ступеня стиснення
+                                     і, відповідно, до збільшення потужності. Аналогічний підхід застосовують у двигунах
+                                     ФОРМУЛА-1, напилюючи тефлонове покриття на стінках камери згоряння, клапанах і днищах
+                                     поршнів. Таким чином, термічний ККД вдається підняти з 0,26 до 0,34. Це відчутно!
+                                     Але ця процедура дорога, і тефлон досить швидко прогорає.&lt;/p&gt;
+                                &lt;p&gt;
+                                &lt;/p&gt;
+                                &lt;p&gt;
+                                    &amp;nbsp;&lt;/p&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Компанії FFI вдалося розробити технологію наведення каталітичного покриття в
+                                     камері згоряння, завдяки якому термічний ККД вдається підняти з 0,26 до 0,30.
+                                     Наш продукт проводить кондиціювання камери згоряння, забезпечуючи особливі умови,
+                                     при яких використовується більше тепла, що виділяється згоранням палива.&lt;/p&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Це працює так: перед кожною заправкою в бак з паливом поміщають продукт MPG,
+                                     який повністю розчиняється на молекулярному рівні і разом з паливом подається
+                                     в камеру згоряння. При займанні продукт активується і обробляє металеві
+                                     поверхні, утворюючи на стінках циліндра, на днищі поршня та на поверхні камери
+                                     згоряння мікроплівку товщиною всього 0,01 мікрона. Під час згоряння карбоксильний
+                                     метал створює залишок оксиду на гарячих поверхнях. Цей процес називається -
+                                     термальне окислення.&amp;nbsp;
+                                    &lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;Це дає наступні ПЕРЕВАГИ:&lt;/strong&gt;&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;1)&lt;/strong&gt; &lt;strong&gt;Мікроплівка змінює характеристики теплопоглинання металу. &lt;/strong&gt; Фактично,
+                                     ця плівка перешкоджає передачі теплового випромінювання, тобто утворює так званий
+                                     теплової бар'єр. Це безпосередньо призводить до збільшення ступеня стиснення / розширення
+                                     і, відповідно, до збільшення потужності ДВС. При цьому загальний температурний
+                                     режим самого двигуна і клапанів не змінюється, тобто перегріву не відбувається! більш
+                                     того, двигун працює в більш щадному режимі.&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;2)&lt;/strong&gt; &lt;strong&gt;Плівка створює ефект полірованої поверхні, забезпечуючи
+                                         більш рівномірний розподіл пального.&lt;/strong&gt; Це можна порівняти з утворенням
+                                     водяних кульок на пофарбованій полірованій поверхні. мікроплівка притягує
+                                     рідке пальне, приводячи до його кращому розподілу і займанню.&lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;strong&gt;3)&lt;/strong&gt; &lt;strong&gt;Плівка в поєднанні з теплом циліндра викликає каталітичну
+                                         реакцію, яка сприяє більш ефективному згорянню палива. &lt;strong&gt;
+                                     Швидкість згоряння збільшується в 2-2,5 рази! Тому, на яких би оборотах не працював
+                                     ваш двигун, паливо повністю встигає згоріти в камері згоряння, а не догорає
+                                     у вихлопній системі автомобіля, як це було до застосування продукту. Крім того,
+                                     сама каталітична реакція є екзотермічної і виділяє додаткову енергію
+                                     у вигляді тепла.
+                                    &lt;br&gt;
+                                   В цілому, ці три переваги призводять до збільшення ступеня стиснення в циліндрі на
+                                    30 &amp;ndash; 40% при тій же кількості пального. &lt;br&gt;
+                                    &lt;br&gt;
+                                     &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;2 фактор:&lt;/strong&gt;&lt;/span&gt;  Зниження
+                                    емісій від використання продукту MPG.
+                                    &lt;br&gt;
+                                    Каталітичний процес, зазвичай відбувається в каталітичних нейтралізаторах (каталізаторах)
+                                    на вихлопних системах, в нашому випадку починається вже при загорянні суміші в циліндрі
+                                    ДВС, що знижує утворення СО, СН і шкідливих оксидів азоту NOx. Навантаження на нейтралізатор
+                                    зменшується і термін його експлуатації значно збільшується. При цьому зафіксовано
+                                    зниження СО і СН у середньому на 70-90%. 
+                                    &lt;br&gt;
+                                    &lt;br&gt;
+                                    &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;3 фактор:&lt;/strong&gt;&lt;/span&gt; Мікроплівка
+                                    перешкоджає утворенню шкідливих відкладень.
+                                    &lt;br&gt;
+                                    Це особливо важливо у зв'язку з впливом, наданим правилами Агентства по захисту навколишнього
+                                    Середовища США (EPA) на автомобільну промисловість. Щоб виконати вимоги EPA
+                                    щодо зниження емісії, виробники видалили з горючого свинець і додали в пальне
+                                    оксигенатори. Це призвело до утворення шкідливих відкладень, що насичують пальне
+                                    і погіршують його роботу. Зниження кількості цих відкладень в камері згоряння ДВС
+                                    &amp;ndash; ще одна перевага продукту. 
+                                    &lt;/p&gt;
+                                &lt;hr&gt;
+                                &lt;p class="text-justify"&gt;
+                                    Масштабні наукові експерименти і практика застосування продукту на легкових і вантажних
+                                    авто - більш ніж у 200 країнах світу виявили численні позитивні ефекти
+                                    продуктів FFI.
+                                 &lt;/p&gt;
+                                 &lt;p class="text-justify"&gt;
+                                    Продукт повністю складається з органічних сполук, не має кислотних або лужних
+                                    основ, які згубно впливають на двигун. Можна з упевненістю стверджувати, що застосування
+                                    продукту MPG є &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;АБСОЛЮТНО БЕЗПЕЧНИМ &lt;/strong&gt;&lt;/span&gt;
+                                    для вашого автомобіля. Менеджери та клієнти отримали додаткові гарантії до світової
+                                    системі страховки, яка передбачає і покриває будь-які можливі пошкодження
+                                    двигуна ({0}) через продуктів
+                                    компанії.&lt;/p&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td valign="bottom"&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>І'мя</value>
+  </data>
+  <data name="ResultsSelectManufacturer" xml:space="preserve">
+    <value>Оберіть виробника</value>
+  </data>
+  <data name="ResultsSelectModel" xml:space="preserve">
+    <value>Оберіть модель</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Надіслати повідомлення</value>
+  </data>
+  <data name="SendMessageFail" xml:space="preserve">
+    <value>Будь ласка, заповніть всі поля форми</value>
+  </data>
+  <data name="CertificateInsurance" xml:space="preserve">
+    <value>Страховка від будь-яких можливих пошкоджень двигуна через продукцію компанії FFI</value>
+  </data>
+  <data name="CertificateMOZ" xml:space="preserve">
+    <value>Висновок державної санітарно-епідеміологічної експертизи про безпеку продуктів FFI</value>
+  </data>
+  <data name="CertificateText" xml:space="preserve">
+    <value>&lt;p&gt;
+    Застраховано AUTO OWNERS INSURANCE COMPANY на суму 1 000 000$ на кожен страховий
+    випадок.
+&lt;/p&gt;
+&lt;p&gt;
+    Має дозвіл EPA - Environmental Protection Agency (американьского суспільства захисту
+    навколишнього середовища) № 218820001. Перевірена на безпеку американським міністерством
+    труда - MSDS - № CRF 1910.120029. Технологія запатентована і продукцію можна купити
+    у дистриб'юторів компанії FFI.
+&lt;/p&gt;</value>
   </data>
 </root>

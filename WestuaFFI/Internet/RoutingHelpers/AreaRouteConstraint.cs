@@ -7,7 +7,7 @@ namespace Internet.RoutingHelpers
     {
 
         private const string AdminAreaName = "Admin";
-        private const string AdminName = "westua";
+        private const string AdminRoleName = "Administrator";
 
         public string AreaName { get; set; }
 
@@ -16,7 +16,7 @@ namespace Internet.RoutingHelpers
             if (AreaName != null)
                 if (AreaName == AdminAreaName)
                     if (httpContext.User.Identity.IsAuthenticated)
-                        if (httpContext.User.Identity.Name == AdminName)
+                        if (httpContext.User.IsInRole(AdminRoleName))
                             return true;
             return false;
         }

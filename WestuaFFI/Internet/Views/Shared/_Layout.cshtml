@@ -1,23 +1,32 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>FFI Львов. Экономия топлива, защита двигателя, сохранность экологии</title>
+    <title>@Resources.labels.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/validation.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.8.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/captify.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/site.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jQuery.flashMessage.js")" type="text/javascript"></script>
+    @RenderSection("scripts", false)
     @RenderSection("head", false)
 </head>
 <body>
     <div class="language-selection">
-        <a href="#" title="ua">
+        <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uk-UA", returnUrl = Request.Url.ToString() })" title="Українська">
             <img src="@Url.Content("~/Content/images/ua.png")"/>
-        </a><a href="#" title="ru">
+        </a><a href="@Url.Action("ChangeCulture", "Home", new { lang = "ru-RU", returnUrl = Request.Url.ToString() })" title="Русский">
             <img src="@Url.Content("~/Content/images/ru.png")"/>
-        </a><a href="#" title="en">
-            <img src="@Url.Content("~/Content/images/en.png")"/>
         </a>
+@*        <a href="@Url.Action("ChangeCulture", "Home", new { lang = "en-US", returnUrl = Request.Url.ToString() })" title="English">*@
+@*            <img src="@Url.Content("~/Content/images/en.png")"/>*@
+@*        </a>*@
         <div id="language_name">
         </div>
     </div>
@@ -31,12 +40,13 @@
                     @Html.Partial("_LogOnPartial")
                 </div>
                 <div class="row">
-                    <a class="btn-large btn-danger" href="https://backoffice.myffi.biz/signup.asp?siteurl=WESTUA">
-                        Стать партнером</a>
+                    <a class="btn-large btn-danger" href="@Url.Action("Business", "Articles")">
+                        @Resources.labels.BecomePartner</a>
                 </div>
             </div>
         </header>
         <section id="main">
+            @Html.Partial("_Flash")
             <div class="row-fluid">
                 <div class="span10">
                     @RenderBody()
@@ -51,10 +61,5 @@
         <footer>
         </footer>
     </div>
-    <script src="@Url.Content("~/Scripts/jquery-1.8.0.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/captify.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/site.js")" type="text/javascript"></script>
-    @RenderSection("scripts", false)
 </body>
 </html>

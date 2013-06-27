@@ -1,18 +1,29 @@
-﻿@model Internet.Models.Product
+﻿@using Internet.Helpers
+@model Internet.Models.Product
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@Model.Name</h2>
-<br />
-<div class="row" id="productDetails">
-    
-    <img alt="@Model.Name" src="@Url.Action("GetImage", "Products", new { productId = Model.Id }, null)"/>
-    
-    <p>
-        <strong>Цена: </strong>@Model.Price грн
-    </p>
-    <br/>
+@{
+    ViewBag.Title = Model.Name;
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, @Model.Name" />
+    <meta name="description" content="@Model.Name" />
+}
 
+<div class="row-fluid head">
+    <h1 class="span5">@Model.Name</h1>
+    @Html.ActionLink(Resources.labels.CartAdd, "AddToCart", "Products", new { id = Model.Id }, new { @class = "btn btn-success pull-right", style = "margin: 5px;" })
+</div>
+<br />
+<div class="row-fluid" id="productDetails">
+    <img alt="@Model.Name" src="@Url.Action("GetImage", "Products", new { productId = Model.Id }, null)"/>
+    <p class="green text16px">
+        <strong>@Resources.labels.Price: </strong>@Model.Price USD / @(CurrencyHelper.RoundToTens(CurrencyHelper.CurrencyRates.UAH * Model.Price))
+        ГРН / @(CurrencyHelper.RoundToTens(Model.Price / CurrencyHelper.CurrencyRates.RUB))
+        РУБ
+    </p>
     @Html.Raw(Model.Description)
 </div>

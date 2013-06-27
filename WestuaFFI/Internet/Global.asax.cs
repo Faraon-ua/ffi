@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -29,11 +27,12 @@ namespace Internet
                 new[] { "Internet.Controllers" }
             );
 
-            routes.Add("DomainRoute", new DomainRoute(
-                "{nickname}.example.com",     // Domain with parameters
-                "{controller}/{action}/{id}",    // URL with parameters
-                new { nickname = "en", controller = "Home", action = "Index", id = "" }  // Parameter defaults
-            ));
+            //TODO: remove if not used
+            //            routes.Add("DomainRoute", new DomainRoute(
+            //                "{nickname}.localhost/Internet/",     // Domain with parameters
+            //                "{controller}/{action}/{id}",    // URL with parameters
+            //                new { nickname = "en", controller = "Home", action = "Index", id = "" }  // Parameter defaults
+            //            ));
         }
 
         protected void Application_Start()
@@ -44,16 +43,23 @@ namespace Internet
             RegisterRoutes(RouteTable.Routes);
         }
 
+        void Session_Start(object sender, EventArgs e)
+        {
+            var partner = SubdomainHelper.GetSiteOwner();
+        }
+
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
             var culture = System.Globalization.CultureInfo.CurrentCulture.Name;
             if (HttpContext.Current.Session != null && HttpContext.Current.Session["Culture"] != null)
-                {
+            {
                 culture = Convert.ToString(HttpContext.Current.Session["Culture"]);
             }
             var cultureInfo = new System.Globalization.CultureInfo(culture);
             System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
             System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }
+
+
     }
 }

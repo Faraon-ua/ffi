@@ -61,7 +61,7 @@ namespace Internet.Areas.Admin.Controllers
                     {
                         productImg.InputStream.CopyTo(ms);
                         byte[] imgArray = ms.GetBuffer();
-                        product.Image = new WebImage(imgArray).Resize(200, 200).GetBytes("png");
+                        product.Image = new WebImage(imgArray).Resize(200, 200).Crop(1,1).GetBytes("png");
                     }
 
                 product.Id = Guid.NewGuid();
@@ -91,13 +91,17 @@ namespace Internet.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                var oldProduct = db.Products.FirstOrDefault(entry => entry.Id == product.Id);
                 if (productImg != null)
                     using (var ms = new MemoryStream())
                     {
                         productImg.InputStream.CopyTo(ms);
                         byte[] imgArray = ms.GetBuffer();
-                        product.Image = new WebImage(imgArray).Resize(200, 200).GetBytes("image/png");
+                        product.Image = new WebImage(imgArray).Resize(200, 200).Crop(1, 1).GetBytes("image/png");
                     }
+                else
+                    product.Image = oldProduct.Image;
+                db.Products.Detach(oldProduct);
                 db.Products.Attach(product);
                 db.ObjectStateManager.ChangeObjectState(product, EntityState.Modified);
                 db.SaveChanges();

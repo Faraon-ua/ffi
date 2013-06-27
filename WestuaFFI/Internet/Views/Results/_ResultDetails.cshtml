@@ -1,9 +1,42 @@
-﻿@model Internet.Models.Result
+﻿@using Internet.RoutingHelpers
+@model Internet.Models.Result  
+@{
+    var siteOwner = SubdomainHelper.GetSiteOwner();            
+}
+
 <div class="row-fluid">
     <div class="span7">
-        @Html.Raw(Model.VideoTag)
+        <iframe width="420" height="315" src="http://www.youtube.com/embed/@Model.VideoTag?rel=0"
+            frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="span5 result-details">
         @Html.Raw(Model.Description)
+        <hr />
+        @if (ViewData["ownersResult"] != null)
+        {
+            @Resources.labels.PartnerName
+            <span>: @siteOwner.Name</span>
+            <br />
+            @Resources.labels.PartnerPhone
+            <span>: @siteOwner.Phone</span>
+            <br />
+            <span>Skype </span>
+            <span>: @siteOwner.Skype</span>
+        }
+        else
+        {
+            <input type="button" value="@Resources.labels.ResultConnectOwner" class="btn btn-success" id="contactOwner"/>
+            
+            using (Html.BeginForm("ContactOwner", "Results", FormMethod.Post, new { style = "display:none;" }))
+            {
+            <input type="hidden" name="video" value="https://www.youtube.com/watch?v=@Model.VideoTag"/>   
+            <input type="hidden" name="sendTo" value="@siteOwner.ContactsEmail"/>   
+            <input type="hidden" name="manufacturer" value="@Request.Params["manufacturer"]"/>   
+            <input type="hidden" name="model" value="@Request.Params["model"]"/>   
+            @Resources.labels.ResultContactOwnerHint
+            <input type="text" name="contacts"/>
+            <input type="submit" value="@Resources.labels.ResultConnectOwner" class="btn btn-success"/>
+            }
+        }
     </div>
 </div>

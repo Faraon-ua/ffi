@@ -2,6 +2,14 @@
     ViewBag.Title = "Certifications";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    ViewBag.Title = @Resources.labels.Certification;
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, сертификаты качества" />
+    <meta name="description" content="Сертификаты качества продукции компании FFI" />
+}
 @section head
 {
     <link rel="stylesheet" href="@Url.Content("~/Content/jquery.fancybox.css?v=2.1.4")" type="text/css" media="screen" />

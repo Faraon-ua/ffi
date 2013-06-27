@@ -1,0 +1,13 @@
+﻿@model Internet.Models.Partner
+<h3>
+    FFI ECO Email</h3>
+@Html.Raw(Resources.labels.PartnerUniqEmail)
+<br />
+<br />
+@using (Html.BeginForm("CreateUniqEmail", "Partners"))
+{
+    <input name="emailName" type="text" />
+    <input value="@Model.User.Email" type="hidden" name="replyTo"/>
+    <br />
+    <input type="submit" class="btn btn-success" value="@Resources.labels.PartnerBtnCreateEmail"/>
+}

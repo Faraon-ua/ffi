@@ -3,7 +3,8 @@
     @foreach (var item in Model)
     {
         <li>
-            @Html.ActionLink(item.Name, "Details", "Products", new { id = item.Id }, new { id = item.Id })
+            @Html.ActionLink(item.Name, "Details", "Products", new { id = item.Name_en }, new { id = item.Id })
         </li>
     }
 </ul>
+<h1 class="invisible">@Model.FirstOrDefault().Category.Name </h1>

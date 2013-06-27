@@ -8,19 +8,21 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Web.Mvc;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("ffiModel", "FK_Products_Categories", "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Internet.Models.Category), "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Internet.Models.Product), true)]
+[assembly: EdmRelationshipAttribute("ffiModel", "FK_Banners_Partners", "Partner", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Internet.Models.Partner), "Banner", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Internet.Models.Banner), true)]
 [assembly: EdmRelationshipAttribute("ffiModel", "FK_Payments_Partners", "Partner", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Internet.Models.Partner), "Payment", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Internet.Models.Payment), true)]
+[assembly: EdmRelationshipAttribute("ffiModel", "FK_Results_Partners", "Partner", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Internet.Models.Partner), "Result", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Internet.Models.Result), true)]
 
 #endregion
 
@@ -91,6 +93,22 @@ namespace Internet.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<Payment> Payments
+        {
+            get
+            {
+                if ((_Payments == null))
+                {
+                    _Payments = base.CreateObjectSet<Payment>("Payments");
+                }
+                return _Payments;
+            }
+        }
+        private ObjectSet<Payment> _Payments;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Product> Products
         {
             get
@@ -103,22 +121,6 @@ namespace Internet.Models
             }
         }
         private ObjectSet<Product> _Products;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Result> Results
-        {
-            get
-            {
-                if ((_Results == null))
-                {
-                    _Results = base.CreateObjectSet<Result>("Results");
-                }
-                return _Results;
-            }
-        }
-        private ObjectSet<Result> _Results;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -139,6 +141,38 @@ namespace Internet.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<FAQ> FAQs
+        {
+            get
+            {
+                if ((_FAQs == null))
+                {
+                    _FAQs = base.CreateObjectSet<FAQ>("FAQs");
+                }
+                return _FAQs;
+            }
+        }
+        private ObjectSet<FAQ> _FAQs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Result> Results
+        {
+            get
+            {
+                if ((_Results == null))
+                {
+                    _Results = base.CreateObjectSet<Result>("Results");
+                }
+                return _Results;
+            }
+        }
+        private ObjectSet<Result> _Results;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Partner> Partners
         {
             get
@@ -155,20 +189,21 @@ namespace Internet.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Payment> Payments
+        public ObjectSet<Banner> Banners
         {
             get
             {
-                if ((_Payments == null))
+                if ((_Banners == null))
                 {
-                    _Payments = base.CreateObjectSet<Payment>("Payments");
+                    _Banners = base.CreateObjectSet<Banner>("Banners");
                 }
-                return _Payments;
+                return _Banners;
             }
         }
-        private ObjectSet<Payment> _Payments;
+        private ObjectSet<Banner> _Banners;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -180,19 +215,19 @@ namespace Internet.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the Payments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPayments(Payment payment)
+        {
+            base.AddObject("Payments", payment);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Products EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToProducts(Product product)
         {
             base.AddObject("Products", product);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Results EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToResults(Result result)
-        {
-            base.AddObject("Results", result);
         }
     
         /// <summary>
@@ -204,6 +239,22 @@ namespace Internet.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the FAQs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToFAQs(FAQ fAQ)
+        {
+            base.AddObject("FAQs", fAQ);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Results EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToResults(Result result)
+        {
+            base.AddObject("Results", result);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the Partners EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToPartners(Partner partner)
@@ -212,20 +263,197 @@ namespace Internet.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Payments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Banners EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPayments(Payment payment)
+        public void AddToBanners(Banner banner)
         {
-            base.AddObject("Payments", payment);
+            base.AddObject("Banners", banner);
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Banner")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Banner : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Banner object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="partnerId">Initial value of the PartnerId property.</param>
+        /// <param name="url">Initial value of the Url property.</param>
+        /// <param name="image">Initial value of the Image property.</param>
+        public static Banner CreateBanner(global::System.Guid id, global::System.Guid partnerId, global::System.String url, global::System.Byte[] image)
+        {
+            Banner banner = new Banner();
+            banner.Id = id;
+            banner.PartnerId = partnerId;
+            banner.Url = url;
+            banner.Image = image;
+            return banner;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _Id;
+        partial void OnIdChanging(global::System.Guid value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid PartnerId
+        {
+            get
+            {
+                return _PartnerId;
+            }
+            set
+            {
+                OnPartnerIdChanging(value);
+                ReportPropertyChanging("PartnerId");
+                _PartnerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PartnerId");
+                OnPartnerIdChanged();
+            }
+        }
+        private global::System.Guid _PartnerId;
+        partial void OnPartnerIdChanging(global::System.Guid value);
+        partial void OnPartnerIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Url
+        {
+            get
+            {
+                return _Url;
+            }
+            set
+            {
+                OnUrlChanging(value);
+                ReportPropertyChanging("Url");
+                _Url = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Url");
+                OnUrlChanged();
+            }
+        }
+        private global::System.String _Url;
+        partial void OnUrlChanging(global::System.String value);
+        partial void OnUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Image
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Image);
+            }
+            set
+            {
+                OnImageChanging(value);
+                ReportPropertyChanging("Image");
+                _Image = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Image");
+                OnImageChanged();
+            }
+        }
+        private global::System.Byte[] _Image;
+        partial void OnImageChanging(global::System.Byte[] value);
+        partial void OnImageChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ffiModel", "FK_Banners_Partners", "Partner")]
+        public Partner Partner
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Partner>("ffiModel.FK_Banners_Partners", "Partner").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Partner>("ffiModel.FK_Banners_Partners", "Partner").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Partner> PartnerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Partner>("ffiModel.FK_Banners_Partners", "Partner");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Partner>("ffiModel.FK_Banners_Partners", "Partner", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
@@ -257,6 +485,7 @@ namespace Internet.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -383,6 +612,7 @@ namespace Internet.Models
         partial void OnIndexChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -409,6 +639,238 @@ namespace Internet.Models
         }
 
         #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="FAQ")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class FAQ : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new FAQ object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="question_ru">Initial value of the Question_ru property.</param>
+        /// <param name="answer_ru">Initial value of the Answer_ru property.</param>
+        /// <param name="showOnPartnerPanel">Initial value of the ShowOnPartnerPanel property.</param>
+        public static FAQ CreateFAQ(global::System.Guid id, global::System.String question_ru, global::System.String answer_ru, global::System.Boolean showOnPartnerPanel)
+        {
+            FAQ fAQ = new FAQ();
+            fAQ.Id = id;
+            fAQ.Question_ru = question_ru;
+            fAQ.Answer_ru = answer_ru;
+            fAQ.ShowOnPartnerPanel = showOnPartnerPanel;
+            return fAQ;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _Id;
+        partial void OnIdChanging(global::System.Guid value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Question_ru
+        {
+            get
+            {
+                return _Question_ru;
+            }
+            set
+            {
+                OnQuestion_ruChanging(value);
+                ReportPropertyChanging("Question_ru");
+                _Question_ru = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Question_ru");
+                OnQuestion_ruChanged();
+            }
+        }
+        private global::System.String _Question_ru;
+        partial void OnQuestion_ruChanging(global::System.String value);
+        partial void OnQuestion_ruChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Answer_ru
+        {
+            get
+            {
+                return _Answer_ru;
+            }
+            set
+            {
+                OnAnswer_ruChanging(value);
+                ReportPropertyChanging("Answer_ru");
+                _Answer_ru = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Answer_ru");
+                OnAnswer_ruChanged();
+            }
+        }
+        private global::System.String _Answer_ru;
+        partial void OnAnswer_ruChanging(global::System.String value);
+        partial void OnAnswer_ruChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Question_ua
+        {
+            get
+            {
+                return _Question_ua;
+            }
+            set
+            {
+                OnQuestion_uaChanging(value);
+                ReportPropertyChanging("Question_ua");
+                _Question_ua = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Question_ua");
+                OnQuestion_uaChanged();
+            }
+        }
+        private global::System.String _Question_ua;
+        partial void OnQuestion_uaChanging(global::System.String value);
+        partial void OnQuestion_uaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Answer_ua
+        {
+            get
+            {
+                return _Answer_ua;
+            }
+            set
+            {
+                OnAnswer_uaChanging(value);
+                ReportPropertyChanging("Answer_ua");
+                _Answer_ua = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Answer_ua");
+                OnAnswer_uaChanged();
+            }
+        }
+        private global::System.String _Answer_ua;
+        partial void OnAnswer_uaChanging(global::System.String value);
+        partial void OnAnswer_uaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Question_en
+        {
+            get
+            {
+                return _Question_en;
+            }
+            set
+            {
+                OnQuestion_enChanging(value);
+                ReportPropertyChanging("Question_en");
+                _Question_en = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Question_en");
+                OnQuestion_enChanged();
+            }
+        }
+        private global::System.String _Question_en;
+        partial void OnQuestion_enChanging(global::System.String value);
+        partial void OnQuestion_enChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Answer_en
+        {
+            get
+            {
+                return _Answer_en;
+            }
+            set
+            {
+                OnAnswer_enChanging(value);
+                ReportPropertyChanging("Answer_en");
+                _Answer_en = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Answer_en");
+                OnAnswer_enChanged();
+            }
+        }
+        private global::System.String _Answer_en;
+        partial void OnAnswer_enChanging(global::System.String value);
+        partial void OnAnswer_enChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean ShowOnPartnerPanel
+        {
+            get
+            {
+                return _ShowOnPartnerPanel;
+            }
+            set
+            {
+                OnShowOnPartnerPanelChanging(value);
+                ReportPropertyChanging("ShowOnPartnerPanel");
+                _ShowOnPartnerPanel = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ShowOnPartnerPanel");
+                OnShowOnPartnerPanelChanged();
+            }
+        }
+        private global::System.Boolean _ShowOnPartnerPanel;
+        partial void OnShowOnPartnerPanelChanging(global::System.Boolean value);
+        partial void OnShowOnPartnerPanelChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>
@@ -433,7 +895,9 @@ namespace Internet.Models
         /// <param name="address">Initial value of the Address property.</param>
         /// <param name="phone">Initial value of the Phone property.</param>
         /// <param name="skype">Initial value of the Skype property.</param>
-        public static Partner CreatePartner(global::System.Guid id, global::System.Guid userId, global::System.DateTime expirationDate, global::System.String name, global::System.String country, global::System.String city, global::System.String address, global::System.String phone, global::System.String skype)
+        /// <param name="contactsEmail">Initial value of the ContactsEmail property.</param>
+        /// <param name="deliveryService">Initial value of the DeliveryService property.</param>
+        public static Partner CreatePartner(global::System.Guid id, global::System.Guid userId, global::System.DateTime expirationDate, global::System.String name, global::System.String country, global::System.String city, global::System.String address, global::System.String phone, global::System.String skype, global::System.String contactsEmail, global::System.String deliveryService)
         {
             Partner partner = new Partner();
             partner.Id = id;
@@ -445,10 +909,13 @@ namespace Internet.Models
             partner.Address = address;
             partner.Phone = phone;
             partner.Skype = skype;
+            partner.ContactsEmail = contactsEmail;
+            partner.DeliveryService = deliveryService;
             return partner;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -669,10 +1136,153 @@ namespace Internet.Models
         private global::System.String _Skype;
         partial void OnSkypeChanging(global::System.String value);
         partial void OnSkypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ContactsEmail
+        {
+            get
+            {
+                return _ContactsEmail;
+            }
+            set
+            {
+                OnContactsEmailChanging(value);
+                ReportPropertyChanging("ContactsEmail");
+                _ContactsEmail = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ContactsEmail");
+                OnContactsEmailChanged();
+            }
+        }
+        private global::System.String _ContactsEmail;
+        partial void OnContactsEmailChanging(global::System.String value);
+        partial void OnContactsEmailChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TestDriveHTML
+        {
+            get
+            {
+                return _TestDriveHTML;
+            }
+            set
+            {
+                OnTestDriveHTMLChanging(value);
+                ReportPropertyChanging("TestDriveHTML");
+                _TestDriveHTML = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TestDriveHTML");
+                OnTestDriveHTMLChanged();
+            }
+        }
+        private global::System.String _TestDriveHTML;
+        partial void OnTestDriveHTMLChanging(global::System.String value);
+        partial void OnTestDriveHTMLChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String DeliveryService
+        {
+            get
+            {
+                return _DeliveryService;
+            }
+            set
+            {
+                OnDeliveryServiceChanging(value);
+                ReportPropertyChanging("DeliveryService");
+                _DeliveryService = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("DeliveryService");
+                OnDeliveryServiceChanged();
+            }
+        }
+        private global::System.String _DeliveryService;
+        partial void OnDeliveryServiceChanging(global::System.String value);
+        partial void OnDeliveryServiceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String BannerUrl
+        {
+            get
+            {
+                return _BannerUrl;
+            }
+            set
+            {
+                OnBannerUrlChanging(value);
+                ReportPropertyChanging("BannerUrl");
+                _BannerUrl = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("BannerUrl");
+                OnBannerUrlChanged();
+            }
+        }
+        private global::System.String _BannerUrl;
+        partial void OnBannerUrlChanging(global::System.String value);
+        partial void OnBannerUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] BannerImage
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_BannerImage);
+            }
+            set
+            {
+                OnBannerImageChanging(value);
+                ReportPropertyChanging("BannerImage");
+                _BannerImage = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("BannerImage");
+                OnBannerImageChanged();
+            }
+        }
+        private global::System.Byte[] _BannerImage;
+        partial void OnBannerImageChanging(global::System.Byte[] value);
+        partial void OnBannerImageChanged();
 
         #endregion
+
     
         #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ffiModel", "FK_Banners_Partners", "Banner")]
+        public EntityCollection<Banner> Banners
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Banner>("ffiModel.FK_Banners_Partners", "Banner");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Banner>("ffiModel.FK_Banners_Partners", "Banner", value);
+                }
+            }
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -695,8 +1305,31 @@ namespace Internet.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ffiModel", "FK_Results_Partners", "Result")]
+        public EntityCollection<Result> Results
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Result>("ffiModel.FK_Results_Partners", "Result");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Result>("ffiModel.FK_Results_Partners", "Result", value);
+                }
+            }
+        }
 
         #endregion
+
     }
     
     /// <summary>
@@ -733,6 +1366,7 @@ namespace Internet.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -907,6 +1541,7 @@ namespace Internet.Models
         partial void OnCreatedAtChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -949,6 +1584,7 @@ namespace Internet.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -965,18 +1601,23 @@ namespace Internet.Models
         /// Create a new Product object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="name">Initial value of the Name property.</param>
+        /// <param name="name_en">Initial value of the Name_en property.</param>
+        /// <param name="name_ua">Initial value of the Name_ua property.</param>
+        /// <param name="name_ru">Initial value of the Name_ru property.</param>
         /// <param name="price">Initial value of the Price property.</param>
-        public static Product CreateProduct(global::System.Guid id, global::System.String name, global::System.Int32 price)
+        public static Product CreateProduct(global::System.Guid id, global::System.String name_en, global::System.String name_ua, global::System.String name_ru, global::System.Int32 price)
         {
             Product product = new Product();
             product.Id = id;
-            product.Name = name;
+            product.Name_en = name_en;
+            product.Name_ua = name_ua;
+            product.Name_ru = name_ru;
             product.Price = price;
             return product;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1011,31 +1652,78 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Name
+        public global::System.String Name_en
         {
             get
             {
-                return _Name;
+                return _Name_en;
             }
             set
             {
-                OnNameChanging(value);
-                ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Name");
-                OnNameChanged();
+                OnName_enChanging(value);
+                ReportPropertyChanging("Name_en");
+                _Name_en = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name_en");
+                OnName_enChanged();
             }
         }
-        private global::System.String _Name;
-        partial void OnNameChanging(global::System.String value);
-        partial void OnNameChanged();
+        private global::System.String _Name_en;
+        partial void OnName_enChanging(global::System.String value);
+        partial void OnName_enChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name_ua
+        {
+            get
+            {
+                return _Name_ua;
+            }
+            set
+            {
+                OnName_uaChanging(value);
+                ReportPropertyChanging("Name_ua");
+                _Name_ua = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name_ua");
+                OnName_uaChanged();
+            }
+        }
+        private global::System.String _Name_ua;
+        partial void OnName_uaChanging(global::System.String value);
+        partial void OnName_uaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name_ru
+        {
+            get
+            {
+                return _Name_ru;
+            }
+            set
+            {
+                OnName_ruChanging(value);
+                ReportPropertyChanging("Name_ru");
+                _Name_ru = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name_ru");
+                OnName_ruChanged();
+            }
+        }
+        private global::System.String _Name_ru;
+        partial void OnName_ruChanging(global::System.String value);
+        partial void OnName_ruChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_ua
         {
             get
@@ -1060,7 +1748,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_ru
         {
             get
@@ -1085,7 +1772,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_en
         {
             get
@@ -1178,6 +1864,7 @@ namespace Internet.Models
         partial void OnPriceChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1220,6 +1907,7 @@ namespace Internet.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1238,16 +1926,21 @@ namespace Internet.Models
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="manufacturer">Initial value of the Manufacturer property.</param>
         /// <param name="model">Initial value of the Model property.</param>
-        public static Result CreateResult(global::System.Guid id, global::System.String manufacturer, global::System.String model)
+        /// <param name="videoTag">Initial value of the VideoTag property.</param>
+        /// <param name="isActive">Initial value of the isActive property.</param>
+        public static Result CreateResult(global::System.Guid id, global::System.String manufacturer, global::System.String model, global::System.String videoTag, global::System.Boolean isActive)
         {
             Result result = new Result();
             result.Id = id;
             result.Manufacturer = manufacturer;
             result.Model = model;
+            result.VideoTag = videoTag;
+            result.isActive = isActive;
             return result;
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1328,9 +2021,32 @@ namespace Internet.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String VideoTag
+        {
+            get
+            {
+                return _VideoTag;
+            }
+            set
+            {
+                OnVideoTagChanging(value);
+                ReportPropertyChanging("VideoTag");
+                _VideoTag = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("VideoTag");
+                OnVideoTagChanged();
+            }
+        }
+        private global::System.String _VideoTag;
+        partial void OnVideoTagChanging(global::System.String value);
+        partial void OnVideoTagChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_ua
         {
             get
@@ -1355,7 +2071,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_ru
         {
             get
@@ -1380,7 +2095,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_en
         {
             get
@@ -1403,30 +2117,96 @@ namespace Internet.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        [AllowHtml]
-        public global::System.String VideoTag
+        public global::System.Boolean isActive
         {
             get
             {
-                return _VideoTag;
+                return _isActive;
             }
             set
             {
-                OnVideoTagChanging(value);
-                ReportPropertyChanging("VideoTag");
-                _VideoTag = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("VideoTag");
-                OnVideoTagChanged();
+                OnisActiveChanging(value);
+                ReportPropertyChanging("isActive");
+                _isActive = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("isActive");
+                OnisActiveChanged();
             }
         }
-        private global::System.String _VideoTag;
-        partial void OnVideoTagChanging(global::System.String value);
-        partial void OnVideoTagChanged();
+        private global::System.Boolean _isActive;
+        partial void OnisActiveChanging(global::System.Boolean value);
+        partial void OnisActiveChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Guid> PartnerId
+        {
+            get
+            {
+                return _PartnerId;
+            }
+            set
+            {
+                OnPartnerIdChanging(value);
+                ReportPropertyChanging("PartnerId");
+                _PartnerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PartnerId");
+                OnPartnerIdChanged();
+            }
+        }
+        private Nullable<global::System.Guid> _PartnerId;
+        partial void OnPartnerIdChanging(Nullable<global::System.Guid> value);
+        partial void OnPartnerIdChanged();
 
         #endregion
+
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("ffiModel", "FK_Results_Partners", "Partner")]
+        public Partner Partner
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Partner>("ffiModel.FK_Results_Partners", "Partner").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Partner>("ffiModel.FK_Results_Partners", "Partner").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Partner> PartnerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Partner>("ffiModel.FK_Results_Partners", "Partner");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Partner>("ffiModel.FK_Results_Partners", "Partner", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -1453,6 +2233,7 @@ namespace Internet.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1535,7 +2316,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_ua
         {
             get
@@ -1560,7 +2340,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_ru
         {
             get
@@ -1585,7 +2364,6 @@ namespace Internet.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [AllowHtml]
         public global::System.String Description_en
         {
             get
@@ -1606,9 +2384,11 @@ namespace Internet.Models
         partial void OnDescription_enChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<EasyPayPayment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <merchant_id>125e2c6b8d7d42f6a0fcba0c3d30daf3</merchant_id>
+  <order_id>1</order_id>
+  <payment_id>202299331</payment_id>
+  <desc>Оплата терміну дії аккаунта користувача test</desc>
+  <payment_type>card</payment_type>
+  <amount>05.0000</amount>
+  <commission>03.0000</commission>
+  <sign>wu1ngdT2Xq31A4eYGKEfj2e21E3vYDjeLqsNr8nx8/M=</sign>
+  <client_sign>wu1ngdT2Xq31A4eYGKEfj2e21E3vYDjeLqsNr8nx8/M=</client_sign>
+</EasyPayPayment>

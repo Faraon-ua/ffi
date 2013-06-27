@@ -1,0 +1,29 @@
+﻿@model Internet.Models.Banner
+<div class="row-fluid">
+    <h3 class="span2">
+        Banner</h3>
+<a href="@Url.Action("Remove", "Banners", new { id = Model.Id })" class="pull-left blue" style="margin-top: 10px;">@Resources.labels.Remove</a>
+
+</div>
+@using (Html.BeginForm("Update", "Banners", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <input type="hidden" name="Id" value="@Model.Id"/>
+    @Html.HiddenFor(model => model.PartnerId)
+
+    @Resources.labels.Url
+    <br />        
+    @Html.EditorFor(model => model.Url)
+    <br />
+    @Resources.labels.Image <span>(450 x 70)px</span>
+    <br />
+    if (Model.Image != null)
+    {
+    <img src="@Url.Action("GetImage", "Banners", new { Id = Model.Id })"/>    
+    }
+    <input type="file" name="bannerImg" accept="image/x-png, image/gif, image/jpeg" />
+
+    <p>
+        <input type="submit" value="@Resources.labels.btnSave" class="btn btn-success" />
+    </p>
+}

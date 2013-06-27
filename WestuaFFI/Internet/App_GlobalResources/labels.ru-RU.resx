@@ -118,19 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountAlreadyVerified" xml:space="preserve">
-    <value>Ваш аккаунт уже активирован, пожалуйста см. страницу Партнерька панель </value>
+    <value>Ваш аккаунт уже активирован, пожалуйста посетите страницу Партнерская Панель </value>
   </data>
   <data name="AccountBeingChecked" xml:space="preserve">
-    <value> Ваш аккаунт был создан, но еще не активирован. После того, как администрация проверит зарегистрировались ли вы как дистрибьютор компании FFI (действительно ли вы наш партнер), вы получите email сообщение об активации вашего аккаунта.  (Администрация сайта не будет работать в течении майских праздников)</value>
+    <value> Ваш аккаунт был создан, но еще не активирован. После того, как администрация проверит зарегистрировались ли вы как дистрибьютор компании FFI (действительно ли вы наш партнер), вы получите email сообщение об активации вашего аккаунта. </value>
   </data>
   <data name="AccountChangePassword" xml:space="preserve">
     <value>Изменить пароль</value>
   </data>
-  <data name="AccountConfirmationText" xml:space="preserve">
-    <value>&lt;html&gt;&lt;head&gt;&lt;meta content=\"text/html;charset=utf-8\" /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Dear {0} , &lt;/p&gt;&lt;p&gt;To verify your account, please click the following link:&lt;/p&gt;&lt;p&gt;&lt;a href='{1}' target=\"_blank\"&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;Best regards,&lt;/div&gt;&lt;div&gt;Someone&lt;/div&gt;&lt;p&gt;Do not forward this email. The verify link is private.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
-  </data>
   <data name="AccountPartnershipCreated" xml:space="preserve">
-    <value> Поздравляем! Ваш аккаунт получил статус партнерьского, срок действия вы можете проверить и изменить в Партнерской Панели. </value>
+    <value> Поздравляем! Ваш аккаунт получил статус партнерского, срок действия вы можете проверить и изменить в Партнерской Панели. </value>
   </data>
   <data name="AccountRegistered" xml:space="preserve">
     <value>
@@ -156,7 +153,7 @@
     <value>Сохранить</value>
   </data>
   <data name="btnSend" xml:space="preserve">
-    <value>Послать</value>
+    <value>Отправить</value>
   </data>
   <data name="BusinessHint" xml:space="preserve">
     <value> Начать бизнес в FFI с партнерской программой FFI-ECO </value>
@@ -174,7 +171,7 @@
     <value> Спасибо за ваше сообщение! В ближайшее время на указанный Вами Email адрес придет ответ. </value>
   </data>
   <data name="Contacts" xml:space="preserve">
-    <value>&lt;h1&gt;Контакты&lt;h1&gt;</value>
+    <value>Контакты</value>
   </data>
   <data name="ContactsInfo" xml:space="preserve">
     <value>Контактная Информация</value>
@@ -186,7 +183,7 @@
     <value>Email адрес</value>
   </data>
   <data name="GettingStarted" xml:space="preserve">
-    <value>&lt;h1&gt;С чего начать&lt;/h1&gt;</value>
+    <value>С чего начать</value>
   </data>
   <data name="GettingStartedBusiness" xml:space="preserve">
     <value> Как правильно начать бизнес с FFI и партерською программе FFI-ECO </value>
@@ -202,16 +199,18 @@
         &lt;p&gt;
             Бонусы от регистрации в нашей партнерской программе:
             &lt;ul&gt;
-                &lt;li&gt;- дешевле любых аналогов &lt;/li&gt;
+               
                 &lt;li&gt;- Персональный сайт c КАЧЕСТВЕННЫМ и УНИКАЛЬНЫМ контентом: ознакомительное видео,
                     технические детали работы продукта, реальные результаты &lt;/li&gt;
-                &lt;li&gt;- встроена реферальная система FFI с уникальным доменом типа: NAME.FFI-ECO.COM&lt;/li&gt;
-                &lt;li&gt;- реально работающая структура приносяшую прибыль &lt;/li&gt;
-                &lt;li&gt;- шаблоны визиток &lt;/li&gt;
-                &lt;li&gt;- Постоянная и полная информационная консультация по всем аспектам работы &lt;/li&gt;
+&lt;li&gt;- Персональный интернет магазин с полным спектром продукции компании&lt;/li&gt;
+ &lt;li&gt;- Персональный Email адрес с уникальным именем типа: name@ffi-eco.com &lt;/li&gt;
+                &lt;li&gt;- Встроена реферальная система FFI с уникальным доменом типа: NAME.FFI-ECO.COM&lt;/li&gt;
+                &lt;li&gt;- Работа в сформировавшейся команде дистрибьюторов компании&lt;/li&gt;
+                &lt;li&gt;- Шаблоны визиток &lt;/li&gt;
+                &lt;li&gt;- Постоянная и полная информационная консультация по всем аспектам работы со строны информационного спонсора &lt;/li&gt;
             &lt;/ul&gt;
             &lt;span class="field-validation-error"&gt;Обязательно сначала зарегистрируйтесь как партнер
-                в ффи, иначе вы не сможете создать аккаунт на нашем сайте. &lt;/span&gt;
+                в FFI, иначе вы не сможете создать аккаунт на нашем сайте. &lt;/span&gt;
         &lt;/p&gt;</value>
   </data>
   <data name="GettingStartedBusinessStep3" xml:space="preserve">
@@ -221,7 +220,7 @@
         &lt;/h3&gt;
         &lt;p&gt;
             Эти знания дадут вам возможность БЫСТРО, ПРАВИЛЬНО и максимально ЭФФЕКТИВНО начать
-            свой бизнес и заработок с компанией Forever Freedom International.
+            свой бизнес и заработок в компании Forever Freedom International.
         &lt;/p&gt;
         &lt;span class="field-validation-error"&gt;Доступно после регистрации партнерской программы
             FFI-ECO &lt;/span&gt;</value>
@@ -230,7 +229,7 @@
     <value>&lt;h2&gt;
                 &lt;font color='red'&gt;ПРАВИЛЬНО&lt;/font&gt;
                 &lt;br /&gt;
-                начать свой бизнесс и работать&lt;br /&gt;
+                начать свой бизнес и работать&lt;br /&gt;
                 ЭФФЕКТИВНО
             &lt;/h2&gt;</value>
   </data>
@@ -324,7 +323,7 @@
     <value>Как работает продукция</value>
   </data>
   <data name="HowItWorksText" xml:space="preserve">
-    <value>&lt;table style="height: 100%; color: black;"&gt;
+    <value>&lt;table style="height: 100%;"&gt;
     &lt;tbody&gt;
         &lt;tr&gt;
             &lt;td valign="top"&gt;
@@ -433,7 +432,7 @@
                                     продукта MPG является &lt;span style="text-decoration: underline;"&gt;&lt;strong&gt;АБСОЛЮТНО БЕЗОПАСНЫМ&lt;/strong&gt;&lt;/span&gt;
                                     для вашего автомобиля. Менеджеры и клиенты получили дополнительные гарантии к мировой
                                     системе страховки, которая предусматривает и покрывает любые возможные повреждения
-                                    двигателя (&lt;a href="@Url.Action("Certifications", "Articles")"&gt;см. страховой полис&lt;/a&gt;) из-за продуктов
+                                    двигателя ({0}) из-за продуктов
                                     компании.&lt;/p&gt;
                             &lt;/td&gt;
                         &lt;/tr&gt;
@@ -497,7 +496,7 @@
     <value>месяцев</value>
   </data>
   <data name="PartnerName" xml:space="preserve">
-    <value>Имя и фамилия</value>
+    <value>Имя и Фамилия</value>
   </data>
   <data name="PartnerNotActive" xml:space="preserve">
     <value>Не действителен</value>
@@ -512,7 +511,7 @@
     <value>Для оплати счета кредитной карточкой необходима регистрация в системе EasyPay</value>
   </data>
   <data name="PartnerPaymentDescription" xml:space="preserve">
-    <value>Оплата срок действия аккаунта</value>
+    <value>Оплата срок действия аккаунта пользователя {0}</value>
   </data>
   <data name="PartnerPaymentSelectHint" xml:space="preserve">
     <value>Выберите срок продлевания действия аккаунта</value>
@@ -527,16 +526,16 @@
     <value>Пароль</value>
   </data>
   <data name="PracticalResults" xml:space="preserve">
-    <value>Практические результати</value>
+    <value>Практические результаты</value>
   </data>
   <data name="RegistrationHint" xml:space="preserve">
-    <value> Обратите внимание! &lt;br/&gt;&lt;br/&gt; Пожалуйста, при регистрации используйте тот же логин, с которым вы зарегистрировались в системе FFI, чтобы мы смогли проверить действительна ли ваша регистрация и являетесь ли вы нашим партнёром. Если вы еще не зарегистрированы как дистрибьютор компании FFI, пожалуйста, посетите эту страницу {0} &lt;br/&gt;&lt;br/&gt; Также, пожалуйста, корректно заполните поле Email адреса, потому что без действующего электронного почтового ящика вы не сможете активировать аккаунт. Если после регистрации в течение 24 часов вы не получили регистрационную ссылку, пожалуйста, обратитесь к администрации в разделе. </value>
+    <value> Обратите внимание! &lt;br/&gt;&lt;br/&gt; Пожалуйста, при регистрации используйте тот же логин, с которым вы зарегистрировались в системе FFI, чтобы мы смогли проверить действительна ли ваша регистрация и являетесь ли вы нашим партнёром. Если вы еще не зарегистрированы как дистрибьютор компании FFI, пожалуйста, посетите эту страницу {0} &lt;br/&gt;&lt;br/&gt; Также, пожалуйста, корректно заполните поле Email адреса, потому что без действующего электронного почтового ящика вы не сможете активировать аккаунт. Если после регистрации в течение 24 часов вы не получили регистрационную ссылку, пожалуйста, обратитесь к администрации в разделе  {1}</value>
   </data>
   <data name="ResultsSelectManufacturer" xml:space="preserve">
-    <value>Выберите производителя</value>
+    <value>Производитель</value>
   </data>
   <data name="ResultsSelectModel" xml:space="preserve">
-    <value>Выберите модель</value>
+    <value>Модель</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
     <value>Послать сообщение</value>
@@ -545,16 +544,13 @@
     <value>Пожалуйста, заполните все поля формы</value>
   </data>
   <data name="TestDrive" xml:space="preserve">
-    <value>&lt;h1&gt;Тест Драйв&lt;h1&gt;&lt;br/&gt;&lt;p style='margin-top:-20px;'&gt;(Ознакомление)&lt;/p&gt;</value>
+    <value>Презентация</value>
   </data>
   <data name="TestDriveHeader" xml:space="preserve">
     <value>Тест Драйв</value>
   </data>
   <data name="TestDriveHint" xml:space="preserve">
     <value>Тест Драйв - это ознакомительное видео, из которого вы сможете почерпнуть информацию о продуктах компании FFI.</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>FFI Ecology Украина: экономия топлива, защита двигателя, сохранность экологии</value>
   </data>
   <data name="Ukraine" xml:space="preserve">
     <value>Украина</value>
@@ -579,5 +575,238 @@
     труда - MSDS - № CRF 1910.120029. Технология запатентована и продукцию можно приобрести
     у дистрибьюторов компании.
 &lt;/p&gt;</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Продукция</value>
+  </data>
+  <data name="CartAdd" xml:space="preserve">
+    <value>Добавить в корзину</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Ваша корзина заказов</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>На главную страницу</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="CartContinueShopping" xml:space="preserve">
+    <value>Продолжить покупки</value>
+  </data>
+  <data name="CartCreateOrder" xml:space="preserve">
+    <value>Оформить заказ</value>
+  </data>
+  <data name="OrderContactInfo" xml:space="preserve">
+    <value>Информация заказчика</value>
+  </data>
+  <data name="OrderCreated" xml:space="preserve">
+    <value>Ваш заказ принят. В ближайшее время с вами свяжется менеджер для уточнения деталей заказа.</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Итого</value>
+  </data>
+  <data name="PartnerContactsEmail" xml:space="preserve">
+    <value>Email для сообщений и заказов</value>
+  </data>
+  <data name="PartnerYouTubeHint" xml:space="preserve">
+    <value>Вы можете изменить видео "Презентация" на своем сайте. Для этого вставьте в это поле html код, который вам предоставляет Youtube.&lt;br/&gt;
+        &lt;img src="../../Content/images/youtube.png" height='400' width='500'/&gt;&lt;br/&gt;
+Ваше видео должно включать: &lt;br/&gt;
+        - достоверную информацию о продукции компании FFI&lt;br/&gt;
+        - приятный задний фон (не должно быть старых ковров и других вещей, которые плохо выглядят)&lt;br/&gt;
+        - опрятный вид спикера&lt;br/&gt;
+        - хорошо поставленную речь&lt;br/&gt;
+- длительность видео не должна превышать 10 минут&lt;br/&gt;
+        &lt;div class="field-validation-error text-justify"&gt;
+            Если ваше видео не будет удовлетворять перечисленным трубованиям, оно будет удалено!
+        &lt;/div&gt;</value>
+  </data>
+  <data name="PartnerReferal" xml:space="preserve">
+    <value>Реферал</value>
+  </data>
+  <data name="PartnerResources" xml:space="preserve">
+    <value>Полезные ресурсы</value>
+  </data>
+  <data name="PartnerBtnCreateEmail" xml:space="preserve">
+    <value>Создать запрос на Email</value>
+  </data>
+  <data name="PartnerReferalText" xml:space="preserve">
+    <value>Адрес вашего сайта &lt;a href='http://{0}.ffi-eco.com' class='blue'&gt;{0}.ffi-eco.com&lt;/a&gt;</value>
+  </data>
+  <data name="PartnerUniqEmail" xml:space="preserve">
+    <value>Вы можете получить уникальный почтовый ящик с адресом &lt;span class='blue'&gt; [имя]@ffi-eco.com&lt;/span&gt;, для этого введите желаемое имя и нажмите кнопку "Создать запрос на Email". Все детали вашего нового почтового ящика будут высланы вам на Email, с которым Вы зарегистрировались в системе, как только он будет создан.</value>
+  </data>
+  <data name="RequestCreated" xml:space="preserve">
+    <value>Ваш запрос был создан</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="PaymentFailure" xml:space="preserve">
+    <value>Оплата счета НЕ ПРОШЛА, пожалуйста свяжитесь с администрацией сайта в разделе Контакты</value>
+  </data>
+  <data name="PaymentStatus" xml:space="preserve">
+    <value>Статус оплаты счета</value>
+  </data>
+  <data name="PaymentSuccess" xml:space="preserve">
+    <value>Оплата счета прошла успешно. Благодарим за использование нашего сервиса!</value>
+  </data>
+  <data name="Instruction" xml:space="preserve">
+    <value>Инструкция</value>
+  </data>
+  <data name="InstructionText" xml:space="preserve">
+    <value>При регистрации в компании Forever Freedom International Вы самостоятельно выбираете свой логин, состоящий из латинских букв и цифр, а за тем оплачиваете стартовый пакет "Starter Kit" (30$).&lt;br/&gt;
+Обращаем внимание, что Ваша платежная карта, которую Вы будете использовать для оплаты, должна быть обязательно пригодна для оплаты через Интернет, так как оплата совершается на счет американской компании. То есть Вам необходимо заказать у своего оператора банка карту Visa Интернет или другую подобную, за тем перевести на нее необходимые средства, и только за тем продолжить оплату. Как правило, данная процедура по открытию такой карты бесплатна и занимает 2-3 часа. Обратитесь в любое отделение Вашего банка и проконсультируйтесь по данному вопросу. В любом случае, данная карта может понадобиться Вам в ближайшем будущем.</value>
+  </data>
+  <data name="TestDriveText" xml:space="preserve">
+    <value>&lt;h3&gt;
+        О компании FFI&lt;/h3&gt;
+    &lt;p&gt;
+        Как часто происходит, что мы теряем свое здоровье, зарабатывая деньги, а потом тратим
+        деньги, восстанавливая утраченное здоровье. Какой-то замкнутый круг получается...
+        &lt;br /&gt;
+        Но не стоит отчаиваться!
+        &lt;br /&gt;
+        Мы познакомим Вас с компанией, у которой есть решения, благодаря которым, Вы можем
+        изменить ситуацию к лучшему. Это - "FOREVER FREEDOM INTERNATIONAL" - компания, которая
+        заботится об окружающей среде, нашем здоровье, предоставляя всем желающим исключительную
+        возможность создания постоянно увеличивающегося заработка.
+    &lt;/p&gt;
+    &lt;h3&gt;
+        Миссия Компании
+    &lt;/h3&gt;
+    &lt;p&gt;
+        Улучшить качество жизни людей по всему миру, предоставляя им возможность личностного
+        и финансового роста, предлагая уникальную продукцию, которая заботится о планете
+        Земля, и сохраняет природные ресурсы для обеспечения лучшего уровня жизни для будущих
+        поколений.
+    &lt;/p&gt;
+    &lt;br /&gt;
+    &lt;blockquote&gt;
+        Как никогда ранее, наше мировое сообщество сталкивается с экологическими проблемами.
+        Связаны ли эти вопросы с загрязнением воздуха, которым мы дышим, с чистотой воды,
+        которую мы пьем, или со здоровьем каждого человека, условия ещё больше усугубляются
+        экологическими факторами. У FFI есть решения, которые улучшат жизни людей во всем
+        мире. Эти решения в настоящее время объединены в одной компании, где вас ждут великолепные
+        деловые возможности, которые обеспечены долгосрочными финансовыми гарантиями для
+        людей на всей планете. Одна из важных задач, которые FFI поставила перед собой –
+        Сохранение Чистоты и Красоты нашей Планеты.
+        &lt;footer&gt;
+            —
+            &lt;cite&gt;Рэнди Рей и Венди Льюис, Совладельцы FFI &lt;/cite&gt;
+        &lt;/footer&gt;
+    &lt;/blockquote&gt;
+    &lt;p&gt;
+        Рэнди Рей и Венди Льюис свыше сорока лет успешно занимались бизнесом и сбытом продукции.
+        В ноябре 2005 г. организовали новое предприятие, Forever Freedom International.
+        В настоящее время предприятие FFI вышло из стадии образования, превратившись в сеть
+        из 200000 Независимых Предпринимателей, охватывающую 215 стран и территорий во
+        всем мире. Бизнес-центры компании организованы в США, Японии, на Тайване, в Бразилии,
+        Корее, Мексике, Гонконге, Австралии, Англии и Таиланде.
+    &lt;/p&gt;
+    &lt;h3&gt;
+        Что предлагает Компания FFI
+    &lt;/h3&gt;
+    Продукция компании разнообразна и крайне востребована на нашем и зарубежных рынках.
+    В линейку продукции входят :
+    &lt;ul&gt;
+        &lt;li&gt;1. Уникальная продукция для экономии топлива от 7 до 30% и более, снижения вредных
+            выбросов в атмосферу выхлопной системой техники с ДВС на 75-90%, защиты двигателей
+            от некачественного топлива, продления моторесурса и увеличения мощности авто без
+            дополнительного технического переоборудования &lt;/li&gt;
+        &lt;li&gt;2. Автокосметика. Эта продукция позволяет без вреда для экологии вымыть Ваш автомобиль
+            не используя воду, придать авто сияние и блеск при любой погоде &lt;/li&gt;
+        &lt;li&gt;3. Средства для уборки помещений, не содержащие вредных для окружающей среды и Вашего
+            здоровья компонентов &lt;/li&gt;
+        &lt;li&gt;4. Женская косметика. Формула состава всей предлагаемой косметики приносит только
+            положительные результаты при ее использовании. Тысячи женщин во всем мире пользуются
+            этой продукцией не нанося вреда своему здоровью и окружающей среде &lt;/li&gt;
+        &lt;li&gt;5. Продукция для поддержания Вашего здоровья на самом высоком уровне. Здесь представлены
+            экологически чистые пищевые биодобавки, в состав которых входят только органические
+            соединения и никакой химии, наносящей вред здоровью и природе. Всю линейку продукции
+            Компании FFI роднит стремление сделать наш мир лучше и чище, поэтому в ней используются
+            исключительно биологические, экологически чистые компоненты &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;br /&gt;
+    &lt;blockquote&gt;
+        МЫ ВЕРИМ, ЧТО ВМЕСТЕ И С НАШЕЙ ПРОДУКЦИЕЙ, МЫ ИЗМЕНИМ МИР К ЛУЧШЕМУ
+        &lt;footer&gt;
+            —
+            &lt;cite&gt;Рэнди Рей и Венди Льюис, Совладельцы FFI &lt;/cite&gt;
+        &lt;/footer&gt;
+    &lt;/blockquote&gt;
+    С 3 сентября 2008г. компания FFI вошла на рынок стран СНГ и на сегодняшний день
+    является одной из наиболее серьезных отечественных возможностей организации бизнеса,
+    что подтверждается нашими огромными достижениями в данной отрасли. У FFI есть решения,
+    которые улучшат жизни людей во всем мире. Эти решения в настоящее время объединены
+    в одной компании, где у вас будут великолепные деловые возможности, которые обеспечены
+    долгосрочными финансовыми гарантиями для людей на всей планете.</value>
+  </data>
+  <data name="PartnerDeliveryService" xml:space="preserve">
+    <value>Служба доставки для отправки товара</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Я забыл свой пароль :(</value>
+  </data>
+  <data name="OrderShippingCondition" xml:space="preserve">
+    <value>Если Вы проживаете на территории страны {0}, то товар Вам будет выслан наложенным платежом с помощью службы доставки "{1}". Если вы проживаете на территории другой страны, товар Вам следует купить во &lt;a href="http://{2}.myffi.biz/" class="blue" target="_blank"&gt;внешнем магазине FFI&lt;/a&gt;, и он Вам будет доставлен курьером  к двери вашего дома.</value>
+  </data>
+  <data name="PasswordRecoveryFail" xml:space="preserve">
+    <value>Пользователя с таким логином не найдено</value>
+  </data>
+  <data name="PasswordRecoverySuccess" xml:space="preserve">
+    <value>Ваш новый пароль был высла на почтовый ящик, с которым вы регистрировались в системе</value>
+  </data>
+  <data name="SelfResult" xml:space="preserve">
+    <value>Свой результат использования продукции (видео с Youtube)</value>
+  </data>
+  <data name="SelfResources" xml:space="preserve">
+    <value>Свои ресурсы</value>
+  </data>
+  <data name="CartEmpty" xml:space="preserve">
+    <value>Ваша корзина пустая</value>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>Пример</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ResultActivated" xml:space="preserve">
+    <value>Ваш результат был одобрен</value>
+  </data>
+  <data name="ResultIsReviewed" xml:space="preserve">
+    <value>Ваш результат проходит верификацию</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Картинка</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="Incorrect" xml:space="preserve">
+    <value>введено неправильно</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Наличные</value>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Кредитная карточка</value>
+  </data>
+  <data name="ResultConnectOwner" xml:space="preserve">
+    <value>Связаться с владельцем этого автомобиля</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Гость</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>Страховий поліс</value>
+  </data>
+  <data name="ResultContactOwnerHint" xml:space="preserve">
+    <value>Введите свой телефон или Email адрес</value>
   </data>
 </root>

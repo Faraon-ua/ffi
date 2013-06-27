@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Internet.Models.FAQ>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Frequently Asked Questions";
+}
+<div class="head">
+    <h1>
+        Frequently Asked Questions</h1>
+</div>
+@Html.Partial("_FAQList", Model)

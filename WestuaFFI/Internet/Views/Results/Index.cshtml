@@ -1,16 +1,25 @@
-﻿@model Internet.Controllers.ResultsController.ResultsModelView
+﻿@using Internet.RoutingHelpers
+@model Internet.Controllers.ResultsController.ResultsModelView
 @{
-    
+    ViewBag.Title = Resources.labels.PracticalResults;
 }
-@using (@Html.BeginForm("Index", "Results", FormMethod.Get))
+@section meta
 {
-    <div class="head">
-        <div class="row-fluid">
-            <div class="span5">
-                <h1>
-                    @Resources.labels.PracticalResults
-                </h1>
-            </div>
+    @if(Model.Result != null)
+    {
+        <meta name="keywords" content="FFI, Forever Freedom Internationl, результаты использования @string.Format("{0} {1}", Model.Result.Manufacturer, Model.Result.Model)" />
+        <meta name="description" content="Результаты использования продукции FFI на автомобиле @string.Format("{0} {1}", Model.Result.Manufacturer, Model.Result.Model)" />
+    }
+}
+<div class="head">
+    <div class="row-fluid">
+        <div class="span5">
+            <h1>
+                @Resources.labels.PracticalResults
+            </h1>
+        </div>
+        @using (@Html.BeginForm("Index", "Results", FormMethod.Get))
+        {
             <div class="span7 text-pullleft results-select-header">
                 <div class="row-fluid">
                     <div class="span6">
@@ -21,11 +30,23 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <br />
-        @if (Model.Result != null)
-        {
-            @Html.Partial("_ResultDetails", Model.Result)
         }
     </div>
+</div>
+<br />
+@if (Model.Result != null)
+{
+    @Html.Partial("_ResultDetails", Model.Result)
+}
+else
+{
+    var siteOwner = SubdomainHelper.GetSiteOwner();
+    if (siteOwner.Results.Count > 0)
+    {
+        var result = siteOwner.Results.First();
+        if (result.isActive)
+        {
+    @Html.Partial("_ResultDetails", result, new ViewDataDictionary { { "ownersResult", true } });
+        }
+    }
 }

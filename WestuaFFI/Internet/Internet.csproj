@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -15,6 +16,15 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -108,22 +118,31 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FaqsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ResultsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SlidesController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\BannersController.cs" />
+    <Compile Include="Controllers\FAQsController.cs" />
     <Compile Include="Controllers\PartnersController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Extensions\FlashMessageExtensions.cs" />
+    <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\CurrencyHelper.cs" />
     <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CurrencyRate.cs" />
+    <Compile Include="Models\FAQ.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Partner.cs" />
+    <Compile Include="Models\EasyPayPayment.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Slide.cs" />
-    <Compile Include="RoutingHelpers\DomainData.cs" />
-    <Compile Include="RoutingHelpers\DomainRoute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -137,16 +156,32 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoutingHelpers\AreaRouteConstraint.cs" />
+    <Compile Include="RoutingHelpers\SubdomainHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\blank.gif" />
-    <Content Include="Content\Certtification\certificate_moz.jpg" />
-    <Content Include="Content\Certtification\straxovka.jpg" />
+    <Content Include="Content\Certtification\certificate_moz.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Certtification\straxovka.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\fancybox_loading.gif" />
     <Content Include="Content\fancybox_overlay.png" />
     <Content Include="Content\fancybox_sprite.png" />
+    <Content Include="Content\images\add-to-cart-icon.png" />
+    <Content Include="Content\images\animated-overlay.gif" />
     <Content Include="Content\images\business.jpg" />
-    <Content Include="Content\images\menu\articles.jpg" />
+    <Content Include="Content\images\eco-stamp120.jpg" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\instruction\step.png" />
+    <Content Include="Content\images\instruction\step_002.png" />
+    <Content Include="Content\images\instruction\step_003.png" />
+    <Content Include="Content\images\instruction\step_004.png" />
+    <Content Include="Content\images\instruction\step_005.png" />
+    <Content Include="Content\images\instruction\step_006.png" />
+    <Content Include="Content\images\instruction\step_007.png" />
+    <Content Include="Content\images\instruction\step_008.png" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -154,16 +189,33 @@
     <Content Include="Content\images\en.png" />
     <Content Include="Content\images\ffi_mpg-boost.png" />
     <Content Include="Content\images\menu\contactus.jpg" />
+    <Content Include="Content\images\menu\faq.jpg" />
+    <Content Include="Content\images\menu\presentation.jpg" />
     <Content Include="Content\images\menu\results2.jpg" />
     <Content Include="Content\images\menu\settings3.jpg" />
     <Content Include="Content\images\menu\start.jpg" />
-    <Content Include="Content\images\menu\test_drive.jpg" />
     <Content Include="Content\images\pdf-icon.png" />
-    <Content Include="Content\images\ru.png" />
+    <Content Include="Content\images\Question_icon.png" />
+    <Content Include="Content\images\ru_flag.png" />
     <Content Include="Content\images\slideshow\arrows.png" />
     <Content Include="Content\images\slideshow\bullets.png" />
     <Content Include="Content\images\slideshow\loading.gif" />
-    <Content Include="Content\images\ua.png" />
+    <Content Include="Content\images\ua_flag.png" />
+    <Content Include="Content\images\ui-bg_diagonals-small_25_c5ddfc_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_20_e69700_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_22_1484e6_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_26_2293f7_40x40.png" />
+    <Content Include="Content\images\ui-bg_flat_0_e69700_40x100.png" />
+    <Content Include="Content\images\ui-bg_flat_0_e6b900_40x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
+    <Content Include="Content\images\ui-bg_inset-hard_100_eeeeee_1x100.png" />
+    <Content Include="Content\images\ui-icons_0a82eb_256x240.png" />
+    <Content Include="Content\images\ui-icons_0b54d5_256x240.png" />
+    <Content Include="Content\images\ui-icons_5fa5e3_256x240.png" />
+    <Content Include="Content\images\ui-icons_fcdd4a_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\images\youtube.png" />
+    <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\nivo-slider.default-theme.css" />
     <Content Include="Content\images\logo.png" />
@@ -178,6 +230,7 @@
     <Content Include="Scripts\jquery-1.8.0-vsdoc.js" />
     <Content Include="Scripts\jquery-1.8.0.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.fancybox.js" />
     <Content Include="Scripts\jquery.fancybox.pack.js" />
@@ -236,7 +289,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Articles\TestDrive.cshtml" />
+    <Content Include="Views\Articles\Presentation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Articles\Instruction.cshtml" />
@@ -250,6 +303,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Resources\" />
+    <Folder Include="XML\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
@@ -370,6 +424,7 @@
     <Content Include="App_GlobalResources\Emails.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Emails.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -408,11 +463,42 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Slides\_SlideForm.cshtml" />
     <Content Include="Areas\Admin\Views\Products\_ProductForm.cshtml" />
-    <None Include="Content\Certtification\Bosh.pdf" />
-    <None Include="Content\Certtification\Him_centr.pdf" />
+    <Content Include="Views\Products\Cart.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\_FAQForm.cshtml" />
+    <Content Include="Content\Certtification\Bosh.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Certtification\Him_centr.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_ShoppingCart.cshtml" />
+    <Content Include="Views\Products\CreateOrder.cshtml" />
+    <Content Include="Views\Payments\Success.cshtml" />
+    <Content Include="Views\Payments\Failure.cshtml" />
+    <Content Include="Views\FAQs\Index.cshtml" />
+    <Content Include="Views\FAQs\_FAQList.cshtml" />
+    <Content Include="Views\Account\PasswordReset.cshtml" />
+    <Content Include="Views\Partners\_PresentationUpdate.cshtml" />
+    <Content Include="Views\Partners\_UniqEmailUpdate.cshtml" />
+    <Content Include="Views\Partners\_ResultUpdate.cshtml" />
+    <Content Include="Views\Home\Maintance.cshtml" />
+    <Content Include="Views\Partners\_BannerUpdate.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -427,15 +513,13 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57618</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8080</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://ffi-eco.com</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

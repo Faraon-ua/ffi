@@ -44,7 +44,7 @@ namespace Internet.Models
 
     public class RegisterModel
     {
-        [RegularExpression(@"^[a-zA-Z\d]+$", ErrorMessage = "Only letters and numbers allowed")]
+        [RegularExpression(@"^[a-zA-Z\d_-]+$", ErrorMessage = "Only letters and numbers allowed")]
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }

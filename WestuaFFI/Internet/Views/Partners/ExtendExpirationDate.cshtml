@@ -4,6 +4,21 @@
     ViewBag.Title = "ExtendExpirationDate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section head
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/jquery.fancybox.css?v=2.1.4")" type="text/css" media="screen" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.js?v=2.1.4")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.pack.js?v=2.1.4")"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("a#inline").fancybox({
+                'hideOnContentClick': true
+            });
+        });
+
+    </script>
+}
+
 <div class="head">
     <h1>
         @Resources.labels.PartnerExtend
@@ -12,17 +27,17 @@
 <br />
 @using (@Html.BeginForm("ExtendExpirationDate", "Partners", FormMethod.Post))
 {
-    <select id="extendValue" name="extendValue" onchange="this.form.submit();" style="width:350px;" >
-        <option value="-1" >@Resources.labels.PartnerPaymentSelectHint</option>
+    <select id="extendValue" name="extendValue" onchange="this.form.submit();" style="width: 350px;">
+        <option value="-1">@Resources.labels.PartnerPaymentSelectHint</option>
         @foreach (var amount in PartnersController.ExtendAmounts)
         {
             if (amount.Value == Model)
             {
-                <option value="@amount.Value" selected>@amount.Key</option>                            
+            <option value="@amount.Value" selected>@amount.Key</option>                            
             }
             else
             {
-                <option value="@amount.Value">@amount.Key</option>            
+            <option value="@amount.Value">@amount.Key</option>            
             }
         }
     </select>
@@ -32,4 +47,15 @@
 @if (Model > 0)
 {
     @Html.Partial("_PaymentForm", Model)
+    <br />
+    <a id="inline" href="#regInstruction" class="blue text14px">
+        @Resources.labels.Instruction
+        <img src="@Url.Content("~/Content/images/Question_icon.png")" />
+    </a>
 }
+
+<div style="display: none">
+    <div id="regInstruction" class="container text-pullcenter">
+        <iframe width="960" height="600" src="http://www.youtube.com/embed/u2S-f4S-PFA?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>

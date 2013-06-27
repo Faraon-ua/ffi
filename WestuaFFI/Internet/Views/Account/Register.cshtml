@@ -9,7 +9,7 @@
     <fieldset>
         <legend><h2>@Resources.labels.NewAccountTitle</h2></legend>
         <div class="field-validation-error text-justify">
-            @Html.Raw(string.Format(Resources.labels.RegistrationHint, Html.ActionLink(Resources.labels.BusinessHint, "Business", "Articles")))
+            @Html.Raw(string.Format(Resources.labels.RegistrationHint, Html.ActionLink(Resources.labels.BusinessHint, "Business", "Articles", null, new { @class = "blue" }), Html.ActionLink(Resources.labels.Contacts, "Contacts", "Home", null, new { @class = "blue" })))
         </div>  
         <br/>
         <div class="control-group">

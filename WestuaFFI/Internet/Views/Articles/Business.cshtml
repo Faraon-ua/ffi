@@ -1,6 +1,30 @@
-﻿@{
+﻿@using Internet.RoutingHelpers
+@{
     ViewBag.Title = "Business";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var siteOwner = SubdomainHelper.GetSiteOwner();
+}
+@{
+    ViewBag.Title = @Resources.labels.BusinessHint;
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, начать свой интернет бизнес" />
+    <meta name="description" content="Как ПРАВИЛЬНО начать свой интернет бизнес" />
+}
+@section head
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/jquery.fancybox.css?v=2.1.4")" type="text/css" media="screen" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.js?v=2.1.4")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.pack.js?v=2.1.4")"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("a#inline").fancybox({
+                'hideOnContentClick': true
+            });
+        });
+
+    </script>
 }
 <div class="head">
     <h1>@Resources.labels.GettingStartedBusiness</h1>
@@ -11,15 +35,81 @@
             @Html.Raw(Resources.labels.GettingStartedBusinessStep1)
         </h3>
         <p>
-            <a class="btn btn-success" href="https://backoffice.myffi.biz/signup.asp?siteurl=MR1970"
-                target="_blank">@Resources.labels.btnRegister</a>
+            <a class="btn btn-success" href="https://backoffice.myffi.biz/signup.asp?siteurl=@siteOwner.User.UserName"
+               target="_blank">@Resources.labels.btnRegister</a> <a id="inline" href="#data" class="blue text14px">
+                   @Resources.labels.Instruction
+                   <img src="@Url.Content("~/Content/images/Question_icon.png")" alt="@Resources.labels.Instruction"/>
+               </a>
         </p>
     </li>
     <li>
         @Html.Raw(Resources.labels.GettingStartedBusinessStep2)
         <a class="btn btn-success" href="@Url.Action("Register", "Account")" target="_blank">@Resources.labels.btnRegister</a>
+        <a id="inline" href="#regInstruction" class="blue text14px">
+            @Resources.labels.Instruction
+            <img src="@Url.Content("~/Content/images/Question_icon.png")" alt="@Resources.labels.Instruction"/>
+        </a>
     </li>
     <li>
         @Html.Raw(Resources.labels.GettingStartedBusinessStep3)
     </li>
 </ol>
+<div style="display: none">
+    <div id="regInstruction" class="container text-pullcenter">
+        <iframe width="960" height="600" src="http://www.youtube.com/embed/VW8hnwZzVx4?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+<div style="display: none">
+    <div id="data" class="container text-pullcenter">
+        <p class="text-justify">@Html.Raw(Resources.labels.InstructionText)</p>
+        <br />
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №1
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_007.png")" style="border: 1px dotted #444; width: 800px;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №2
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_005.png")" style="border: 1px dotted #444;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №3
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_002.png")" style="border: 1px dotted #444;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №4
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_006.png")" style="border: 1px dotted #444;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №5
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step.png")" style="border: 1px dotted #444;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №6
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_008.png")" style="border: 1px dotted #444;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №7
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_004.png")" style="border: 1px dotted #444;">
+        </div>
+        <div style="float: left; width: 100%; text-weight: bold;">
+            Шаг №8
+        </div>
+        <div style="float: left; width: 100%; margin-bottom: 10px;">
+            <img src="@Url.Content("~/Content/images/instruction/step_003.png")" style="border: 1px dotted #444;">
+        </div>
+    </div>
+</div>

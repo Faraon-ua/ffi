@@ -1,6 +1,6 @@
 ﻿$(function () {
-    var width = 120;
-    var height = 120;
+    var width = 90;
+    var height = 90;
 
     $('img.captify').each(function() {
             $(this).attr("width", width);

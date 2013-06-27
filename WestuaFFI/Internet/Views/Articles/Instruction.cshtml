@@ -2,8 +2,18 @@
     ViewBag.Title = "Instruction";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    ViewBag.Title = @Resources.labels.GettingStarted;
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, как правильно начать пользоваться продукцией компании FFI" />
+    <meta name="description" content="Как правильно начать пользоваться продукцией компании FFI" />
+}
 <div class="head">
-    @Html.Raw(Resources.labels.GettingStarted)
+    <h1>
+        @Html.Raw(Resources.labels.GettingStarted)
+    </h1>
 </div>
 <br />
 @Html.Raw(Resources.labels.GettingStartedProductionText)
@@ -15,7 +25,7 @@
             @Html.Raw(Resources.labels.GettingStartedProductionConsulting)
         </p>
         <br />
-        <a class="btn btn-primary" href="@Url.Action("Contacts", "Home")">Контакты</a>
+        <a class="btn btn-primary" href="@Url.Action("Contacts", "Home")">@Resources.labels.Contacts</a>
     </div>
     <div class="span1">
     </div>
@@ -24,7 +34,7 @@
             @Html.Raw(Resources.labels.GettingStartedProductionBuy)
             <br />
             <br />
-            <a class="btn btn-primary pull-right" href="@Url.Action("Index", "Home")">Продукция</a>
+            <a class="btn btn-primary pull-right" href="@Url.Action("Index", "Home")">@Resources.labels.Production</a>
         </p>
     </div>
 </div>

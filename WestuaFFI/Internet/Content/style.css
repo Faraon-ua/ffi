@@ -1,4 +1,88 @@
-﻿.centered {
+﻿/*
+.captify {
+    background: #568DEA;
+}
+*/
+/*body footer
+{
+    background-image: url('images/eco-stamp120.jpg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    height: 95px;
+}*/
+
+.invisible {
+    visibility: hidden;
+    height: 1px;
+}
+
+.partner-panel input[type=text]
+{
+    width: 500px;
+}
+
+.banner
+{
+    width: 450px;
+    height: 70px;
+    margin-right: 50px;
+}
+.nav
+{
+    font-size: 14px;
+}
+
+#main
+{
+    border-bottom: solid 1px #568dea;
+}
+.collapseContent
+{
+    cursor: pointer;
+}
+
+.collapseContentText
+{
+    display: none;
+}
+
+.collapseContentText p
+{
+    text-align: justify;
+}
+
+blockquote:before
+{
+    color: #999999;
+    content: "“";
+    display: block;
+    font: italic 400%/1 Cochin,Georgia, "Times New Roman" ,serif;
+    height: 0;
+    margin-left: -0.95em;
+}
+
+blockquote
+{
+    font-style: italic;
+}
+
+blockquote footer
+{
+    margin-top: 10px;
+}
+
+.width30px
+{
+    width: 30px;
+}
+
+img
+{
+    border-width: 0px;
+}
+
+.centered
+{
     margin: 0 auto;
 }
 
@@ -10,7 +94,7 @@
 
 .result-details
 {
-    color: black;
+    color: #;
 }
 .result-details ul
 {
@@ -22,6 +106,30 @@
     float: left;
     margin-right: 10px;
 }
+
+#productDetails p, #productDetails span
+{
+    text-align: justify;
+    line-height: 1.5em !important;
+}
+
+#productDetails ul, #productDetails ul li
+{
+    list-style-type: square;
+    margin-left: 7px;
+}
+
+#productDetails ol, #productDetails ol li
+{
+    list-style-type: decimal;
+    margin-left: 7px;
+}
+
+#productDetails h1, #productDetails h2, #productDetails h3, #productDetails h4, #productDetails h5, #productDetails h6
+{
+    color: #333333;
+}
+
 .products li
 {
     margin-top: 15px;
@@ -33,29 +141,24 @@
 .products li a
 {
     color: #568DEA;
-    font-size: 12pt;
+    font-size: 14px;
 }
 
 .language-selection
 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #568DEA;
-    padding: 10px;
+    float: right;
 }
 
-.language-selection a:not(:last-child)
+.language-selection a
 {
-    margin-bottom: 10px !important;
-    display: block;
+    margin-left: 5px;
 }
 
 ol#instruction p
 {
     text-align: justify;
     font-size: 12pt;
-    color: black;
+    color: #333333;
 }
 
 .text-pullcenter
@@ -94,6 +197,7 @@ html, body
     overflow-y: visible;
     font-family: Tahoma;
     line-height: 18px;
+    color: #333333;
 }
 
 a
@@ -109,20 +213,69 @@ ul, li
 
 p
 {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .blue
 {
-    color: #568dea;
+    color: #568dea !important;
 }
 
 .white
 {
-    color: white;
+    color: white !important;
 }
 
-.underlined {
+.green
+{
+    color: #219A0D;
+}
+
+.yellow
+{
+    color: #c09853;
+}
+
+.textUpperCase
+{
+    text-transform: uppercase;
+}
+
+.text12px
+{
+    font-size: 12px;
+}
+
+.text12_5px
+{
+    font-size: 12.5px;
+}
+
+.text13px
+{
+    font-size: 13px;
+}
+.text13_5px
+{
+    font-size: 13.5px;
+}
+.text14px
+{
+    font-size: 14px;
+}
+
+.text16px
+{
+    font-size: 16px;
+}
+
+.text18px
+{
+    font-size: 18px;
+}
+
+.underlined
+{
     text-decoration: underline;
 }
 
@@ -264,7 +417,7 @@ form
     min-height: 70px;
     width: 100%;
     padding: 10px 0px 0px 20px;
-    z-index: 3333333333333;
+    z-index:    3333333;
     overflow: hidden;
 }
 
@@ -310,7 +463,6 @@ nav a
 {
     float: left;
     padding: 0;
-    margin: 20px 0 0 0;
     position: relative;
 }
 #navigation li
@@ -328,6 +480,7 @@ nav a
     z-index: 13;
     width: 100%;
     text-decoration: none;
+    font-size: 14px;
 }
 #navigation li.back
 {
@@ -524,7 +677,7 @@ ul#navigation li li:hover li ul, ul#navigation li li.sfHover li ul
     margin: -14px 0 0 40px;
     padding: 0;
     color: white;
-    font-family: Aller;
+    font-family: Tahoma;
     font-size: 24px;
     height: 60px;
     width: 160px;
@@ -641,8 +794,8 @@ ul#navigation li li:hover li ul, ul#navigation li li.sfHover li ul
     float: left;
     width: 220px;
     height: 120px;
-    background: #9fbff4;
-    border: 1px solid #568dea;
+    background: rgb(250, 252, 255);
+    border: 1px solid rgb(186, 194, 207);
     color: white;
     margin: 10px 0 0 0;
     padding: 0;
@@ -659,8 +812,8 @@ ul#navigation li li:hover li ul, ul#navigation li li.sfHover li ul
     height: 25px;
     width: 220px;
     color: white;
-    background: #9fbff4;
-    border: 1px solid #568dea;
+    background: rgb(250, 252, 255);
+    border: 1px solid rgb(186, 194, 207);
     padding: 0;
     margin: 0px 0 0 0;
 }
@@ -670,8 +823,8 @@ ul#navigation li li:hover li ul, ul#navigation li li.sfHover li ul
     height: 25px;
     width: 220px;
     color: white;
-    background: #9fbff4;
-    border: 1px solid #568dea;
+    background: rgb(250, 252, 255);
+    border: 1px solid rgb(186, 194, 207);
     padding: 0;
     margin: 10px 0 0 0;
 }
@@ -687,7 +840,7 @@ ul#navigation li li:hover li ul, ul#navigation li li.sfHover li ul
     float: left;
     margin: -65px 0 0 37px;
     color: white;
-    font-family: Aller;
+    font-family: Tahoma;
     font-size: 24px;
     height: 65px;
     width: 160px;

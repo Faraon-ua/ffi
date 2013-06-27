@@ -1,17 +1,17 @@
 ﻿<nav>
-    <a href="@Url.Action("TestDrive", "Articles")">
-        <img src="@Url.Content("~/Content/images/menu/test_drive.jpg")" class="captify" alt="@Resources.labels.TestDrive"/>
+    <a href="@Url.Action("Presentation", "Articles")">
+        <img src="@Url.Content("~/Content/images/menu/presentation.jpg")" class="captify" alt="<span class='text13px blue textUpperCase'>@Resources.labels.TestDrive</span>"/>
     </a><a href="@Url.Action("GettingStarted", "Articles")">
-        <img src="@Url.Content("~/Content/images/menu/start.jpg")" class="captify" alt="@Resources.labels.GettingStarted"/>
+            <img src="@Url.Content("~/Content/images/menu/start.jpg")" class="captify" alt="<span class='text14px blue textUpperCase'>@Resources.labels.GettingStarted</span>"/>
     </a><a href="@Url.Action("HowItWorks", "Articles")">
-        <img src="@Url.Content("~/Content/images/menu/settings3.jpg")" class="captify" alt="<h2>@Resources.labels.HowItWorks</h3>"/>
+        <img src="@Url.Content("~/Content/images/menu/settings3.jpg")" class="captify" alt="<span class='text12_5px blue textUpperCase'>@Resources.labels.HowItWorks</span>"/>
         </a><a href="@Url.Action("Index", "Results")">
-                <img src="@Url.Content("~/Content/images/menu/results2.jpg")" class="captify" alt="<h2>@Resources.labels.PracticalResults</h3>"/>
+                <img src="@Url.Content("~/Content/images/menu/results2.jpg")" class="captify" alt="<span class='text12px blue textUpperCase'>@Resources.labels.PracticalResults</span>"/>
             </a>
-@*    <a href="@Url.Action("Index", "Articles")">*@
-@*        <img src="@Url.Content("~/Content/images/menu/articles.jpg")" class="captify" alt="<h1>Полезные статьи<h1>"/>*@
-@*    </a>*@
+    <a href="@Url.Action("Index", "FAQs")">
+        <img src="@Url.Content("~/Content/images/menu/faq.jpg")" class="captify" alt="<span class='text14px blue textUpperCase'>FAQ<span>"/>
+    </a>
     <a href="@Url.Action("Contacts", "Home")">
-        <img src="@Url.Content("~/Content/images/menu/contactus.jpg")" class="captify" alt="@Resources.labels.Contacts"/>
+        <img src="@Url.Content("~/Content/images/menu/contactus.jpg")" class="captify" alt="<span class='text14px blue textUpperCase'>@Resources.labels.Contacts</span>"/>
     </a>
 </nav>

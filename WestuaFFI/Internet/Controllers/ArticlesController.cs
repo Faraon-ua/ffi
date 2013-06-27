@@ -37,7 +37,7 @@ namespace Internet.Controllers
             return View();
         }
 
-        public ActionResult TestDrive()
+        public ActionResult Presentation()
         {
             return View();
         }

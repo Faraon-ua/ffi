@@ -1,0 +1,35 @@
+﻿@model Internet.Models.Result
+
+@using (Html.BeginForm("UpdateResult", "Partners"))
+{
+    <input type="hidden" name="PartnerId" value="@Model.PartnerId"/>
+    @Resources.labels.ResultsSelectManufacturer
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Manufacturer)
+        @Html.ValidationMessageFor(model => model.Manufacturer)
+    </div>
+    <div class="editor-label">
+        @Resources.labels.ResultsSelectModel
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model)
+        @Html.ValidationMessageFor(model => model.Model)
+    </div>
+    <div class="editor-label">
+        @Resources.labels.Description <a href="http://ffi-eco.com/Results?manufacturer=Wolksvagen&model=Passat" target="_blank" class="blue">@Resources.labels.Example</a>
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Description_ua, new { @class = "redactor" })
+        @Html.ValidationMessageFor(model => model.Description_ua)
+    </div>
+    <div class="editor-label">
+        Youtube video link (@Resources.labels.Example: http://www.youtube.com/watch?v=QfPxkD5RlDI)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.VideoTag)
+        @Html.ValidationMessageFor(model => model.VideoTag)
+    </div>
+    <p>
+        <input type="submit" value="@Resources.labels.btnSave" class="btn btn-success"/>
+    </p>
+}

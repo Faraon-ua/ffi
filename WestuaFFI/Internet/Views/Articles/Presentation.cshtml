@@ -1,0 +1,30 @@
+﻿@using Internet.RoutingHelpers
+@{
+    ViewBag.Title = "TestDrive";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var siteOwner = SubdomainHelper.GetSiteOwner();    
+}
+@{
+    ViewBag.Title = @Resources.labels.TestDrive;
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, ознакомительное видео, презентация" />
+    <meta name="description" content="Ознакомительное видео, презентация" />
+}
+<div class="head">
+    <h1>
+        @Resources.labels.TestDrive
+    </h1>
+</div>
+<br />
+@if (!string.IsNullOrEmpty(siteOwner.TestDriveHTML))
+{
+    <iframe width="780" height="500" src="http://www.youtube.com/embed/@siteOwner.TestDriveHTML?rel=0" frameborder="0" allowfullscreen></iframe>  
+}
+<div class="text-justify">
+    @Html.Raw(Resources.labels.TestDriveText)
+    <br />
+    <br />
+    <br />
+</div>

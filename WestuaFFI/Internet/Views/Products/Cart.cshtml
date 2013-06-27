@@ -1,0 +1,44 @@
+﻿@model Order
+@using Internet.Helpers
+@using Internet.Models
+@{
+    ViewBag.Title = @Resources.labels.Cart;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="head">
+    <h1>@Resources.labels.Cart</h1>
+</div>
+@if (Session["Cart"] != null)
+{
+    using (Html.BeginForm("CartRefresh", "Products"))
+    {
+        for (int i = 0; i < Model.Products.Count; i++)
+        {
+    <div class="row-fluid">
+        <div class="span1">
+            <img src="@Url.Action("GetImage", "Products", new { productId = Model.Products.ElementAt(i).Key.Id })" width="50" height="50"/>
+        </div>
+        <div class="span6">
+            @Html.ActionLink(Model.Products.ElementAt(i).Key.Name, "Details", "Products", new { id = Model.Products.ElementAt(i).Key.Name_en }, new { @class = "text18px blue" })
+        </div>
+        <div class="span5">
+            <input type="hidden" name="cartEntries[@i].Key" value="@Model.Products.ElementAt(i).Key.Id"/>
+            <input type="text" name="cartEntries[@i].Value" value="@Model.Products.ElementAt(i).Value" class="width30px"/>
+            шт
+        </div>
+    </div>
+        }
+    <br />
+    <div class="text18px">@Resources.labels.Total: @Model.Total USD / @(CurrencyHelper.RoundToTens(CurrencyHelper.CurrencyRates.UAH * Model.Total)) ГРН / @(CurrencyHelper.RoundToTens(Model.Total / CurrencyHelper.CurrencyRates.RUB)) РУБ
+    </div>
+    <br />
+    
+    <div class="row-fluid">
+        <input type="submit" value="@Resources.labels.Refresh" class="btn"/>
+        @Html.ActionLink(Resources.labels.CartContinueShopping, "Index", "Home", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink(Resources.labels.CartCreateOrder, "CreateOrder", "Products", null, new { @class = "btn btn-success" })
+    </div>
+    }
+}
+<br />
+@Html.ActionLink(Resources.labels.Home, "Index", "Home", null, new { @class = "blue" })

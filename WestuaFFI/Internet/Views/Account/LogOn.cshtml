@@ -41,6 +41,7 @@
         </div>
         <div class="form-actions">
             <input type="submit" value="Log On" class="btn btn-primary" />
+            @Html.ActionLink(Resources.labels.ForgotPassword, "PasswordReset", "Account", null, new {@class="pull-right blue"})
         </div>
     </fieldset>
 }

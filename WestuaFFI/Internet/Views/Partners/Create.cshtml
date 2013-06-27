@@ -3,6 +3,20 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section head
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/jquery.fancybox.css?v=2.1.4")" type="text/css" media="screen" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.js?v=2.1.4")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.pack.js?v=2.1.4")"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("a#inline").fancybox({
+                'hideOnContentClick': true
+            });
+        });
+
+    </script>
+}
 <h1>
     @Resources.labels.PartnerCreateHeading
 </h1>

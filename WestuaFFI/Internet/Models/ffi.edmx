@@ -12,6 +12,12 @@
           <EntitySet Name="Products" EntityType="ffiModel.Store.Products" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Results" EntityType="ffiModel.Store.Results" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Slides" EntityType="ffiModel.Store.Slides" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Banners" EntityType="ffiModel.Store.Banners" store:Type="Tables" Schema="ffieco_ffiuser" />
+          <EntitySet Name="FAQs" EntityType="ffiModel.Store.FAQs" store:Type="Tables" Schema="ffieco_ffiuser" />
+          <AssociationSet Name="FK_Banners_Partners" Association="ffiModel.Store.FK_Banners_Partners">
+            <End Role="Partners" EntitySet="Partners" />
+            <End Role="Banners" EntitySet="Banners" />
+          </AssociationSet>
           <AssociationSet Name="FK_Payments_Partners" Association="ffiModel.Store.FK_Payments_Partners">
             <End Role="Partners" EntitySet="Partners" />
             <End Role="Payments" EntitySet="Payments" />
@@ -19,6 +25,10 @@
           <AssociationSet Name="FK_Products_Categories" Association="ffiModel.Store.FK_Products_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_Partners" Association="ffiModel.Store.FK_Results_Partners">
+            <End Role="Partners" EntitySet="Partners" />
+            <End Role="Results" EntitySet="Results" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Categories">
@@ -44,6 +54,11 @@
           <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="250" />
           <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="20" />
           <Property Name="Skype" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactsEmail" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TestDriveHTML" Type="nvarchar" MaxLength="250" />
+          <Property Name="DeliveryService" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BannerUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="BannerImage" Type="image" />
         </EntityType>
         <EntityType Name="Payments">
           <Key>
@@ -62,9 +77,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
-          <Property Name="Description_ua" Type="text" />
-          <Property Name="Description_ru" Type="text" />
+          <Property Name="Name_en" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Name_ua" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Name_ru" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Description_ua" Type="ntext" />
+          <Property Name="Description_ru" Type="ntext" />
           <Property Name="Description_en" Type="text" />
           <Property Name="Image" Type="image" />
           <Property Name="CategoryId" Type="uniqueidentifier" />
@@ -77,10 +94,12 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Manufacturer" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="VideoTag" Type="nvarchar" Nullable="false" MaxLength="250" />
           <Property Name="Description_ua" Type="text" />
           <Property Name="Description_ru" Type="text" />
           <Property Name="Description_en" Type="text" />
-          <Property Name="VideoTag" Type="nvarchar" MaxLength="250" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="PartnerId" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="Slides">
           <Key>
@@ -89,10 +108,44 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Image" Type="image" Nullable="false" />
           <Property Name="Url" Type="nvarchar" MaxLength="500" />
-          <Property Name="Description_ua" Type="nvarchar" MaxLength="500" />
-          <Property Name="Description_ru" Type="nvarchar" MaxLength="500" />
-          <Property Name="Description_en" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description_ua" Type="ntext" />
+          <Property Name="Description_ru" Type="ntext" />
+          <Property Name="Description_en" Type="text" />
         </EntityType>
+        <EntityType Name="Banners">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PartnerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Image" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FAQs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Question_ru" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Answer_ru" Type="text" Nullable="false" />
+          <Property Name="Question_ua" Type="nvarchar" MaxLength="250" />
+          <Property Name="Answer_ua" Type="text" />
+          <Property Name="Question_en" Type="nvarchar" MaxLength="250" />
+          <Property Name="Answer_en" Type="text" />
+          <Property Name="ShowOnPartnerPanel" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Banners_Partners">
+          <End Role="Partners" Type="ffiModel.Store.Partners" Multiplicity="1" />
+          <End Role="Banners" Type="ffiModel.Store.Banners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Banners">
+              <PropertyRef Name="PartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Payments_Partners">
           <End Role="Partners" Type="ffiModel.Store.Partners" Multiplicity="1" />
           <End Role="Payments" Type="ffiModel.Store.Payments" Multiplicity="*" />
@@ -117,26 +170,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Results_Partners">
+          <End Role="Partners" Type="ffiModel.Store.Partners" Multiplicity="0..1" />
+          <End Role="Results" Type="ffiModel.Store.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partners">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="PartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ffiModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="ffiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="ffiModel.Category" />
+          <EntitySet Name="Payments" EntityType="ffiModel.Payment" />
           <EntitySet Name="Products" EntityType="ffiModel.Product" />
+          <EntitySet Name="Slides" EntityType="ffiModel.Slide" />
           <AssociationSet Name="FK_Products_Categories" Association="ffiModel.FK_Products_Categories">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
+          <EntitySet Name="FAQs" EntityType="ffiModel.FAQ" />
           <EntitySet Name="Results" EntityType="ffiModel.Result" />
-          <EntitySet Name="Slides" EntityType="ffiModel.Slide" />
           <EntitySet Name="Partners" EntityType="ffiModel.Partner" />
-          <EntitySet Name="Payments" EntityType="ffiModel.Payment" />
+          <EntitySet Name="Banners" EntityType="ffiModel.Banner" />
+          <AssociationSet Name="FK_Banners_Partners" Association="ffiModel.FK_Banners_Partners">
+            <End Role="Partner" EntitySet="Partners" />
+            <End Role="Banner" EntitySet="Banners" />
+          </AssociationSet>
           <AssociationSet Name="FK_Payments_Partners" Association="ffiModel.FK_Payments_Partners">
             <End Role="Partner" EntitySet="Partners" />
             <End Role="Payment" EntitySet="Payments" />
           </AssociationSet>
-        </EntityContainer>
+          <AssociationSet Name="FK_Results_Partners" Association="ffiModel.FK_Results_Partners">
+            <End Role="Partner" EntitySet="Partners" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
@@ -147,70 +222,6 @@
           <Property Type="String" Name="Name_ua" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Index" Nullable="false" />
           <NavigationProperty Name="Products" Relationship="ffiModel.FK_Products_Categories" FromRole="Category" ToRole="Product" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description_ua" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Description_ru" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
-          <Property Type="Guid" Name="CategoryId" />
-          <Property Type="Int32" Name="Price" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="ffiModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
-        </EntityType>
-        <Association Name="FK_Products_Categories">
-          <End Type="ffiModel.Category" Role="Category" Multiplicity="0..1" />
-          <End Type="ffiModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Result">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Manufacturer" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Model" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description_ua" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Description_ru" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="VideoTag" MaxLength="250" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Slide">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="Binary" Name="Image" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Type="String" Name="Url" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description_ua" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description_ru" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description_en" MaxLength="500" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Partner">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="Guid" Name="UserId" Nullable="false" />
-          <Property Type="DateTime" Name="ExpirationDate" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Country" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Skype" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Payments" Relationship="ffiModel.FK_Payments_Partners" FromRole="Partner" ToRole="Payment" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
@@ -225,6 +236,117 @@
           <Property Type="DateTime" Name="CreatedAt" Nullable="false" />
           <NavigationProperty Name="Partner" Relationship="ffiModel.FK_Payments_Partners" FromRole="Payment" ToRole="Partner" />
         </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name_en" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name_ua" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name_ru" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_ua" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_ru" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="Guid" Name="CategoryId" />
+          <Property Type="Int32" Name="Price" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="ffiModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Slide">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Binary" Name="Image" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Url" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_ua" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_ru" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Products_Categories">
+          <End Type="ffiModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="ffiModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FAQ">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Question_ru" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Answer_ru" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Question_ua" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Answer_ua" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Question_en" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Answer_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ShowOnPartnerPanel" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Manufacturer" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Model" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VideoTag" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_ua" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description_ru" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="isActive" Nullable="false" />
+          <Property Type="Guid" Name="PartnerId" />
+          <NavigationProperty Name="Partner" Relationship="ffiModel.FK_Results_Partners" FromRole="Result" ToRole="Partner" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="ExpirationDate" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Skype" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactsEmail" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TestDriveHTML" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryService" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BannerUrl" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="BannerImage" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Banners" Relationship="ffiModel.FK_Banners_Partners" FromRole="Partner" ToRole="Banner" />
+          <NavigationProperty Name="Payments" Relationship="ffiModel.FK_Payments_Partners" FromRole="Partner" ToRole="Payment" />
+          <NavigationProperty Name="Results" Relationship="ffiModel.FK_Results_Partners" FromRole="Partner" ToRole="Result" />
+        </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="PartnerId" Nullable="false" />
+          <Property Type="String" Name="Url" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Image" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Partner" Relationship="ffiModel.FK_Banners_Partners" FromRole="Banner" ToRole="Partner" />
+        </EntityType>
+        <Association Name="FK_Banners_Partners">
+          <End Type="ffiModel.Partner" Role="Partner" Multiplicity="1" />
+          <End Type="ffiModel.Banner" Role="Banner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Banner">
+              <PropertyRef Name="PartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Payments_Partners">
           <End Type="ffiModel.Partner" Role="Partner" Multiplicity="1" />
           <End Type="ffiModel.Payment" Role="Payment" Multiplicity="*" />
@@ -237,7 +359,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_Results_Partners">
+          <End Type="ffiModel.Partner" Role="Partner" Multiplicity="0..1" />
+          <End Type="ffiModel.Result" Role="Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="PartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -254,6 +388,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="ffiModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="PaymentFor" ColumnName="PaymentFor" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="ffiModel.Product">
               <MappingFragment StoreEntitySet="Products">
@@ -263,20 +410,9 @@
                 <ScalarProperty Name="Description_en" ColumnName="Description_en" />
                 <ScalarProperty Name="Description_ru" ColumnName="Description_ru" />
                 <ScalarProperty Name="Description_ua" ColumnName="Description_ua" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Results">
-            <EntityTypeMapping TypeName="ffiModel.Result">
-              <MappingFragment StoreEntitySet="Results">
-                <ScalarProperty Name="VideoTag" ColumnName="VideoTag" />
-                <ScalarProperty Name="Description_en" ColumnName="Description_en" />
-                <ScalarProperty Name="Description_ru" ColumnName="Description_ru" />
-                <ScalarProperty Name="Description_ua" ColumnName="Description_ua" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Name_ru" ColumnName="Name_ru" />
+                <ScalarProperty Name="Name_ua" ColumnName="Name_ua" />
+                <ScalarProperty Name="Name_en" ColumnName="Name_en" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -293,9 +429,43 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="FAQs">
+            <EntityTypeMapping TypeName="ffiModel.FAQ">
+              <MappingFragment StoreEntitySet="FAQs">
+                <ScalarProperty Name="ShowOnPartnerPanel" ColumnName="ShowOnPartnerPanel" />
+                <ScalarProperty Name="Answer_en" ColumnName="Answer_en" />
+                <ScalarProperty Name="Question_en" ColumnName="Question_en" />
+                <ScalarProperty Name="Answer_ua" ColumnName="Answer_ua" />
+                <ScalarProperty Name="Question_ua" ColumnName="Question_ua" />
+                <ScalarProperty Name="Answer_ru" ColumnName="Answer_ru" />
+                <ScalarProperty Name="Question_ru" ColumnName="Question_ru" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="ffiModel.Result">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Description_en" ColumnName="Description_en" />
+                <ScalarProperty Name="Description_ru" ColumnName="Description_ru" />
+                <ScalarProperty Name="Description_ua" ColumnName="Description_ua" />
+                <ScalarProperty Name="VideoTag" ColumnName="VideoTag" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Partners">
             <EntityTypeMapping TypeName="ffiModel.Partner">
               <MappingFragment StoreEntitySet="Partners">
+                <ScalarProperty Name="BannerImage" ColumnName="BannerImage" />
+                <ScalarProperty Name="BannerUrl" ColumnName="BannerUrl" />
+                <ScalarProperty Name="DeliveryService" ColumnName="DeliveryService" />
+                <ScalarProperty Name="TestDriveHTML" ColumnName="TestDriveHTML" />
+                <ScalarProperty Name="ContactsEmail" ColumnName="ContactsEmail" />
                 <ScalarProperty Name="Skype" ColumnName="Skype" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
@@ -308,14 +478,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Payments">
-            <EntityTypeMapping TypeName="ffiModel.Payment">
-              <MappingFragment StoreEntitySet="Payments">
-                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-                <ScalarProperty Name="Completed" ColumnName="Completed" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="PaymentFor" ColumnName="PaymentFor" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <EntitySetMapping Name="Banners">
+            <EntityTypeMapping TypeName="ffiModel.Banner">
+              <MappingFragment StoreEntitySet="Banners">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
                 <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
@@ -342,21 +509,32 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ffi">
-        <EntityTypeShape EntityType="ffiModel.Category" Width="1.5" PointX="0.75" PointY="1.125" Height="2.1725878906249996" />
-        <EntityTypeShape EntityType="ffiModel.Product" Width="1.5" PointX="3" PointY="0.875" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="ffiModel.Category" Width="1.5" PointX="0.75" PointY="1.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="ffiModel.Payment" Width="1.5" PointX="8" PointY="1.375" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="ffiModel.Product" Width="1.5" PointX="3" PointY="1" Height="3.1340950520833353" />
+        <EntityTypeShape EntityType="ffiModel.Slide" Width="1.5" PointX="2.75" PointY="5.75" Height="2.1725878906250031" />
         <AssociationConnector Association="ffiModel.FK_Products_Categories" >
-          <ConnectorPoint PointX="2.25" PointY="2.2112939453125" />
-          <ConnectorPoint PointX="3" PointY="2.2112939453125" />
+          <ConnectorPoint PointX="2.25" PointY="2.5862939453125" />
+          <ConnectorPoint PointX="3" PointY="2.5862939453125" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="ffiModel.Result" Width="1.5" PointX="3" PointY="4.375" Height="2.3648893229166656" />
-        <EntityTypeShape EntityType="ffiModel.Slide" Width="1.5" PointX="0.875" PointY="4.5" Height="2.1725878906249996" />
-        <EntityTypeShape EntityType="ffiModel.Partner" Width="1.5" PointX="5.375" PointY="0.75" Height="2.7494921874999996" />
-        <EntityTypeShape EntityType="ffiModel.Payment" Width="1.5" PointX="7.625" PointY="1" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="ffiModel.FAQ" Width="1.5" PointX="5.5" PointY="5.5" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="ffiModel.Result" Width="1.5" PointX="7.875" PointY="4.25" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="ffiModel.Partner" Width="1.5" PointX="5.625" PointY="0.75" Height="4.2879036458333353" />
+        <EntityTypeShape EntityType="ffiModel.Banner" Width="1.5" PointX="7.875" PointY="8.125" Height="1.9802864583333353" />
+        <AssociationConnector Association="ffiModel.FK_Banners_Partners" >
+          <ConnectorPoint PointX="7.09375" PointY="5.0379036458333353" />
+          <ConnectorPoint PointX="7.09375" PointY="9.1151432291666676" />
+          <ConnectorPoint PointX="7.875" PointY="9.1151432291666676" />
+        </AssociationConnector>
         <AssociationConnector Association="ffiModel.FK_Payments_Partners" >
-          <ConnectorPoint PointX="6.875" PointY="2.2785953776041659" />
-          <ConnectorPoint PointX="7.625" PointY="2.2785953776041659" />
+          <ConnectorPoint PointX="7.125" PointY="2.6535953776041667" />
+          <ConnectorPoint PointX="8" PointY="2.6535953776041667" />
         </AssociationConnector>
-      </Diagram>
+        <AssociationConnector Association="ffiModel.FK_Results_Partners" >
+          <ConnectorPoint PointX="7.125" PointY="4.6439518229166676" />
+          <ConnectorPoint PointX="7.875" PointY="4.6439518229166676" />
+        </AssociationConnector>
+        </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

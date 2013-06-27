@@ -2,10 +2,19 @@
     ViewBag.Title = "HowItWorks";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    ViewBag.Title = @Resources.labels.HowItWorks;
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, как работает продукция компании FFI" />
+    <meta name="description" content="Как работает продукция компании FFI" />
+}
 <div class="head">
     <h1>@Resources.labels.HowItWorks | <a href="@Url.Action("Certifications", "Articles")" class="white underlined">@Resources.labels.Certification</a>
     </h1>
 </div>
 <iframe width="780" height="600" src="http://www.youtube.com/embed/pEEf8iMWg0E?rel=0"
     frameborder="0" allowfullscreen></iframe>
-@Html.Raw(string.Format(Resources.labels.HowItWorksText, Html.ActionLink("страховий поліс", "Certifications", "Articles", new { @class = "blue" })))
+@Html.Raw(string.Format(Resources.labels.HowItWorksText, Html.ActionLink(@Resources.labels.Insurance, "Certifications", "Articles", null, new { @class = "blue" })))
+<br/>

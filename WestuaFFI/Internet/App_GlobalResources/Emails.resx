@@ -123,7 +123,42 @@
   <data name="AccountActivatedHeader" xml:space="preserve">
     <value>Ваш аккаунт було активовано</value>
   </data>
+  <data name="AccountConfirmationText" xml:space="preserve">
+    <value>&lt;html&gt;&lt;head&gt;&lt;meta content=\"text/html;charset=utf-8\" /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Шановний {0} , &lt;/p&gt;&lt;p&gt; Щоб підтвердити ваш аккаунт, будь ласка, клікніть на наступне посилання:&lt;/p&gt;&lt;p&gt;&lt;a href='{1}' target=\"_blank\"&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;З повагою,&lt;/div&gt;&lt;div&gt;FFI-ECO&lt;/div&gt;&lt;p&gt;Не відповідайте на це повідомлення, активізаційний лінк є приватним.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+
+&lt;html&gt;&lt;head&gt;&lt;meta content=\"text/html;charset=utf-8\" /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Уважаемый {0} , &lt;/p&gt;&lt;p&gt; Чтобы подтвердить ваш аккаунт, пожалуйста, кликните на следущую ссылку:&lt;/p&gt;&lt;p&gt;&lt;a href='{1}' target=\"_blank\"&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;С уважением,&lt;/div&gt;&lt;div&gt;FFI-ECO&lt;/div&gt;&lt;p&gt;Не отвечайте на это сообщение, активизационная ссылка приватная.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+
+&lt;html&gt;&lt;head&gt;&lt;meta content=\"text/html;charset=utf-8\" /&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Dear {0} , &lt;/p&gt;&lt;p&gt; To verify your account, please click the following link:&lt;/p&gt;&lt;p&gt;&lt;a href='{1}' target=\"_blank\"&gt;{1}&lt;/a&gt;&lt;/p&gt;&lt;div&gt;Best regards,&lt;/div&gt;&lt;div&gt;FFI-ECO&lt;/div&gt;&lt;p&gt;Do not forward this email. The verify link is private.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="AccountEpirationExtended" xml:space="preserve">
+    <value>Шановний {0}, термін дії вашого аккаунта в системі FFI-ECO було продовжено на {1} місяців, до {2} &lt;br/&gt;&lt;br/&gt;
+Дорогой {0}, срок действия вашего аккаунта в системе FFI-ECO продолжен на {1} месяцев, до {2}</value>
+  </data>
   <data name="NewUserBody" xml:space="preserve">
     <value>Новый пользователь: {0}</value>
+  </data>
+  <data name="OrderCreatedClientSubject" xml:space="preserve">
+    <value>Заказ с сайта FFI-ECO.COM</value>
+  </data>
+  <data name="OrderCreatedClientText" xml:space="preserve">
+    <value>Ваш заказ принят, в ближайшее время с вами свяжется менеджер для уточнения деталей доставки.</value>
+  </data>
+  <data name="OrderCreatedText" xml:space="preserve">
+    <value>Name: {0} &lt;br/&gt; Email: {1} &lt;br/&gt; Phone: {2} &lt;br/&gt; Adress: {3} &lt;br/&gt;Products: &lt;br/&gt; {4} &lt;br/&gt; Total: {5} uah</value>
+  </data>
+  <data name="ResultContactOwner" xml:space="preserve">
+    <value>A Client is willing to contact a owner of this car &lt;a href='{0}'&gt;{0}&lt;/a&gt;&lt;br/&gt;
+Client contact information: {1}&lt;br/&gt;&lt;br/&gt;
+Клиент вашего сайта хотел бы связаться с владельцем этого автомобиля &lt;a href='{0}'&gt;{0}&lt;/a&gt;&lt;br/&gt;
+Контактная информация клиента: {1}&lt;br/&gt;&lt;br/&gt;
+Клієнт вашего сайта бажає звязатися з власником цього авто &lt;a href='{0}'&gt;{0}&lt;/a&gt;&lt;br/&gt;
+Контактна інформація клієнта: {1}&lt;br/&gt;&lt;br/&gt;
+
+
+</value>
+  </data>
+  <data name="UniqEmailRequest" xml:space="preserve">
+    <value>Desired email name: {0} &lt;br/&gt;
+Reply to: {1}</value>
   </data>
 </root>

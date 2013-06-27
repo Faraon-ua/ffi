@@ -1,4 +1,5 @@
 ﻿@model Internet.Models.Partner
+
 @Html.ValidationSummary(true)
 <legend></legend>
 <p>
@@ -6,6 +7,7 @@
 </p>
 <br />
 @Html.HiddenFor(model => model.UserId)
+<input type="hidden" name="Id" value="@Model.Id"/>
 <div class="editor-label">
     @Resources.labels.PartnerName
 </div>
@@ -34,6 +36,15 @@
     @Html.EditorFor(model => model.Address)
     @Html.ValidationMessageFor(model => model.Address)
 </div>
+
+<div class="editor-label">
+    @Resources.labels.PartnerDeliveryService
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DeliveryService)
+    @Html.ValidationMessageFor(model => model.DeliveryService)
+</div>
+
 <div class="editor-label">
     @Resources.labels.PartnerPhone
 </div>
@@ -48,3 +59,11 @@
     @Html.EditorFor(model => model.Skype)
     @Html.ValidationMessageFor(model => model.Skype)
 </div>
+<div class="editor-label">
+    @Resources.labels.PartnerContactsEmail
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ContactsEmail)
+    @Html.ValidationMessageFor(model => model.ContactsEmail)
+</div>
+

@@ -1,6 +1,7 @@
 ﻿@model Internet.Models.Result
 <fieldset>
     <legend>Result</legend>
+    @Html.HiddenFor(model => model.PartnerId)
     <div class="editor-label">
         @Html.LabelFor(model => model.Manufacturer)
     </div>
@@ -44,6 +45,6 @@
         @Html.ValidationMessageFor(model => model.VideoTag)
     </div>
     <p>
-        <input type="submit" value="Create" />
+        <input type="submit" value="Submit" />
     </p>
 </fieldset>

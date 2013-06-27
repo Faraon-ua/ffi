@@ -47,6 +47,7 @@ namespace Internet.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 result.Id = Guid.NewGuid();
+                result.isActive = true;
                 db.Results.AddObject(result);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
@@ -72,6 +73,7 @@ namespace Internet.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                result.isActive = true;
                 db.Results.Attach(result);
                 db.ObjectStateManager.ChangeObjectState(result, EntityState.Modified);
                 db.SaveChanges();

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using Internet.Models;
 
@@ -14,7 +11,6 @@ namespace Internet.Areas.Admin.Controllers
     public class SlidesController : Controller
     {
         private ffiEntities db = new ffiEntities();
-
 
         public ActionResult GetImage(Guid slideId)
         {
@@ -91,6 +87,7 @@ namespace Internet.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                var oldSlide = db.Slides.FirstOrDefault(entry => entry.Id == slide.Id);
                 if (slideImg != null)
                     using (var ms = new MemoryStream())
                     {
@@ -98,8 +95,10 @@ namespace Internet.Areas.Admin.Controllers
                         byte[] imgArray = ms.GetBuffer();
                         slide.Image = imgArray; //new WebImage(imgArray).Resize(200, 200).GetBytes("png");
                     }
-
+                else
+                    slide.Image = oldSlide.Image;
  
+                db.Slides.Detach(oldSlide);
                 db.Slides.Attach(slide);
                 db.ObjectStateManager.ChangeObjectState(slide, EntityState.Modified);
                 db.SaveChanges();

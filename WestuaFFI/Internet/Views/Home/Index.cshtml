@@ -1,5 +1,13 @@
 ﻿@using Internet.Models
-@model IEnumerable<Internet.Models.Category>
+@model IEnumerable<Category>
+@{
+    ViewBag.Title = "продукция компании FFI, MPG, экономия топлива, увеличение моторесурса, КПД и мощности двигателя, уменьшение эмиссии вредных выхлопов (CO2, CH, NO), сохранность экологии";
+}
+@section meta
+{
+    <meta name="keywords" content="FFI, Forever Freedom Internationl, Украина, Львов, Харьков, MPG, экономия топлива, экология, интернет бизнес, биотопливо, присадки, экологически чистые продукты, экологически чистое топливо, эко продукты, увеличение моторесурса, увеличение кпд двигателя, очистка топливной системы, автокосметика, video mpg, car mpg, best mpg" />
+    <meta name="description" content="FFI Ecology - это ресурс, где вы сможете ознакомиться со всей экологически чистой продукцией компании FFI, методами ее применения и начать свой интернет бизнес" />
+}
 @section head
 {
     <link href="@Url.Content("~/Content/nivo-slider.css")" rel="stylesheet" type="text/css" />
@@ -14,6 +22,10 @@
         $(function () {
             $('#slider').nivoSlider();
             $("#navigation").lavaLamp({ speed: 200 });
+            @{
+                var selectedCategoryId = Session["SelectedCategory"];
+            }
+            $("#navigation a[id=@((selectedCategoryId ?? Model.FirstOrDefault().Id).ToString())]").click();
         });
     </script>
 }
@@ -23,16 +35,14 @@
             @foreach (var slide in (ViewBag.Slides as List<Slide>))
             {
                 <a href="@slide.Url">
-                    <img src="@Url.Action("GetImage","Slides", new { slideId = slide.Id })" alt="@slide.Description" title="@slide.Description" />
+                    <img src="@Url.Action("GetImage", "Slides", new { slideId = slide.Id })" alt="@slide.Description" title="@slide.Description" />
                 </a>
             }
         </div>
-        @*        <div id="htmlcaption" class="nivo-html-caption">*@ @*            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.*@
-        @*        </div>*@
     </div>
 </div>
 <div class="row-fluid">
-    <div id="header">
+    <div id="header" style="height: 35px;">
         <ul id="navigation">
             @foreach (var category in Model)
             {
@@ -41,7 +51,8 @@
                         {
                             HttpMethod = "GET",
                             UpdateTargetId = "productsBox",
-                        })
+                            OnComplete = "SelectFirstCategoryProduct();"
+                        }, new { id = category.Id })
                 </li>
             }
         </ul>
@@ -51,6 +62,12 @@
     <div class="span5" id="productsBox">
     </div>
     <div class="span6">
-        <img id="productImg" />
+        <img id="productImg" alt="@Resources.labels.Production"/>
     </div>
 </div>
+@section footer
+{
+    <h1 class="invisible">
+        FFI, Forever Freedom Internationl, Украина, Львов, Харьков, MPG, экономия топлива, экология, интернет бизнес, биотопливо, присадки, экологически чистые продукты, экологически чистое топливо, эко продукты, увеличение моторесурса, увеличение кпд двигателя, очистка топливной системы, автокосметика, video mpg, car mpg, best mpg
+    </h1>
+}

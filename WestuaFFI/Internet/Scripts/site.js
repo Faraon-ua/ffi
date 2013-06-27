@@ -1,6 +1,5 @@
 ﻿$(function () {
-
-    $("#navigation a:first").click();
+//    $("#navigation a:first").click();
 
     $(".products li a").live("mouseenter", function() {
          $(this).animate({
@@ -12,6 +11,15 @@
         $(this).animate({
                         'margin-left': 0,
                     }, 200, function() {});
+    });
+
+    $(".collapseContent").click(function() {
+        $(this).next("div").toggle(300);
+    });
+
+    $("#contactOwner").click(function() {
+        $(this).next("form").css("display", "block");
+        $(this).css("display", "none");
     });
 });
 
@@ -26,4 +34,8 @@ function PreSubmitPayment(amount, userName) {
             }
         }
     );
+}
+
+function SelectFirstCategoryProduct() {
+     $("#productImg").attr("src", "/Products/GetImage?productId=" + $("#productsBox a:first").attr("id"));
 }

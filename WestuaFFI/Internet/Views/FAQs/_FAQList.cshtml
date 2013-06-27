@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Internet.Models.FAQ>
+
+@foreach (var item in Model)
+{
+    <div class="row-fluid">
+        <h4 class="collapseContent">
+            @item.Question
+        </h4>
+        <div class="collapseContentText">@Html.Raw(item.Answer)</div>
+    </div>
+    <br/>
+}

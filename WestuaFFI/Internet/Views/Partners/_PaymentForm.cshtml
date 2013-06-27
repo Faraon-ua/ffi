@@ -5,7 +5,7 @@
 <form action="https://merchant.easypay.ua/client/order" method="post" id="paymentForm" onsubmit="if($('input[name=order_id]').val()==0){ PreSubmitPayment(@Model, '@User.Identity.Name'); return false;}">
 <input type="hidden" name="merchant_id" value="125e2c6b8d7d42f6a0fcba0c3d30daf3" />
 <input type="hidden" name="amount" value="@Model" />
-<input type="hidden" name="desc" value="@Resources.labels.PartnerPaymentDescription" />
+<input type="hidden" name="desc" value="@string.Format(Resources.labels.PartnerPaymentDescription, User.Identity.Name)" />
 <input type="hidden" name="order_id" value="0" />
 <input type="image" src="https://merchant.easypay.ua/content/images/easypay_pay1.png"
     value="Оплатить" />

@@ -1,0 +1,79 @@
+﻿@model Internet.Models.Order
+@using Internet.Helpers
+@using Internet.Models
+@{
+    ViewBag.Title = "CreateOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="head">
+    <h1>
+        @Resources.labels.CartCreateOrder</h1>
+</div>
+@{
+    var cart = Session["Cart"] as Dictionary<Product, int>;
+    for (int i = 0; i < cart.Count; i++)
+    {
+    <div class="row-fluid">
+        <div class="span1">
+            <img src="@Url.Action("GetImage", "Products", new { productId = cart.ElementAt(i).Key.Id })" width="50" height="50"/>
+        </div>
+        <div class="span6">
+            @Html.ActionLink(cart.ElementAt(i).Key.Name, "Details", "Products", new { id = cart.ElementAt(i).Key.Name_en }, new { @class = "text18px blue" })
+        </div>
+        <div class="span5">
+            @cart.ElementAt(i).Value шт
+        </div>
+    </div>
+    }
+    <br />
+     <div class="text18px">@Resources.labels.Total: @Model.Total USD / @(CurrencyHelper.RoundToTens(CurrencyHelper.CurrencyRates.UAH * Model.Total)) ГРН / @(CurrencyHelper.RoundToTens(Model.Total / CurrencyHelper.CurrencyRates.RUB)) РУБ
+    </div>
+}
+<br />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)    
+    <fieldset>
+        <legend class="green">@Resources.labels.OrderContactInfo</legend>
+        <table>
+            <tr>
+                <td>
+                    @Resources.labels.PartnerName &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.EditorFor(entry => entry.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Resources.labels.EmailAddress
+                </td>
+                <td>
+                    @Html.EditorFor(entry => entry.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Resources.labels.PartnerPhone
+                </td>
+                <td>
+                    @Html.EditorFor(entry => entry.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Resources.labels.PartnerAddress
+                </td>
+                <td>
+                    @Html.EditorFor(entry => entry.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="@Resources.labels.CartCreateOrder" class="btn btn-success"/>
+    </fieldset>
+}

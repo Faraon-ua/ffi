@@ -34,7 +34,27 @@ namespace Internet.Controllers
             {
                 return RedirectToAction("Index", "Home").Warning(Resources.labels.AccountAlreadyVerified);
             }
-        } 
+        }
+
+        public ActionResult PasswordReset()
+        {
+            if (!Membership.EnablePasswordReset)
+            {
+                throw new Exception("Password reset is not allowed");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PasswordReset(string userName)
+        {
+            var user = Membership.GetUser(userName);
+            if (user == null) return View().Warning(@Resources.labels.PasswordRecoveryFail);
+            if (user.IsLockedOut) user.UnlockUser();
+            var newPassword = user.ResetPassword();
+            EmailHelper.Instance.SendPasswordRecovery(user.Email, newPassword);
+            return View("LogOn").Warning(@Resources.labels.PasswordRecoverySuccess);
+        }
 
         public ActionResult LogOn()
         {
@@ -101,12 +121,12 @@ namespace Internet.Controllers
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, false, null, out createStatus);
-                
+
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     //                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     EmailHelper.Instance.NewUserAlert(model.UserName);
-//                    EmailHelper.Instance.SendConfirmationEmail(model.UserName);
+                    //                    EmailHelper.Instance.SendConfirmationEmail(model.UserName);
                     return RedirectToAction("Index", "Home").Warning(Resources.labels.AccountBeingChecked);
                 }
                 else

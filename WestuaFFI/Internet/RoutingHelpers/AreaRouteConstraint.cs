@@ -5,9 +5,8 @@ namespace Internet.RoutingHelpers
 {
     public class AreaRouteConstraint : IRouteConstraint
     {
-
-        private const string AdminAreaName = "Admin";
-        private const string AdminRoleName = "Administrator";
+        public const string AdminAreaName = "Admin";
+        public const string AdminRoleName = "Administrator";
 
         public string AreaName { get; set; }
 

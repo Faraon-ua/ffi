@@ -166,13 +166,27 @@
     <Content Include="Content\Certtification\straxovka.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\images\cart.png" />
+    <Content Include="Content\images\cart_not_active.png" />
+    <Content Include="Content\images\ffi-eco-logo.png" />
+    <Content Include="Content\images\green_arrow_right.png" />
+    <Content Include="Content\images\menu\chart.png" />
+    <Content Include="Content\images\menu\contacts.png" />
+    <Content Include="Content\images\menu\question.png" />
+    <Content Include="Content\images\menu\settings.png" />
+    <Content Include="Content\images\menu\start.png" />
+    <Content Include="Content\images\PartnerResources\cutaway.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\slideshow\slide1.png" />
+    <Content Include="Content\images\social_networks.png" />
+    <Content Include="Content\start.png" />
+    <Content Include="Content\styleNew.css" />
     <Content Include="Content\fancybox_loading.gif" />
     <Content Include="Content\fancybox_overlay.png" />
     <Content Include="Content\fancybox_sprite.png" />
-    <Content Include="Content\images\add-to-cart-icon.png" />
     <Content Include="Content\images\animated-overlay.gif" />
     <Content Include="Content\images\business.jpg" />
-    <Content Include="Content\images\eco-stamp120.jpg" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\instruction\step.png" />
     <Content Include="Content\images\instruction\step_002.png" />
@@ -188,12 +202,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\en.png" />
     <Content Include="Content\images\ffi_mpg-boost.png" />
-    <Content Include="Content\images\menu\contactus.jpg" />
-    <Content Include="Content\images\menu\faq.jpg" />
-    <Content Include="Content\images\menu\presentation.jpg" />
-    <Content Include="Content\images\menu\results2.jpg" />
-    <Content Include="Content\images\menu\settings3.jpg" />
-    <Content Include="Content\images\menu\start.jpg" />
     <Content Include="Content\images\pdf-icon.png" />
     <Content Include="Content\images\Question_icon.png" />
     <Content Include="Content\images\ru_flag.png" />
@@ -201,24 +209,11 @@
     <Content Include="Content\images\slideshow\bullets.png" />
     <Content Include="Content\images\slideshow\loading.gif" />
     <Content Include="Content\images\ua_flag.png" />
-    <Content Include="Content\images\ui-bg_diagonals-small_25_c5ddfc_40x40.png" />
-    <Content Include="Content\images\ui-bg_diagonals-thick_20_e69700_40x40.png" />
-    <Content Include="Content\images\ui-bg_diagonals-thick_22_1484e6_40x40.png" />
-    <Content Include="Content\images\ui-bg_diagonals-thick_26_2293f7_40x40.png" />
-    <Content Include="Content\images\ui-bg_flat_0_e69700_40x100.png" />
-    <Content Include="Content\images\ui-bg_flat_0_e6b900_40x100.png" />
-    <Content Include="Content\images\ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
-    <Content Include="Content\images\ui-bg_inset-hard_100_eeeeee_1x100.png" />
-    <Content Include="Content\images\ui-icons_0a82eb_256x240.png" />
-    <Content Include="Content\images\ui-icons_0b54d5_256x240.png" />
-    <Content Include="Content\images\ui-icons_5fa5e3_256x240.png" />
-    <Content Include="Content\images\ui-icons_fcdd4a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\images\youtube.png" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\nivo-slider.default-theme.css" />
-    <Content Include="Content\images\logo.png" />
     <Content Include="Content\nivo-slider.css" />
     <Content Include="Content\redactor.css" />
     <Content Include="Content\style.css" />
@@ -263,7 +258,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutOld.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -491,6 +486,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

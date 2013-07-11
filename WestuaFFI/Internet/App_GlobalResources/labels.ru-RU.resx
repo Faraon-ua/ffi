@@ -186,7 +186,7 @@
     <value>С чего начать</value>
   </data>
   <data name="GettingStartedBusiness" xml:space="preserve">
-    <value> Как правильно начать бизнес с FFI и партерською программе FFI-ECO </value>
+    <value> Как правильно начать  бизнес в FFI с партнерской программой FFI-ECO</value>
   </data>
   <data name="GettingStartedBusinessStep1" xml:space="preserve">
     <value>Шаг 1. Регистрация и оплата аккаунта дистрибьютора (Starter kit 30$) на главном
@@ -226,19 +226,19 @@
             FFI-ECO &lt;/span&gt;</value>
   </data>
   <data name="GettingStartedBusinessSub" xml:space="preserve">
-    <value>&lt;h2&gt;
+    <value>&lt;h3&gt;
                 &lt;font color='red'&gt;ПРАВИЛЬНО&lt;/font&gt;
                 &lt;br /&gt;
                 начать свой бизнес и работать&lt;br /&gt;
                 ЭФФЕКТИВНО
-            &lt;/h2&gt;</value>
+            &lt;/h3&gt;</value>
   </data>
   <data name="GettingStartedProduction" xml:space="preserve">
-    <value>&lt;h2&gt;
+    <value>&lt;h3&gt;
 &lt;font color="red"&gt;ПРАВИЛЬНО&lt;/font&gt;
 &lt;br&gt;
-начать пользоваться продукцией и получить ЭКОНОМИЮ
-&lt;/h2&gt;</value>
+начать пользоваться продукцией и получить&lt;br /&gt; ЭКОНОМИЮ
+&lt;/h3&gt;</value>
   </data>
   <data name="GettingStartedProductionBuy" xml:space="preserve">
     <value>Приобрести продукцию вы также можете на нашем сайте, смотрите раздел</value>
@@ -320,7 +320,7 @@
 &lt;/ol&gt;</value>
   </data>
   <data name="HowItWorks" xml:space="preserve">
-    <value>Как работает продукция</value>
+    <value>Как работает</value>
   </data>
   <data name="HowItWorksText" xml:space="preserve">
     <value>&lt;table style="height: 100%;"&gt;
@@ -526,10 +526,10 @@
     <value>Пароль</value>
   </data>
   <data name="PracticalResults" xml:space="preserve">
-    <value>Практические результаты</value>
+    <value>Результаты</value>
   </data>
   <data name="RegistrationHint" xml:space="preserve">
-    <value> Обратите внимание! &lt;br/&gt;&lt;br/&gt; Пожалуйста, при регистрации используйте тот же логин, с которым вы зарегистрировались в системе FFI, чтобы мы смогли проверить действительна ли ваша регистрация и являетесь ли вы нашим партнёром. Если вы еще не зарегистрированы как дистрибьютор компании FFI, пожалуйста, посетите эту страницу {0} &lt;br/&gt;&lt;br/&gt; Также, пожалуйста, корректно заполните поле Email адреса, потому что без действующего электронного почтового ящика вы не сможете активировать аккаунт. Если после регистрации в течение 24 часов вы не получили регистрационную ссылку, пожалуйста, обратитесь к администрации в разделе  {1}</value>
+    <value> Обратите внимание! &lt;br/&gt;&lt;br/&gt; Пожалуйста, корректно заполните поле Email адреса, потому что без действующего электронного почтового ящика вы не сможете активировать аккаунт. Если после регистрации в течение 24 часов вы не получили регистрационную ссылку, пожалуйста, обратитесь к администрации в разделе  {1}</value>
   </data>
   <data name="ResultsSelectManufacturer" xml:space="preserve">
     <value>Производитель</value>
@@ -538,7 +538,7 @@
     <value>Модель</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
-    <value>Послать сообщение</value>
+    <value>Отправить сообщение</value>
   </data>
   <data name="SendMessageFail" xml:space="preserve">
     <value>Пожалуйста, заполните все поля формы</value>
@@ -804,9 +804,42 @@
     <value>Гость</value>
   </data>
   <data name="Insurance" xml:space="preserve">
-    <value>Страховий поліс</value>
+    <value>Страховой полис</value>
   </data>
   <data name="ResultContactOwnerHint" xml:space="preserve">
     <value>Введите свой телефон или Email адрес</value>
+  </data>
+  <data name="Faq" xml:space="preserve">
+    <value>Ответы</value>
+  </data>
+  <data name="FFIEarnings" xml:space="preserve">
+    <value>Заработок с FFI</value>
+  </data>
+  <data name="KnowMore" xml:space="preserve">
+    <value>Узнать больше</value>
+  </data>
+  <data name="RegisterFFI" xml:space="preserve">
+    <value>Регистрация в компании FFI</value>
+  </data>
+  <data name="RegisterFFIEco" xml:space="preserve">
+    <value>Регистрация в партнерской программе FFI-ECO</value>
+  </data>
+  <data name="StartBusiness" xml:space="preserve">
+    <value>Начать бизнес</value>
+  </data>
+  <data name="TryProduct" xml:space="preserve">
+    <value>Попробовать продукцию</value>
+  </data>
+  <data name="LogOnText" xml:space="preserve">
+    <value>Введите свой логин и пароль. &lt;a href="/Account/Register"&gt;Зарегистрируйтесь&lt;/a&gt;, если у вас нет аккаунта.</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запомнить меня?</value>
+  </data>
+  <data name="ProductsBack" xml:space="preserve">
+    <value>Назад в каталог</value>
+  </data>
+  <data name="PartnerCutAwayText" xml:space="preserve">
+    <value>Чтобы сохранить макет визитки, щелкните по нему правой клавишей мыши и выберите "Сохранить изображение как"</value>
   </data>
 </root>

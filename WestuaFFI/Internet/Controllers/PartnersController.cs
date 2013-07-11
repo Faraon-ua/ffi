@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -75,6 +77,42 @@ namespace Internet.Controllers
             }
 
             return View(partner);
+        }
+
+        public ActionResult Visitka(Guid partnerId)
+        {
+            var partner = db.Partners.SingleOrDefault(p => p.Id == partnerId);
+            using (
+                var fileStream = new FileStream(Server.MapPath("~/Content/images/PartnerResources/cutaway.png"),
+                                                FileMode.Open))
+            {
+                using (var bmp = new Bitmap(fileStream))
+                {
+                    using (var g = Graphics.FromImage(bmp))
+                    {
+                        g.DrawString(partner.Name, new Font("verdana", 13), new SolidBrush(Color.FromArgb(90, 131, 52)),
+                                     new Point(30, 365));
+                        g.DrawString(partner.Phone, new Font("verdana", 4, FontStyle.Bold),
+                                     new SolidBrush(Color.FromArgb(84, 84, 84)), new Point(125, 490));
+                        g.DrawString(partner.Skype, new Font("verdana", 4, FontStyle.Bold),
+                                     new SolidBrush(Color.FromArgb(84, 84, 84)), new Point(125, 520));
+                        g.DrawString(partner.ContactsEmail, new Font("verdana", 4, FontStyle.Bold),
+                                     new SolidBrush(Color.FromArgb(84, 84, 84)), new Point(125, 550));
+                        
+                        g.DrawString(string.Format("{0}.FFI-ECO.COM", partner.User.UserName.ToUpper()), new Font("verdana", (float)9.5, FontStyle.Regular),
+                                     new SolidBrush(Color.FromArgb(84, 84, 84)), new Point(30, 260));
+                        bmp.Save(fileStream, ImageFormat.Png);
+
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            bmp.Save(ms, ImageFormat.Png);
+                            bmp.Dispose();
+                            g.Dispose();
+                            return File(ms.ToArray(), "image/png");
+                        }
+                    }
+                }
+            }
         }
 
         //
@@ -190,7 +228,7 @@ namespace Internet.Controllers
         {
             if (ModelState.IsValid)
             {
-//                if (string.IsNullOrEmpty(result.VideoTag)) return RedirectToAction("Edit", new { id = partner.User.UserName }).Warning(string.Format("{0} {1} {2}", Resources.labels.TestDrive, "youtube link", Resources.labels.Incorrect));
+                //                if (string.IsNullOrEmpty(result.VideoTag)) return RedirectToAction("Edit", new { id = partner.User.UserName }).Warning(string.Format("{0} {1} {2}", Resources.labels.TestDrive, "youtube link", Resources.labels.Incorrect));
                 result.Id = Guid.NewGuid();
                 result.isActive = false;
                 var myUri = new Uri(result.VideoTag);

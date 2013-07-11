@@ -35,8 +35,8 @@ namespace Internet.Controllers
 //            return RedirectToAction("Maintance");
             var slides = _db.Slides.ToList();
             ViewBag.Slides = slides;
-            var categories = _db.Categories.OrderBy(entry => entry.Index).ToList();
-            return View(categories);
+            
+            return View();
         }
 
         public ActionResult About()

@@ -24,6 +24,7 @@
 }
 @*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>*@
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<br />
 <div id="tabs" class="partner-panel">
     <ul>
         <li><a href="#tabs-0">
@@ -38,13 +39,11 @@
         @if (Model.Partner.IsActive)
         {
             <li><a href="#tabs-4">
-                <h3 class="white">
-                    Marketing</h3>
+                <h3 class="white">Marketing</h3>
             </a></li>
         }
         <li><a href="#tabs-5">
-            <h3 class="white">
-                FAQ</h3>
+            <h3 class="white">FAQ</h3>
         </a></li>
     </ul>
     <div id="tabs-0">
@@ -62,25 +61,28 @@
         }
     </div>
     <div id="tabs-1">
+        <div>@Resources.labels.PartnerCutAwayText</div>
+        <img src="@Url.Action("Visitka", "Partners", new { partnerId = Model.Partner.Id }, null)"  width="650px"/>
+
         @Html.Partial("_PresentationUpdate", Model.Partner)
         <hr />
         @Html.Partial("_UniqEmailUpdate", Model.Partner)
         <hr />
-        <h3>
-            @Resources.labels.SelfResult</h3>
+        <h4>
+            @Resources.labels.SelfResult</h4>
         <br />
         @if (Model.Partner.Results.Any())
         {
             var result = Model.Partner.Results.First();
             if (result.isActive)
             {
-            <div class="green">@Resources.labels.ResultActivated</div>
-            <a href="http://ffi-eco.com/Results?manufacturer=@result.Manufacturer&model=@result.Model" target="_blank" class="blue">@result.Manufacturer
-                @result.Model</a>
+                <div class="green">@Resources.labels.ResultActivated</div>
+                <a href="http://ffi-eco.com/Results?manufacturer=@result.Manufacturer&model=@result.Model" target="_blank" class="blue">@result.Manufacturer
+                    @result.Model</a>
             }
             else
             {
-            <div class="yellow">@Resources.labels.ResultIsReviewed</div>
+                <div class="yellow">@Resources.labels.ResultIsReviewed</div>
             }
         }
         else
@@ -89,7 +91,7 @@
         }
         <hr />
         @{
-            var banner = new Banner() {PartnerId = Model.Partner.Id};
+            var banner = new Banner() { PartnerId = Model.Partner.Id };
             if (Model.Partner.Banners.Any())
             {
                 banner = Model.Partner.Banners.First();

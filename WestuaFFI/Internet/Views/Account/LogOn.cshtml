@@ -3,19 +3,19 @@
     ViewBag.Title = "Log On";
 }
 <h2>
-    Log On</h2>
+    @Resources.labels.LogOn</h2>
 <p>
-    Please enter your user name and password. @Html.ActionLink("Register", "Register")
-    if you don't have an account.
+    
+   @Html.Raw(Resources.labels.LogOnText)
 </p>
 @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.ValidationSummary(true, "Log on was unsuccessful. Please correct the errors and try again.", new { @class = "alert alert-block alert-error" })
     <fieldset>
-        <legend>Account Information</legend>
+        <legend></legend>
         <div class="control-group">
             <div class="control-label">
-                @Html.LabelFor(m => m.UserName)
+                @Resources.labels.UserName
             </div>
             <div class="controls">
                 @Html.TextBoxFor(m => m.UserName, new { @class = "required" })
@@ -24,7 +24,7 @@
         </div>
         <div class="control-group">
             <div class="control-label">
-                @Html.LabelFor(m => m.Password)
+                @Resources.labels.Password
             </div>
             <div class="controls">
                 @Html.PasswordFor(m => m.Password, new { @class = "required" })
@@ -33,14 +33,14 @@
         </div>
         <div class="control-group">
             <div class="control-label">
-                @Html.LabelFor(m => m.RememberMe)
+                @Resources.labels.RememberMe
             </div>
             <div class="controls">
                 @Html.CheckBoxFor(m => m.RememberMe)
             </div>
         </div>
         <div class="form-actions">
-            <input type="submit" value="Log On" class="btn btn-primary" />
+            <input type="submit" value="@Resources.labels.LogOn" class="btn btn-primary" />
             @Html.ActionLink(Resources.labels.ForgotPassword, "PasswordReset", "Account", null, new {@class="pull-right blue"})
         </div>
     </fieldset>

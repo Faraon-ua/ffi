@@ -142,7 +142,7 @@
     <value>Важливо!!! &lt;br/&gt;&lt;br/&gt;Будь ласка, при реєстрації використовуйте той самий логін, з яким ви зареєструвались у системі FFI, щоб ми змогли перевірити чи дійсна ваша реєстрація та чи є ви нашим партнером. Якщо ви ще не зареєструвались як дистриб'ютор компанії FFI, будь ласка, відвідайте цю сторінку {0} &lt;br/&gt;&lt;br/&gt;Також, будь ласка, корректно заповніть поле Email адреси, бо без діючої електронної поштової скриньки ви не зможете активувати аккаунт. Якщо після реєстрації протягом 24 годин ви не отримали реєстраційну ссилку, будь ласка, зверніться до адміністраціі у розділі {1}</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>FFI Ecology</value>
+    <value>FFI Eco</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>Логін</value>
@@ -235,13 +235,13 @@
     <value>Як правильно почати бізнес з FFI та партерською програмою FFI-ECO</value>
   </data>
   <data name="HowItWorks" xml:space="preserve">
-    <value>Як працює продукція</value>
+    <value>Як працює</value>
   </data>
   <data name="PartnerPaymentCardHint" xml:space="preserve">
     <value>Для оплати рахунку кредитною карткою необхідна реєстрація в системі EasyPay</value>
   </data>
   <data name="PracticalResults" xml:space="preserve">
-    <value>Практичні результати</value>
+    <value>Результати</value>
   </data>
   <data name="Certification" xml:space="preserve">
     <value>Сертифікати якості та гарантії</value>
@@ -297,19 +297,19 @@
             FFI-ECO &lt;/span&gt;</value>
   </data>
   <data name="GettingStartedBusinessSub" xml:space="preserve">
-    <value>&lt;h2&gt;
+    <value>&lt;h3&gt;
                 &lt;font color='red'&gt;ПРАВИЛЬНО&lt;/font&gt;
                 &lt;br /&gt;
                  почати свій бізнес і працювати&lt;br /&gt;
-                ЭФЕКТИВНО
-            &lt;/h2&gt;</value>
+                ЕФЕКТИВНО
+            &lt;/h3&gt;</value>
   </data>
   <data name="GettingStartedProduction" xml:space="preserve">
-    <value>&lt;h2&gt;
+    <value>&lt;h3&gt;
 &lt;font color="red"&gt;ПРАВИЛЬНО&lt;/font&gt;
 &lt;br&gt;
 почати користуватися продукцією та отримати ЕКОНОМІЮ
-&lt;/h2&gt;</value>
+&lt;/h3&gt;</value>
   </data>
   <data name="GettingStartedProductionBuy" xml:space="preserve">
     <value>Придбати продукцію ви також можете на нашому сайті, дивіться розділ </value>
@@ -778,9 +778,45 @@
     <value>Гість</value>
   </data>
   <data name="Insurance" xml:space="preserve">
-    <value>Страховой полис</value>
+    <value>Страховий поліс</value>
   </data>
   <data name="ResultContactOwnerHint" xml:space="preserve">
     <value>Введіть свій телефон або Email адресу</value>
+  </data>
+  <data name="Faq" xml:space="preserve">
+    <value>Відповіді</value>
+  </data>
+  <data name="FFIEarnings" xml:space="preserve">
+    <value>Заробіток з FFI</value>
+  </data>
+  <data name="KnowMore" xml:space="preserve">
+    <value>Дізнатись більше</value>
+  </data>
+  <data name="RegisterFFI" xml:space="preserve">
+    <value>Реєстрація в компанії FFI</value>
+  </data>
+  <data name="RegisterFFIEco" xml:space="preserve">
+    <value>Реєстрація в партнерській програмі FFI-ECO</value>
+  </data>
+  <data name="StartBusiness" xml:space="preserve">
+    <value>Розпочати бізнес</value>
+  </data>
+  <data name="TryProduct" xml:space="preserve">
+    <value>Спробувати продукцію</value>
+  </data>
+  <data name="LogOnText" xml:space="preserve">
+    <value>Введіть свій логін та пароль. &lt;a href="/Account/Register"&gt;Зареєструйтесь&lt;/a&gt;, якщо у вас немає акаунта.</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запам'ятати мене?</value>
+  </data>
+  <data name="ProductsBack" xml:space="preserve">
+    <value>Назад до каталогу</value>
+  </data>
+  <data name="PartnerCutAwayText" xml:space="preserve">
+    <value>Щоб зберегти макет візитки, клікніть на ньому правою клавішою мишки та виберіть "Зберегти зображення як ..."</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -4,7 +4,7 @@
 @{
     var siteOnwer = SubdomainHelper.GetSiteOwner();
     var partner = Partner.CurrentUserAsPartner;
-    var partnerLinkText = partner == null ? Resources.labels.BecomePartner : Resources.labels.PartnerPanel;
+
     var partnerLink = partner == null ? Url.Action("Business", "Articles") : Url.Action("Edit", "Partners", new { id = User.Identity.Name });
 }
 <!DOCTYPE html>
@@ -18,11 +18,10 @@
     <meta content="index, follow" name="robots">
     <link rel="icon" type="image/png" href="@Url.Content("~/Content/images/favicon.ico")">
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styleNew.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/validation.css")" rel="stylesheet" type="text/css" />
     <script src="@Url.Content("~/Scripts/jquery-1.8.0.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/captify.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/site.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jQuery.flashMessage.js")" type="text/javascript"></script>
@@ -45,29 +44,31 @@
     <div class="container">
         <header>
             <a href="/">
-                <img alt="logo" src="@Url.Content("~/Content/images/logo.png")"/>
+                <img class="logo" alt="logo" src="@Url.Content("~/Content/images/ffi-eco-logo.png")"/>
             </a>
             <div class="pull-right">
                 <div class="row-fluid">
-                    <div class="span8">
+                    <div class="span7">
                         @Html.Partial("_LogOnPartial")
                     </div>
-                    <div class="span4">
+                    <div class="span5">
                         <div class="language-selection">
                             <a href="@Url.Action("ChangeCulture", "Home", new { lang = "uk-UA", returnUrl = Request.Url.ToString() })" title="Українська">
                                 <img src="@Url.Content("~/Content/images/ua_flag.png")" alt="українська"/>
                             </a><a href="@Url.Action("ChangeCulture", "Home", new { lang = "ru-RU", returnUrl = Request.Url.ToString() })" title="Русский">
-                                <img src="@Url.Content("~/Content/images/ru_flag.png")" alt="русский"/>
-                            </a>@*        <a href="@Url.Action("ChangeCulture", "Home", new { lang = "en-US", returnUrl = Request.Url.ToString() })" title="English">*@
+                                    <img src="@Url.Content("~/Content/images/ru_flag.png")" alt="русский"/>
+                                </a>@*        <a href="@Url.Action("ChangeCulture", "Home", new { lang = "en-US", returnUrl = Request.Url.ToString() })" title="English">*@
                             @*            <img src="@Url.Content("~/Content/images/en.png")"/>*@ @*        </a>*@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    @Html.Partial("_ShoppingCart")
-                    <a class="btn-large btn-danger" href="@partnerLink">@partnerLinkText
+                @if (partner != null)
+                {
+                    <div class="row-fluid">
+                    <a class="btn-green-gradient" href="@partnerLink">@Resources.labels.PartnerPanel
                     </a>
                 </div>
+                }
             </div>
             <div class="pull-right banner">
                 @if (siteOnwer.Banners.Any())
@@ -81,20 +82,37 @@
         </header>
         <section id="main">
             @Html.Partial("_Flash")
-            <div class="row-fluid">
-                <div class="span10">
-                    @RenderBody()
-                </div>
-                <div class="span2">
-                    <div class="pull-right">
-                        @Html.Partial("_NavPartial")
-                    </div>
-                </div>
-            </div>
+
+            @RenderSection("slideshow", false)
+            @Html.Partial("_NavPartial")
+
+            @RenderBody()
+
         </section>
         <footer>
-            @RenderSection("footer", false)
+            <div class="bg-green social">
+                <ul class="socialNetworks">
+                    <li>
+                        <a class="vkontakte" href="http://vk.com/ffi_eco_com" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a class="youtube" href="http://www.youtube.com/channel/UCQAuB1WGvv7m5c2X0dLwisw" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a class="twitter" href="skype:FFI-ECO?chat" target="_blank"></a>
+                    </li> 
+                    @if (@ViewContext.RouteData.Values["controller"].ToString() == "Products")
+                    {
+                        <li>
+                            <a class="cart" href="@Url.Action("Cart", "Products")" target="_blank"></a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="bg-green copyright"> Copyright © 2012-2013 FFI ECO </div>
         </footer>
+
+        @RenderSection("footer_seo", false)
     </div>
 </body>
 </html>

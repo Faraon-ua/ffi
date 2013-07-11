@@ -1,12 +1,14 @@
 ﻿@using Internet.Models
-@model IEnumerable<Category>
+@using Internet.RoutingHelpers
 @{
     ViewBag.Title = "продукция компании FFI, MPG, экономия топлива, увеличение моторесурса, КПД и мощности двигателя, уменьшение эмиссии вредных выхлопов (CO2, CH, NO), сохранность экологии";
+    var siteOwner = SubdomainHelper.GetSiteOwner();    
+    
 }
 @section meta
 {
     <meta name="keywords" content="FFI, Forever Freedom Internationl, Украина, Львов, Харьков, MPG, экономия топлива, экология, интернет бизнес, биотопливо, присадки, экологически чистые продукты, экологически чистое топливо, эко продукты, увеличение моторесурса, увеличение кпд двигателя, очистка топливной системы, автокосметика, video mpg, car mpg, best mpg" />
-    <meta name="description" content="FFI Ecology - это ресурс, где вы сможете ознакомиться со всей экологически чистой продукцией компании FFI, методами ее применения и начать свой интернет бизнес" />
+    <meta name="description" content="FFI Eco - интернет бизнес, экология, экономия топлива, очистка топливной системы, увеличение КПД и оторесурса двигателя, экологически чистая продукция компании FFI" />
 }
 @section head
 {
@@ -21,53 +23,78 @@
     <script type="text/javascript">
         $(function () {
             $('#slider').nivoSlider();
-            $("#navigation").lavaLamp({ speed: 200 });
-            @{
-                var selectedCategoryId = Session["SelectedCategory"];
-            }
-            $("#navigation a[id=@((selectedCategoryId ?? Model.FirstOrDefault().Id).ToString())]").click();
         });
     </script>
 }
-<div class="row-fluid">
-    <div class="slider-wrapper theme-default">
-        <div id="slider" class="nivoSlider">
+@section slideshow
+{
+    <div class="row-fluid">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                @foreach (var slide in (ViewBag.Slides as List<Slide>))
+                {
+                    <img src="@Url.Action("GetImage", "Slides", new { slideId = slide.Id })" title="#@slide.Id"/>
+                }
+            </div>
             @foreach (var slide in (ViewBag.Slides as List<Slide>))
             {
-                <a href="@slide.Url">
-                    <img src="@Url.Action("GetImage", "Slides", new { slideId = slide.Id })" alt="@slide.Description" title="@slide.Description" />
-                </a>
+                <div class="slide-show-title nivo-html-caption" id="@slide.Id">
+                    <h2>@Html.Raw(slide.Description)</h2>
+                </div>
             }
         </div>
     </div>
-</div>
-<div class="row-fluid">
-    <div id="header" style="height: 35px;">
-        <ul id="navigation">
-            @foreach (var category in Model)
-            {
-                <li>
-                    @Ajax.ActionLink(category.Name, "Index", "Products", new { categoryId = category.Id }, new AjaxOptions
-                        {
-                            HttpMethod = "GET",
-                            UpdateTargetId = "productsBox",
-                            OnComplete = "SelectFirstCategoryProduct();"
-                        }, new { id = category.Id })
-                </li>
-            }
-        </ul>
-    </div>
-</div>
-<div class="row-fluid">
-    <div class="span5" id="productsBox">
-    </div>
-    <div class="span6">
-        <img id="productImg" alt="@Resources.labels.Production"/>
-    </div>
-</div>
-@section footer
-{
-    <h1 class="invisible">
-        FFI, Forever Freedom Internationl, Украина, Львов, Харьков, MPG, экономия топлива, экология, интернет бизнес, биотопливо, присадки, экологически чистые продукты, экологически чистое топливо, эко продукты, увеличение моторесурса, увеличение кпд двигателя, очистка топливной системы, автокосметика, video mpg, car mpg, best mpg
-    </h1>
 }
+
+<div class="presentation row-fluid">
+    <div class="underline"></div>
+    <div style="margin-top: 20px;" class="pull-left">
+        <div class="font-large-green pull-left text-align-left" style="width: 130px;">
+            @Resources.labels.FFIEarnings
+        </div>
+        <div class="pull-left arrow-green-right">
+        </div>
+        <a class="btn-green-gradient" style="margin-top: 160px;" href="@Url.Action("Business", "Articles")">@Resources.labels.StartBusiness</a>
+        <a class="btn-green-gradient" style="margin-top: 20px;" href="@Url.Action("Instruction", "Articles")">@Resources.labels.TryProduct</a>
+        <a class="btn-green-gradient" style="margin-top: 20px;" href="@Url.Action("Index", "Products")">@Resources.labels.Production</a>
+    </div>
+    <div class="pull-right">
+        @if (!string.IsNullOrEmpty(siteOwner.TestDriveHTML))
+        {
+            <iframe width="725px" height="415" src="http://www.youtube.com/embed/@siteOwner.TestDriveHTML?rel=0" frameborder="0" allowfullscreen></iframe>  
+        }
+    </div>
+</div>
+
+@*<div class="row-fluid">*@
+@*    <div id="header" style="height: 35px;">*@
+@*        <ul id="navigation">*@
+@*            @foreach (var category in Model)*@
+@*            {*@
+@*                <li>*@
+@*                    @Ajax.ActionLink(category.Name, "Index", "Products", new { categoryId = category.Id }, new AjaxOptions*@
+@*                        {*@
+@*                            HttpMethod = "GET",*@
+@*                            UpdateTargetId = "productsBox",*@
+@*                            OnComplete = "SelectFirstCategoryProduct();"*@
+@*                        }, new { id = category.Id })*@
+@*                </li>*@
+@*            }*@
+@*        </ul>*@
+@*    </div>*@
+@*</div>*@
+@*<div class="row-fluid">*@
+@*    <div class="span5" id="productsBox">*@
+@*    </div>*@
+@*    <div class="span6">*@
+@*        <img id="productImg" alt="@Resources.labels.Production"/>*@
+@*    </div>*@
+@*</div>
+*@
+
+
+@*@section footer_seo*@
+@*{*@
+@*    <h1 class="invisible">FFI, Forever Freedom Internationl, Украина, Львов, Харьков, MPG, экономия топлива, экология, интернет бизнес, биотопливо, присадки, экологически чистые продукты, экологически чистое топливо, эко продукты, увеличение моторесурса, увеличение кпд двигателя, очистка топливной системы, автокосметика, video mpg, car mpg, best mpg*@
+@*    </h1>*@
+@*}*@

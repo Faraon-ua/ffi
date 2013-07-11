@@ -1,12 +1,11 @@
 ﻿@using Internet.RoutingHelpers
 @{
-    ViewBag.Title = "Contacts";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var siteOwner = SubdomainHelper.GetSiteOwner();
 }
 @{
     ViewBag.Title = Resources.labels.Contacts;
- }
+}
 @section meta
 {
     <meta name="keywords" content="FFI, Forever Freedom Internationl, контакты" />
@@ -23,22 +22,23 @@
             </h2>
             <p>@siteOwner.Name</p>
             <p>
-                @siteOwner.Country</p>
+                @siteOwner.Country
+            </p>
             <p>
-                @siteOwner.City</p>
+                @siteOwner.City
+            </p>
             <h3>
                 @Resources.labels.PartnerPhone
             </h3>
             <p>
-                @siteOwner.Phone</p>
-            <h3>
-                Email
+                @siteOwner.Phone
+            </p>
+            <h3>Email
             </h3>
             <p>
                 <a href="mailto:@siteOwner.ContactsEmail">@siteOwner.ContactsEmail</a>
             </p>
-            <h3>
-                Skype
+            <h3>Skype
             </h3>
             <p>
                 @siteOwner.Skype
@@ -52,25 +52,37 @@
             <div id="contactUs">
                 @using (Html.BeginForm())
                 {
-                    <div id="contactName">
-                        <input type="hidden" name="toAddress" value="@siteOwner.ContactsEmail"/>
-                        <p id="nameLabel">
-                            @Resources.labels.Name
-                        </p>
-                        <p id="emailLabel">
-                            Email
-                        </p>
-                        <p id="textLabel">
-                            @Resources.labels.Message
-                        </p>
-                    </div>
-                    <!-- contact form -->
-                    <div id="contactForm">
-                        <input type="text" id="contactNameForm" name="name" />
-                        <input type="text" id="contactEmailForm" name="eMail" />
-                    </div>
-                    <textarea id="contactTextForm" name="text" cols="" rows=""></textarea>
-                    <input type="submit" value="@Resources.labels.btnSend" name="submit" id="contactParButton" />
+                    <input type="hidden" name="toAddress" value="@siteOwner.ContactsEmail"/>                    
+                    <table>
+                        <tr>
+                            <td>
+                            @Resources.labels.Name                                
+                            </td>
+                            <td>
+                                <input type="text" id="contactNameForm" name="name" />
+                            </td>
+                            <td rowspan="3" >
+                                 <input type="submit" value="@Resources.labels.btnSend" name="submit" id="contactParButton" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Email
+                                
+                            </td>
+                            <td>
+                                  <input type="text" id="contactEmailForm" name="eMail" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 @Resources.labels.Message
+                            </td>
+                            <td>
+                                 <textarea id="contactTextForm" name="text" cols="" rows=""></textarea>
+                            </td>
+                        </tr>
+                    </table>
                 }
             </div>
         </div>

@@ -1,11 +1,14 @@
 ﻿@model Internet.Models.Partner
-<h3>
+<h4>
     @Resources.labels.TestDrive (Youtube link)
-</h3>
+</h4>
+<br/>
+
 @using (Html.BeginForm("UpdatePresentation", "Partners"))
 {
     <input type="hidden" name="partnerId" value="@Model.Id"/>
     @Resources.labels.Example<span>: http://www.youtube.com/watch?v=gYE9RrIGbH0</span>
+    <br/>
     var presentationUrl = string.IsNullOrEmpty(Model.TestDriveHTML) ? string.Empty : string.Format("http://www.youtube.com/watch?v={0}", Model.TestDriveHTML);
     <input type="text" value="@presentationUrl" name="presentation"/>
     <br />

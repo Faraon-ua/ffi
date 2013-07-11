@@ -19,10 +19,17 @@ namespace Internet.Controllers
             var arr = product.Image == null ? new byte[0] : product.Image;
             return File(arr, "image/png");
         }
+        
         //
         // GET: /Products/
 
-        public PartialViewResult Index(Guid categoryId)
+        public ActionResult Index()
+        {
+            var categories = db.Categories.OrderBy(entry => entry.Index).ToList();
+            return View(categories);
+        }
+
+        public PartialViewResult CategoryProducts(Guid categoryId)
         {
             Session["SelectedCategory"] = categoryId.ToString();
             var products = db.Products.Include("Category").Where(entry => entry.CategoryId == categoryId);

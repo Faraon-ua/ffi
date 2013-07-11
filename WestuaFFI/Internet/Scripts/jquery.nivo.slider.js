@@ -88,11 +88,11 @@
         });
 
         //Create caption
-        slider.append($('<div class="nivo-caption"></div>'));
+        slider.append($('<div class="slide-show-title"></div>'));
         
         // Process caption function
         var processCaption = function(settings){
-            var nivoCaption = $('.nivo-caption', slider);
+            var nivoCaption = $('.slide-show-title', slider);
             if(vars.currentImage.attr('title') != '' && vars.currentImage.attr('title') != undefined){
                 var title = vars.currentImage.attr('title');
                 if(title.substr(0,1) == '#') title = $(title).html();   
@@ -640,7 +640,7 @@
         boxCols: 8,
         boxRows: 4,
         animSpeed: 500,
-        pauseTime: 3000,
+        pauseTime: 5000,
         startSlide: 0,
         directionNav: true,
         controlNav: true,

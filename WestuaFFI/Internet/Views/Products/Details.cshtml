@@ -13,12 +13,17 @@
     <meta name="description" content="@Model.Name" />
 }
 
-<div class="row-fluid head">
+<div class="row-fluid head results-select-header">
     <h1 class="span5">@Model.Name</h1>
     @Html.ActionLink(Resources.labels.CartAdd, "AddToCart", "Products", new { id = Model.Id }, new { @class = "btn btn-success pull-right", style = "margin: 5px;" })
 </div>
 <br />
 <div class="row-fluid" id="productDetails">
+    <div>
+        @Html.ActionLink(Resources.labels.ProductsBack, "Index", "Products")
+    </div>
+    <br />
+
     <img alt="@Model.Name" src="@Url.Action("GetImage", "Products", new { productId = Model.Id }, null)"/>
     <p class="green text16px">
         <strong>@Resources.labels.Price: </strong>@Model.Price USD / @(CurrencyHelper.RoundToTens(CurrencyHelper.CurrencyRates.UAH * Model.Price))

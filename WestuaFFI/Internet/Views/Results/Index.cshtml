@@ -5,13 +5,14 @@
 }
 @section meta
 {
-    @if(Model.Result != null)
+    @if (Model.Result != null)
     {
         <meta name="keywords" content="FFI, Forever Freedom Internationl, результаты использования @string.Format("{0} {1}", Model.Result.Manufacturer, Model.Result.Model)" />
         <meta name="description" content="Результаты использования продукции FFI на автомобиле @string.Format("{0} {1}", Model.Result.Manufacturer, Model.Result.Model)" />
     }
 }
-<div class="head">
+<br />
+<div class="head results-select-header">
     <div class="row-fluid">
         <div class="span5">
             <h1>
@@ -40,13 +41,17 @@
 }
 else
 {
-    var siteOwner = SubdomainHelper.GetSiteOwner();
-    if (siteOwner.Results.Count > 0)
+    if (!Request.Url.Query.Contains("model"))
     {
-        var result = siteOwner.Results.First();
-        if (result.isActive)
+        var siteOwner = SubdomainHelper.GetSiteOwner();
+        if (siteOwner.Results.Count > 0)
         {
+            var result = siteOwner.Results.First();
+            if (result.isActive)
+            {
     @Html.Partial("_ResultDetails", result, new ViewDataDictionary { { "ownersResult", true } });
+            }
         }
+
     }
 }

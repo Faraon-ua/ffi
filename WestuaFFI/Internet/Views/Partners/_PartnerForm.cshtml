@@ -16,6 +16,13 @@
     @Html.ValidationMessageFor(model => model.Name)
 </div>
 <div class="editor-label">
+    FFI @Resources.labels.UserName
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FFILogin)
+    @Html.ValidationMessageFor(model => model.FFILogin)
+</div>
+<div class="editor-label">
     @Resources.labels.PartnerCountry
 </div>
 <div class="editor-field">

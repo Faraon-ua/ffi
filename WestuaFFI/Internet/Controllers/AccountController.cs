@@ -121,6 +121,7 @@ namespace Internet.Controllers
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, false, null, out createStatus);
+                EmailHelper.Instance.SendConfirmationEmail(model.UserName);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {

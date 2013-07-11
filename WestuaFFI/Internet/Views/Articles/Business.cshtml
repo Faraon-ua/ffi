@@ -23,7 +23,6 @@
                 'hideOnContentClick': true
             });
         });
-
     </script>
 }
 <div class="head">
@@ -35,8 +34,8 @@
             @Html.Raw(Resources.labels.GettingStartedBusinessStep1)
         </h3>
         <p>
-            <a class="btn btn-success" href="https://backoffice.myffi.biz/signup.asp?siteurl=@siteOwner.User.UserName"
-               target="_blank">@Resources.labels.btnRegister</a> <a id="inline" href="#data" class="blue text14px">
+            <a class="btn btn-success" href="https://backoffice.myffi.biz/signup.asp?siteurl=@siteOwner.FFILogin"
+               target="_blank">@Resources.labels.RegisterFFI</a> <a id="inline" href="#data" class="blue text14px">
                    @Resources.labels.Instruction
                    <img src="@Url.Content("~/Content/images/Question_icon.png")" alt="@Resources.labels.Instruction"/>
                </a>
@@ -44,7 +43,7 @@
     </li>
     <li>
         @Html.Raw(Resources.labels.GettingStartedBusinessStep2)
-        <a class="btn btn-success" href="@Url.Action("Register", "Account")" target="_blank">@Resources.labels.btnRegister</a>
+        <a class="btn btn-success" href="@Url.Action("Register", "Account")" target="_blank">@Resources.labels.RegisterFFIEco</a>
         <a id="inline" href="#regInstruction" class="blue text14px">
             @Resources.labels.Instruction
             <img src="@Url.Content("~/Content/images/Question_icon.png")" alt="@Resources.labels.Instruction"/>

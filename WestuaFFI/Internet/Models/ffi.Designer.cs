@@ -14,6 +14,7 @@ using System.Data.Objects;
 using System.Data.Objects.DataClasses;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Web.Mvc;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
@@ -29,51 +30,54 @@ using System.Xml.Serialization;
 namespace Internet.Models
 {
     #region Contexts
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
     public partial class ffiEntities : ObjectContext
     {
         #region Constructors
-    
+
         /// <summary>
         /// Initializes a new ffiEntities object using the connection string found in the 'ffiEntities' section of the application configuration file.
         /// </summary>
-        public ffiEntities() : base("name=ffiEntities", "ffiEntities")
+        public ffiEntities()
+            : base("name=ffiEntities", "ffiEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
-    
+
         /// <summary>
         /// Initialize a new ffiEntities object.
         /// </summary>
-        public ffiEntities(string connectionString) : base(connectionString, "ffiEntities")
+        public ffiEntities(string connectionString)
+            : base(connectionString, "ffiEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
-    
+
         /// <summary>
         /// Initialize a new ffiEntities object.
         /// </summary>
-        public ffiEntities(EntityConnection connection) : base(connection, "ffiEntities")
+        public ffiEntities(EntityConnection connection)
+            : base(connection, "ffiEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
-    
+
         #endregion
-    
+
         #region Partial Methods
-    
+
         partial void OnContextCreated();
-    
+
         #endregion
-    
+
         #region ObjectSet Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -89,7 +93,7 @@ namespace Internet.Models
             }
         }
         private ObjectSet<Category> _Categories;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -105,7 +109,7 @@ namespace Internet.Models
             }
         }
         private ObjectSet<Payment> _Payments;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -121,7 +125,7 @@ namespace Internet.Models
             }
         }
         private ObjectSet<Product> _Products;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -137,7 +141,7 @@ namespace Internet.Models
             }
         }
         private ObjectSet<Slide> _Slides;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -153,7 +157,7 @@ namespace Internet.Models
             }
         }
         private ObjectSet<FAQ> _FAQs;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -169,23 +173,7 @@ namespace Internet.Models
             }
         }
         private ObjectSet<Result> _Results;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<Partner> Partners
-        {
-            get
-            {
-                if ((_Partners == null))
-                {
-                    _Partners = base.CreateObjectSet<Partner>("Partners");
-                }
-                return _Partners;
-            }
-        }
-        private ObjectSet<Partner> _Partners;
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -202,10 +190,26 @@ namespace Internet.Models
         }
         private ObjectSet<Banner> _Banners;
 
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Partner> Partners
+        {
+            get
+            {
+                if ((_Partners == null))
+                {
+                    _Partners = base.CreateObjectSet<Partner>("Partners");
+                }
+                return _Partners;
+            }
+        }
+        private ObjectSet<Partner> _Partners;
+
         #endregion
 
         #region AddTo Methods
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the Categories EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
@@ -213,7 +217,7 @@ namespace Internet.Models
         {
             base.AddObject("Categories", category);
         }
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the Payments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
@@ -221,7 +225,7 @@ namespace Internet.Models
         {
             base.AddObject("Payments", payment);
         }
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the Products EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
@@ -229,7 +233,7 @@ namespace Internet.Models
         {
             base.AddObject("Products", product);
         }
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the Slides EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
@@ -237,7 +241,7 @@ namespace Internet.Models
         {
             base.AddObject("Slides", slide);
         }
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the FAQs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
@@ -245,7 +249,7 @@ namespace Internet.Models
         {
             base.AddObject("FAQs", fAQ);
         }
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the Results EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
@@ -253,21 +257,21 @@ namespace Internet.Models
         {
             base.AddObject("Results", result);
         }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the Partners EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToPartners(Partner partner)
-        {
-            base.AddObject("Partners", partner);
-        }
-    
+
         /// <summary>
         /// Deprecated Method for adding a new object to the Banners EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToBanners(Banner banner)
         {
             base.AddObject("Banners", banner);
+        }
+
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Partners EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPartners(Partner partner)
+        {
+            base.AddObject("Partners", partner);
         }
 
         #endregion
@@ -277,17 +281,17 @@ namespace Internet.Models
     #endregion
 
     #region Entities
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Banner")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Banner")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Banner : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Banner object.
         /// </summary>
@@ -308,11 +312,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -335,11 +339,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid PartnerId
         {
@@ -359,11 +363,11 @@ namespace Internet.Models
         private global::System.Guid _PartnerId;
         partial void OnPartnerIdChanging(global::System.Guid value);
         partial void OnPartnerIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Url
         {
@@ -383,11 +387,11 @@ namespace Internet.Models
         private global::System.String _Url;
         partial void OnUrlChanging(global::System.String value);
         partial void OnUrlChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Byte[] Image
         {
@@ -410,9 +414,9 @@ namespace Internet.Models
 
         #endregion
 
-    
+
         #region Navigation Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -454,17 +458,17 @@ namespace Internet.Models
         #endregion
 
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Category")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Category")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Category : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Category object.
         /// </summary>
@@ -487,11 +491,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -514,11 +518,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name_ru
         {
@@ -538,11 +542,11 @@ namespace Internet.Models
         private global::System.String _Name_ru;
         partial void OnName_ruChanging(global::System.String value);
         partial void OnName_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name_en
         {
@@ -562,11 +566,11 @@ namespace Internet.Models
         private global::System.String _Name_en;
         partial void OnName_enChanging(global::System.String value);
         partial void OnName_enChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name_ua
         {
@@ -586,11 +590,11 @@ namespace Internet.Models
         private global::System.String _Name_ua;
         partial void OnName_uaChanging(global::System.String value);
         partial void OnName_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Int32 Index
         {
@@ -613,9 +617,9 @@ namespace Internet.Models
 
         #endregion
 
-    
+
         #region Navigation Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -641,17 +645,17 @@ namespace Internet.Models
         #endregion
 
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="FAQ")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "FAQ")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class FAQ : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new FAQ object.
         /// </summary>
@@ -672,11 +676,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -699,11 +703,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Question_ru
         {
@@ -723,13 +727,13 @@ namespace Internet.Models
         private global::System.String _Question_ru;
         partial void OnQuestion_ruChanging(global::System.String value);
         partial void OnQuestion_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
-        public global::System.String Answer_ru
+        [AllowHtml]public global::System.String Answer_ru
         {
             get
             {
@@ -747,11 +751,11 @@ namespace Internet.Models
         private global::System.String _Answer_ru;
         partial void OnAnswer_ruChanging(global::System.String value);
         partial void OnAnswer_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.String Question_ua
         {
@@ -771,13 +775,13 @@ namespace Internet.Models
         private global::System.String _Question_ua;
         partial void OnQuestion_uaChanging(global::System.String value);
         partial void OnQuestion_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
-        public global::System.String Answer_ua
+        [AllowHtml]public global::System.String Answer_ua
         {
             get
             {
@@ -795,11 +799,11 @@ namespace Internet.Models
         private global::System.String _Answer_ua;
         partial void OnAnswer_uaChanging(global::System.String value);
         partial void OnAnswer_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.String Question_en
         {
@@ -819,13 +823,13 @@ namespace Internet.Models
         private global::System.String _Question_en;
         partial void OnQuestion_enChanging(global::System.String value);
         partial void OnQuestion_enChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
-        public global::System.String Answer_en
+        [AllowHtml]public global::System.String Answer_en
         {
             get
             {
@@ -843,11 +847,11 @@ namespace Internet.Models
         private global::System.String _Answer_en;
         partial void OnAnswer_enChanging(global::System.String value);
         partial void OnAnswer_enChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Boolean ShowOnPartnerPanel
         {
@@ -870,19 +874,19 @@ namespace Internet.Models
 
         #endregion
 
-    
+
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Partner")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Partner")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Partner : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Partner object.
         /// </summary>
@@ -897,7 +901,8 @@ namespace Internet.Models
         /// <param name="skype">Initial value of the Skype property.</param>
         /// <param name="contactsEmail">Initial value of the ContactsEmail property.</param>
         /// <param name="deliveryService">Initial value of the DeliveryService property.</param>
-        public static Partner CreatePartner(global::System.Guid id, global::System.Guid userId, global::System.DateTime expirationDate, global::System.String name, global::System.String country, global::System.String city, global::System.String address, global::System.String phone, global::System.String skype, global::System.String contactsEmail, global::System.String deliveryService)
+        /// <param name="fFILogin">Initial value of the FFILogin property.</param>
+        public static Partner CreatePartner(global::System.Guid id, global::System.Guid userId, global::System.DateTime expirationDate, global::System.String name, global::System.String country, global::System.String city, global::System.String address, global::System.String phone, global::System.String skype, global::System.String contactsEmail, global::System.String deliveryService, global::System.String fFILogin)
         {
             Partner partner = new Partner();
             partner.Id = id;
@@ -911,17 +916,18 @@ namespace Internet.Models
             partner.Skype = skype;
             partner.ContactsEmail = contactsEmail;
             partner.DeliveryService = deliveryService;
+            partner.FFILogin = fFILogin;
             return partner;
         }
 
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -944,11 +950,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid UserId
         {
@@ -968,11 +974,11 @@ namespace Internet.Models
         private global::System.Guid _UserId;
         partial void OnUserIdChanging(global::System.Guid value);
         partial void OnUserIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.DateTime ExpirationDate
         {
@@ -992,11 +998,11 @@ namespace Internet.Models
         private global::System.DateTime _ExpirationDate;
         partial void OnExpirationDateChanging(global::System.DateTime value);
         partial void OnExpirationDateChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name
         {
@@ -1016,11 +1022,11 @@ namespace Internet.Models
         private global::System.String _Name;
         partial void OnNameChanging(global::System.String value);
         partial void OnNameChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Country
         {
@@ -1040,11 +1046,11 @@ namespace Internet.Models
         private global::System.String _Country;
         partial void OnCountryChanging(global::System.String value);
         partial void OnCountryChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String City
         {
@@ -1064,11 +1070,11 @@ namespace Internet.Models
         private global::System.String _City;
         partial void OnCityChanging(global::System.String value);
         partial void OnCityChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Address
         {
@@ -1088,11 +1094,11 @@ namespace Internet.Models
         private global::System.String _Address;
         partial void OnAddressChanging(global::System.String value);
         partial void OnAddressChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Phone
         {
@@ -1112,11 +1118,11 @@ namespace Internet.Models
         private global::System.String _Phone;
         partial void OnPhoneChanging(global::System.String value);
         partial void OnPhoneChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Skype
         {
@@ -1136,11 +1142,11 @@ namespace Internet.Models
         private global::System.String _Skype;
         partial void OnSkypeChanging(global::System.String value);
         partial void OnSkypeChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String ContactsEmail
         {
@@ -1160,11 +1166,11 @@ namespace Internet.Models
         private global::System.String _ContactsEmail;
         partial void OnContactsEmailChanging(global::System.String value);
         partial void OnContactsEmailChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.String TestDriveHTML
         {
@@ -1184,11 +1190,11 @@ namespace Internet.Models
         private global::System.String _TestDriveHTML;
         partial void OnTestDriveHTMLChanging(global::System.String value);
         partial void OnTestDriveHTMLChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String DeliveryService
         {
@@ -1208,11 +1214,11 @@ namespace Internet.Models
         private global::System.String _DeliveryService;
         partial void OnDeliveryServiceChanging(global::System.String value);
         partial void OnDeliveryServiceChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.String BannerUrl
         {
@@ -1232,11 +1238,11 @@ namespace Internet.Models
         private global::System.String _BannerUrl;
         partial void OnBannerUrlChanging(global::System.String value);
         partial void OnBannerUrlChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.Byte[] BannerImage
         {
@@ -1257,11 +1263,35 @@ namespace Internet.Models
         partial void OnBannerImageChanging(global::System.Byte[] value);
         partial void OnBannerImageChanged();
 
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
+        [DataMemberAttribute()]
+        public global::System.String FFILogin
+        {
+            get
+            {
+                return _FFILogin;
+            }
+            set
+            {
+                OnFFILoginChanging(value);
+                ReportPropertyChanging("FFILogin");
+                _FFILogin = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FFILogin");
+                OnFFILoginChanged();
+            }
+        }
+        private global::System.String _FFILogin;
+        partial void OnFFILoginChanging(global::System.String value);
+        partial void OnFFILoginChanged();
+
         #endregion
 
-    
+
         #region Navigation Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -1283,7 +1313,7 @@ namespace Internet.Models
                 }
             }
         }
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -1305,7 +1335,7 @@ namespace Internet.Models
                 }
             }
         }
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -1331,17 +1361,17 @@ namespace Internet.Models
         #endregion
 
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Payment")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Payment")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Payment : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Payment object.
         /// </summary>
@@ -1368,11 +1398,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -1395,11 +1425,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid PartnerId
         {
@@ -1419,11 +1449,11 @@ namespace Internet.Models
         private global::System.Guid _PartnerId;
         partial void OnPartnerIdChanging(global::System.Guid value);
         partial void OnPartnerIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Int32 Amount
         {
@@ -1443,11 +1473,11 @@ namespace Internet.Models
         private global::System.Int32 _Amount;
         partial void OnAmountChanging(global::System.Int32 value);
         partial void OnAmountChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String PaymentFor
         {
@@ -1467,11 +1497,11 @@ namespace Internet.Models
         private global::System.String _PaymentFor;
         partial void OnPaymentForChanging(global::System.String value);
         partial void OnPaymentForChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Int32 OrderId
         {
@@ -1491,11 +1521,11 @@ namespace Internet.Models
         private global::System.Int32 _OrderId;
         partial void OnOrderIdChanging(global::System.Int32 value);
         partial void OnOrderIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Boolean Completed
         {
@@ -1515,11 +1545,11 @@ namespace Internet.Models
         private global::System.Boolean _Completed;
         partial void OnCompletedChanging(global::System.Boolean value);
         partial void OnCompletedChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.DateTime CreatedAt
         {
@@ -1542,9 +1572,9 @@ namespace Internet.Models
 
         #endregion
 
-    
+
         #region Navigation Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -1586,17 +1616,17 @@ namespace Internet.Models
         #endregion
 
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Product")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Product")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Product : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Product object.
         /// </summary>
@@ -1619,11 +1649,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -1646,11 +1676,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name_en
         {
@@ -1670,11 +1700,11 @@ namespace Internet.Models
         private global::System.String _Name_en;
         partial void OnName_enChanging(global::System.String value);
         partial void OnName_enChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name_ua
         {
@@ -1694,11 +1724,11 @@ namespace Internet.Models
         private global::System.String _Name_ua;
         partial void OnName_uaChanging(global::System.String value);
         partial void OnName_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Name_ru
         {
@@ -1718,12 +1748,13 @@ namespace Internet.Models
         private global::System.String _Name_ru;
         partial void OnName_ruChanging(global::System.String value);
         partial void OnName_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_ua
         {
             get
@@ -1742,12 +1773,13 @@ namespace Internet.Models
         private global::System.String _Description_ua;
         partial void OnDescription_uaChanging(global::System.String value);
         partial void OnDescription_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_ru
         {
             get
@@ -1766,12 +1798,13 @@ namespace Internet.Models
         private global::System.String _Description_ru;
         partial void OnDescription_ruChanging(global::System.String value);
         partial void OnDescription_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_en
         {
             get
@@ -1790,11 +1823,11 @@ namespace Internet.Models
         private global::System.String _Description_en;
         partial void OnDescription_enChanging(global::System.String value);
         partial void OnDescription_enChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.Byte[] Image
         {
@@ -1814,11 +1847,11 @@ namespace Internet.Models
         private global::System.Byte[] _Image;
         partial void OnImageChanging(global::System.Byte[] value);
         partial void OnImageChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public Nullable<global::System.Guid> CategoryId
         {
@@ -1838,11 +1871,11 @@ namespace Internet.Models
         private Nullable<global::System.Guid> _CategoryId;
         partial void OnCategoryIdChanging(Nullable<global::System.Guid> value);
         partial void OnCategoryIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Int32 Price
         {
@@ -1865,9 +1898,9 @@ namespace Internet.Models
 
         #endregion
 
-    
+
         #region Navigation Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -1909,17 +1942,17 @@ namespace Internet.Models
         #endregion
 
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Result")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Result")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Result : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Result object.
         /// </summary>
@@ -1942,11 +1975,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -1969,11 +2002,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Manufacturer
         {
@@ -1993,11 +2026,11 @@ namespace Internet.Models
         private global::System.String _Manufacturer;
         partial void OnManufacturerChanging(global::System.String value);
         partial void OnManufacturerChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String Model
         {
@@ -2017,11 +2050,11 @@ namespace Internet.Models
         private global::System.String _Model;
         partial void OnModelChanging(global::System.String value);
         partial void OnModelChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.String VideoTag
         {
@@ -2041,12 +2074,13 @@ namespace Internet.Models
         private global::System.String _VideoTag;
         partial void OnVideoTagChanging(global::System.String value);
         partial void OnVideoTagChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_ua
         {
             get
@@ -2065,12 +2099,13 @@ namespace Internet.Models
         private global::System.String _Description_ua;
         partial void OnDescription_uaChanging(global::System.String value);
         partial void OnDescription_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_ru
         {
             get
@@ -2089,12 +2124,13 @@ namespace Internet.Models
         private global::System.String _Description_ru;
         partial void OnDescription_ruChanging(global::System.String value);
         partial void OnDescription_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_en
         {
             get
@@ -2113,11 +2149,11 @@ namespace Internet.Models
         private global::System.String _Description_en;
         partial void OnDescription_enChanging(global::System.String value);
         partial void OnDescription_enChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Boolean isActive
         {
@@ -2137,11 +2173,11 @@ namespace Internet.Models
         private global::System.Boolean _isActive;
         partial void OnisActiveChanging(global::System.Boolean value);
         partial void OnisActiveChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public Nullable<global::System.Guid> PartnerId
         {
@@ -2164,9 +2200,9 @@ namespace Internet.Models
 
         #endregion
 
-    
+
         #region Navigation Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
@@ -2208,17 +2244,17 @@ namespace Internet.Models
         #endregion
 
     }
-    
+
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ffiModel", Name="Slide")]
+    [EdmEntityTypeAttribute(NamespaceName = "ffiModel", Name = "Slide")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContractAttribute(IsReference = true)]
     public partial class Slide : EntityObject
     {
         #region Factory Method
-    
+
         /// <summary>
         /// Create a new Slide object.
         /// </summary>
@@ -2235,11 +2271,11 @@ namespace Internet.Models
         #endregion
 
         #region Primitive Properties
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = true, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Guid Id
         {
@@ -2262,11 +2298,11 @@ namespace Internet.Models
         private global::System.Guid _Id;
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = false)]
         [DataMemberAttribute()]
         public global::System.Byte[] Image
         {
@@ -2286,11 +2322,11 @@ namespace Internet.Models
         private global::System.Byte[] _Image;
         partial void OnImageChanging(global::System.Byte[] value);
         partial void OnImageChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
         public global::System.String Url
         {
@@ -2310,12 +2346,13 @@ namespace Internet.Models
         private global::System.String _Url;
         partial void OnUrlChanging(global::System.String value);
         partial void OnUrlChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_ua
         {
             get
@@ -2334,12 +2371,13 @@ namespace Internet.Models
         private global::System.String _Description_ua;
         partial void OnDescription_uaChanging(global::System.String value);
         partial void OnDescription_uaChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_ru
         {
             get
@@ -2358,12 +2396,13 @@ namespace Internet.Models
         private global::System.String _Description_ru;
         partial void OnDescription_ruChanging(global::System.String value);
         partial void OnDescription_ruChanged();
-    
+
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty = false, IsNullable = true)]
         [DataMemberAttribute()]
+        [AllowHtml]
         public global::System.String Description_en
         {
             get
@@ -2385,10 +2424,10 @@ namespace Internet.Models
 
         #endregion
 
-    
+
     }
 
     #endregion
 
-    
+
 }
